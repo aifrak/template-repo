@@ -1,0 +1,28 @@
+{
+  "recommendations": [
+    // EditorConfig:
+    "editorconfig.editorconfig",
+
+    // Tasks / Makefile targets
+    "spmeesseman.vscode-taskexplorer",
+
+    // Github Actions:
+    "cschleiden.vscode-github-actions",
+
+    // Markdown:
+    "davidanson.vscode-markdownlint",
+    "shd101wyy.markdown-preview-enhanced",
+    "yzhang.markdown-all-in-one",
+
+    // Formatters:
+    "esbenp.prettier-vscode", // YAML, Markdown
+
+    // Comments:
+    "stackbreak.comment-divider",
+
+    // Spelling:
+    "streetsidesoftware.code-spell-checker"
+  ],
+
+  "unwantedRecommendations": []
+}
