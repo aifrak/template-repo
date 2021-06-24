@@ -1,0 +1,46 @@
+{
+  "name": "template-repo",
+  "dockerComposeFile": [
+    "../docker-compose.yml",
+    "../docker-compose.dev.yml",
+    "docker-compose.yml"
+  ],
+  "service": "app",
+  "workspaceFolder": "/app",
+  "settings": {
+    "shellformat.path": "/usr/local/bin/shfmt"
+  },
+  "extensions": [
+    // EditorConfig
+    "editorconfig.editorconfig",
+
+    // Github Actions
+    "cschleiden.vscode-github-actions",
+
+    // Docker
+    "ms-azuretools.vscode-docker",
+
+    // Shell
+    "foxundermoon.shell-format",
+    "timonwong.shellcheck",
+
+    // Markdown
+    "davidanson.vscode-markdownlint",
+    "yzhang.markdown-all-in-one",
+
+    // YAML
+    "redhat.vscode-yaml",
+
+    // Gitignore
+    "codezombiech.gitignore",
+
+    // Formatters
+    "esbenp.prettier-vscode",
+
+    // Comments
+    "stackbreak.comment-divider",
+
+    // Spelling
+    "streetsidesoftware.code-spell-checker"
+  ]
+}

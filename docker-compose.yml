@@ -1,0 +1,14 @@
+version: "3.9"
+
+services:
+  app:
+    image: aifrak/template-repo:latest
+    build:
+      context: .
+      target: base
+    volumes:
+      - .:/app
+      - app-node-modules:/app/node_modules
+
+volumes:
+  app-node-modules:
