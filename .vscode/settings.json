@@ -1,14 +1,59 @@
 {
   // Editor:
   "editor.rulers": [80],
-  "editor.insertSpaces": true,
-  "editor.tabSize": 2,
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true,
 
   // Files:
-  "files.trimTrailingWhitespace": true,
-  "files.insertFinalNewline": true,
+  "files.associations": {
+    "run": "shellscript",
+    "pre-commit": "shellscript",
+    ".markdownlintignore": "properties"
+  },
+  "files.watcherExclude": {
+    "**/.git": true,
+    "**/.history/**": true,
+    "**/.husky/_/**": true,
+    "**/node_modules/**": true
+  },
+  "files.exclude": {
+    "**/.git": true,
+    "**/.history": true
+  },
+
+  // Search:
+  "search.exclude": {
+    "**/.git": true,
+    "**/.history": true,
+    "**/.husky/_/**": true,
+    "**/node_modules": true
+  },
+
+  // Prettier:
+  "prettier.useEditorConfig": true,
+
+  // Shellformat:
+  "shellformat.useEditorConfig": true,
+
+  // Shellcheck:
+  "shellcheck.customArgs": ["-x"],
+  "shellcheck.useWorkspaceRootAsCwd": true,
+
+  // Task explorer:
+  "taskExplorer.groupSeparator": ":",
+  "taskExplorer.exclude": ["**/.history/**", "**/node_modules/**"],
+
+  // Comment Divider:
+  "comment-divider.length": 50,
+
+  // Markdown All in One:
+  "markdown.extension.orderedList.marker": "one",
 
   // Override languages:
+  "[dockerfile]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -23,14 +68,29 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
 
+  // VSCode icons:
+  "vsicons.associations.files": [
+    {
+      "icon": "docker",
+      "extensions": ["docker-compose.dev.yml", "docker-compose.override.yml"],
+      "filename": true
+    },
+    {
+      "icon": "markdownlint",
+      "extensions": [".markdownlintignore"],
+      "filename": true
+    }
+  ],
+
   // Spelling:
-  "cSpell.words": ["aifrak", "fkirc", "markdownlint", "nosborn"],
-
-  // Markdownlint:
-  "markdownlint.config": {
-    "MD013": true
-  },
-
-  // Comment Divider:
-  "comment-divider.length": 50
+  "cSpell.words": [
+    "Dependabot",
+    "buildx",
+    "hadolint",
+    "markdownlint",
+    "markdownlintignore",
+    "semver",
+    "uncommented"
+  ],
+  "cSpell.ignoreWords": ["aifrak", "fkirc", "pabio", "softprops", "tvdias"]
 }
