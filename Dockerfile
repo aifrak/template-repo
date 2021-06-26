@@ -57,6 +57,8 @@ CMD [ "bash" ]
 
 FROM base as dev
 
+USER root
+
 RUN set -e \
   && export DEBIAN_FRONTEND=noninteractive \
   && apt-get update -qq \
@@ -67,15 +69,14 @@ RUN set -e \
   && apt-get autoremove \
   && rm -rf /var/lib/apt/lists/*
 
+USER ${USERNAME}
+
 FROM dev as vscode
 
 WORKDIR ${HOME}
 
 RUN set -e \
   && mkdir -p .vscode-server/extensions \
-    .vscode-server-insiders/extensions \
-  && chown -R "${USERNAME}" \
-    .vscode-server \
-    .vscode-server-insiders
+    .vscode-server-insiders/extensions
 
 WORKDIR ${APP_DIR}
