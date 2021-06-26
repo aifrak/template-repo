@@ -20,6 +20,9 @@
     // Docker
     "ms-azuretools.vscode-docker",
 
+    // Dockerfile
+    "exiasr.hadolint",
+
     // Shell
     "foxundermoon.shell-format",
     "timonwong.shellcheck",
