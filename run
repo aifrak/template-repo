@@ -3,16 +3,10 @@
 set -euo pipefail
 
 . ./scripts/run/docker-file.sh
+. ./scripts/run/markdown.sh
+. ./scripts/run/prettier.sh
 . ./scripts/run/shell.sh
 . ./scripts/lib/utils.sh
-
-# If we're running in CI we need to disable TTY allocation for docker-compose
-# commands that enable it by default, such as exec and run.
-# Idea from: https://github.com/nickjj/docker-flask-example/blob/main/run
-TTY=""
-if [[ ! -t 1 ]]; then
-  TTY="-T"
-fi
 
 export DOCKER_BUILDKIT=1
 export COMPOSE_DOCKER_CLI_BUILD=1
@@ -20,23 +14,30 @@ export COMPOSE_DOCKER_CLI_BUILD=1
 function help {
   cat <<EOF
 
-$0 [command] [options...]
+$0 [command] [--dev] [sub-command]
+
+Example: $0 --dev dc:exec ./run test
+
+Options:
+  --dev                       Use "dev" file when docker compose
 
 Main commands:
-  format                     Format code of the whole project
-  lint                       Lint the whole project
-  pre-commit                 Format, lint and test the whole project
-  test                       Test the whole project
+  format                      Format code of the whole project
+  install-deps                Install all dependencies
+  lint                        Lint the whole project
+  pre-commit                  Format, lint and test the whole project
+  test                        Test the whole project
 
 docker-compose commands:
-  dc:run                     Run a function from "./run" inside the "app" docker service
-
-Dev commands:
-  dev:code                   Prepare docker services for development environment
-  dev:dc                     Run docker-compose with development configuration
-  dev:build                  Build docker service with development configuration
+  dc:build                    Build all docker services
+  dc:console                  Build, start, up all services and console of "app" docker service
+  dc:exec                     Execute a command in a "app" docker service
+  dc:run                      Run a command inside the "app" docker service and remove stopped containers
+  dc:up                       Starts all docker services
 EOF
 
+  markdown:help
+  prettier:help
   shell:help
   dockerfile:help
 }
@@ -55,8 +56,24 @@ function is_inside_docker {
   fi
 }
 
+function is_ci {
+  if [[ "${CI:-false}" = true ]]; then
+    return 0
+  else
+    return 1
+  fi
+}
+
+# If we're running in CI we need to disable TTY allocation for docker-compose
+# commands that enable it by default, such as exec and run.
+# Idea from: https://github.com/nickjj/docker-flask-example/blob/main/run
+TTY=""
+if [[ ! -t 1 ]] || is_ci; then
+  TTY="-T"
+fi
+
 # ---------------------------------------------- #
-#                      Main                      #
+#                   Application                  #
 # ---------------------------------------------- #
 
 function test {
@@ -64,18 +81,19 @@ function test {
     # TODO: Call internal test function here
     warning "TESTS MISSING. Call your functions in ./run file."
   else
-    dc:run test
+    dc:exec ./run test
   fi
 }
 
 function lint {
+  # shellcheck disable=SC2119
   if is_inside_docker; then
     local status=0
 
     shell:lint || status=${?}
     dockerfile:lint || status=${?}
-    npx markdownlint . || status=${?}
-    npx prettier --check . || status=${?}
+    markdown:lint || status=${?}
+    prettier:lint || status=${?}
 
     if [[ ${status} -eq 0 ]]; then
       success "✔ Project linted"
@@ -84,19 +102,20 @@ function lint {
       exit ${status}
     fi
   else
-    dc:run lint
+    dc:exec ./run lint
   fi
 }
 
 function format {
+  # shellcheck disable=SC2119
   if is_inside_docker; then
     shell:format
     dockerfile:format
-    npx prettier --list-different --write .
+    prettier:format
 
     success "✔ Project formatted"
   else
-    dc:run format
+    dc:exec ./run format
   fi
 }
 
@@ -106,7 +125,16 @@ function pre-commit {
     lint
     test
   else
-    dc:run pre-commit
+    dc:exec ./run pre-commit
+  fi
+}
+
+function install-deps {
+  if is_inside_docker; then
+    npm install --quiet
+    mix deps.get
+  else
+    dc:exec ./run install-deps
   fi
 }
 
@@ -114,33 +142,52 @@ function pre-commit {
 #                 docker-compose                 #
 # ---------------------------------------------- #
 
-function dc:run {
-  docker-compose run ${TTY} app ./run "${@}"
-  docker-compose rm -f -v
-}
-
-# ---------------------------------------------- #
-#                       Dev                      #
-# ---------------------------------------------- #
+dc_options=()
 
 dev_dc_options=(
   -f docker-compose.yml
   -f docker-compose.dev.yml
 )
 
-function dev:code {
-  dev:build
-  dev:dc up -d --remove-orphans
-  dev:dc exec app bash
+function dc {
+  docker-compose "${dc_options[@]}" "${@}"
 }
 
-function dev:dc {
-  docker-compose "${dev_dc_options[@]}" "${@}"
+function dc:build {
+  docker buildx bake "${dc_options[@]}"
 }
 
-function dev:build {
-  docker buildx bake "${dev_dc_options[@]}"
+function dc:exec {
+  dc exec ${TTY} app "${@}"
 }
+
+function dc:run {
+  dc run ${TTY} app "${@}"
+  dc rm -f -v
+}
+
+function dc:up {
+  dc up -d --remove-orphans
+}
+
+function dc:console {
+  dc:build
+  dc:up
+  dc:exec bash
+}
+
+# ---------------------------------------------- #
+#                       run                      #
+# ---------------------------------------------- #
+
+for opt in "${@}"; do
+  case ${opt} in
+    --dev)
+      dc_options=("${dev_dc_options[@]}")
+      shift
+      ;;
+  esac
+done
 
 # Idea from: https://github.com/adriancooney/Taskfile
 TIMEFORMAT=$'\nTask completed in %3lR'

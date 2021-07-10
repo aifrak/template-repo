@@ -9,7 +9,7 @@ jobs:
 
     env:
       IMAGE_TARGET: base
-      IMAGE_TAG: aifrak/template-elixir:latest
+      IMAGE_TAG: aifrak/template-repo:latest
       DOCKER_CACHE_OLD: /tmp/.buildx-cache
       DOCKER_CACHE_NEW: /tmp/.buildx-cache-new
 

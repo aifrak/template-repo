@@ -8,16 +8,16 @@ shell_scripts_globs=(
 function shell:help {
   cat <<EOF
 
-  Shell commands:
-    shell:format               Format Shell scripts
-    shell:lint                 Lint Shell scripts
+Shell commands:
+  shell:format                Format given Shell scripts
+  shell:lint                  Lint given Shell scripts
 EOF
 }
 
 function shell:lint {
-  shellcheck "${shell_scripts_globs[@]}" -x
+  shellcheck -x "${@:-${shell_scripts_globs[@]}}"
 }
 
 function shell:format {
-  shfmt -w "${shell_scripts_globs[@]}"
+  shfmt -w "${@:-${shell_scripts_globs[@]}}"
 }
