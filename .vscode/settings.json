@@ -89,6 +89,8 @@
     "hadolint",
     "markdownlint",
     "markdownlintignore",
+    "preminor",
+    "prepatch",
     "semver",
     "uncommented"
   ],
