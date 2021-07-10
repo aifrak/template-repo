@@ -6,9 +6,10 @@ services:
     build:
       context: .
       target: base
+      args:
+        USER_UID: ${USER_UID:-1000}
+        USER_GID: ${USER_GID:-1000}
+    user: ${USER_UID:-1000}:${USER_GID:-1000}
+    command: sleep infinity
     volumes:
       - .:/app
-      - app-node-modules:/app/node_modules
-
-volumes:
-  app-node-modules:
