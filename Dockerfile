@@ -1,4 +1,4 @@
-FROM node:16.3.0-buster as node
+FROM node:16.4.2-buster as node
 RUN npm install -g npm@7.19.1 --quiet
 
 FROM koalaman/shellcheck:v0.7.2 as shellcheck
