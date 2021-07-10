@@ -1,10 +1,11 @@
 # VSCode
-.history
+.history/
 
 # Node
-node_modules/*
-# Folder should exists to avoid root ownership
-!node_modules/.gitkeep
+node_modules/
 
 # Docker compose
 docker-compose.override.yml
+
+# Keep .gitkeep files
+!/**/.gitkeep
