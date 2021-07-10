@@ -5,10 +5,3 @@ services:
     image: aifrak/template-repo:dev
     build:
       target: dev
-      args:
-        USER_UID: ${USER_UID:-1000}
-        USER_GID: ${USER_GID:-1000}
-    user: ${USER_UID:-1000}:${USER_GID:-1000}
-    volumes:
-      - .:/app:cached
-    command: sleep infinity

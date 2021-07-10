@@ -85,14 +85,26 @@
   // Spelling:
   "cSpell.words": [
     "Dependabot",
+    "GROUPNAME",
+    "NOPASSWD",
+    "WORKDIR",
+    "autoremove",
     "buildx",
+    "chmod",
+    "gitkeep",
+    "gnupg",
     "hadolint",
     "markdownlint",
     "markdownlintignore",
+    "mkdir",
+    "noninteractive",
     "preminor",
     "prepatch",
     "semver",
-    "uncommented"
+    "shellcheck",
+    "shfmt",
+    "uncommented",
+    "xtype"
   ],
   "cSpell.ignoreWords": ["aifrak", "fkirc", "pabio", "softprops", "tvdias"]
 }

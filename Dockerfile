@@ -10,21 +10,40 @@ FROM ubuntu:focal-20210609 as base
 USER root
 
 ENV INSIDE_DOCKER=1
-ENV LANG=C.UTF-8
+ENV LANG=en_US.UTF-8
+
+# 1. Install `locales` package and setup locale
+# 2. Clean
+RUN set -e \
+  && export DEBIAN_FRONTEND=noninteractive \
+  && apt-get update -qq \
+  && apt-get install -y -qq --no-install-recommends \
+    locales=2.31-* \
+  && sed -i "/${LANG}/s/^# //g" /etc/locale.gen \
+  && locale-gen ${LANG} \
+  && apt-get clean \
+  && apt-get autoremove \
+  && rm -rf /var/lib/apt/lists/*
+
+# Added here instead before `locale-gen` to avoid warnings
+ENV LC_ALL=${LANG}
+
 ENV USERNAME=app-user
 ARG GROUPNAME=${USERNAME}
 ARG USER_UID=1000
 ARG USER_GID=${USER_UID}
+
 ENV HOME=/home/${USERNAME}
 ENV APP_DIR=/app
 
-# Add user and project directory
-RUN \
-  groupadd --gid ${USER_GID} ${GROUPNAME} \
+# 1. Add username and groupname
+# 2. Create project directory and add ownership
+RUN set -e \
+  && groupadd --gid ${USER_GID} ${GROUPNAME} \
   && useradd --uid ${USER_UID} --gid ${USER_GID} --shell /bin/bash \
     --create-home ${USERNAME} \
   && mkdir ${APP_DIR} \
-  && chown ${USER_GID}:${USER_GID} ${APP_DIR}
+  && chown ${USERNAME}: ${APP_DIR}
 
 # Add shellcheck
 COPY --from=shellcheck --chown=root /bin/shellcheck /usr/local/bin/
@@ -47,11 +66,7 @@ USER ${USERNAME}
 
 WORKDIR ${APP_DIR}
 
-# Install project packages
-COPY --chown=${USERNAME} package-lock.json package.json .npmrc ./
-RUN set -e \
-  && npm ci --quiet \
-  && touch node_modules/.gitkeep
+ENV CI=true
 
 CMD [ "bash" ]
 
@@ -62,12 +77,19 @@ USER root
 RUN set -e \
   && export DEBIAN_FRONTEND=noninteractive \
   && apt-get update -qq \
-  && apt-get install -y -qq --no-install-recommends ca-certificates=* git=* sudo=* \
+  && apt-get install -y -qq --no-install-recommends \
+    ca-certificates=* \
+    git=* \
+    gnupg2=* \
+    openssh-client=* \
+    sudo=* \
   && echo "${USERNAME}" ALL=\(root\) NOPASSWD:ALL >/etc/sudoers.d/"${USERNAME}" \
   && chmod 0440 /etc/sudoers.d/"${USERNAME}" \
   && apt-get clean \
   && apt-get autoremove \
   && rm -rf /var/lib/apt/lists/*
+
+ENV CI=false
 
 USER ${USERNAME}
 

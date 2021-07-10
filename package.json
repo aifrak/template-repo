@@ -1,4 +1,5 @@
 {
+  "name": "template-repo",
   "devDependencies": {
     "markdownlint-cli": "^0.27.1",
     "prettier": "~2.3.2",
