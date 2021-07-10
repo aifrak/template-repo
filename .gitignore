@@ -1,7 +1,7 @@
 # VSCode
 .history/
 
-# Node
+# NodeJS
 node_modules/
 
 # Docker compose

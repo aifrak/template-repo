@@ -8,13 +8,14 @@
   // Files:
   "files.associations": {
     "run": "shellscript",
-    "pre-commit": "shellscript",
-    ".markdownlintignore": "properties"
+    "pre-commit": "shellscript"
   },
   "files.watcherExclude": {
     "**/.git": true,
-    "**/.history/**": true,
     "**/.husky/_/**": true,
+    // VSCode
+    "**/.history/**": true,
+    // NodeJS
     "**/node_modules/**": true
   },
   "files.exclude": {
@@ -25,8 +26,10 @@
   // Search:
   "search.exclude": {
     "**/.git": true,
-    "**/.history": true,
     "**/.husky/_/**": true,
+    // VSCode
+    "**/.history/**": true,
+    // NodeJS
     "**/node_modules": true
   },
 
@@ -42,7 +45,11 @@
 
   // Task explorer:
   "taskExplorer.groupSeparator": ":",
-  "taskExplorer.exclude": ["**/.history/**", "**/node_modules/**"],
+  "taskExplorer.exclude": [
+    "**/.history/**",
+    // NodeJS
+    "**/node_modules/**"
+  ],
 
   // Comment Divider:
   "comment-divider.length": 50,
@@ -83,6 +90,15 @@
   ],
 
   // Spelling:
+  "cSpell.enableFiletypes": [
+    "dockercompose",
+    "dockerfile",
+    "editorconfig",
+    "elixir",
+    "ignore",
+    "properties",
+    "shellscript"
+  ],
   "cSpell.words": [
     "Dependabot",
     "GROUPNAME",
@@ -106,5 +122,15 @@
     "uncommented",
     "xtype"
   ],
-  "cSpell.ignoreWords": ["aifrak", "fkirc", "pabio", "softprops", "tvdias"]
+  "cSpell.ignoreWords": [
+    "aifrak",
+    "davidanson",
+    "esbenp",
+    "exiasr",
+    "koalaman",
+    "mvdan",
+    "pabio",
+    "softprops",
+    "tvdias"
+  ]
 }
