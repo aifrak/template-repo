@@ -15,8 +15,8 @@ quote_type = auto
 binary_next_line = true
 switch_case_indent = true
 
-[{Dockerfile*,*.dockerfile}]
+[Dockerfile*]
 binary_next_line = true
 
-[{*.md,*.markdown}]
+[*.md]
 trim_trailing_whitespace = false

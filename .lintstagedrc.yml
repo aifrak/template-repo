@@ -1,0 +1,16 @@
+"{run,pre-commit,*.sh}":
+  - ./run shell:format
+  - ./run shell:lint
+
+"Dockerfile*":
+  - ./run dockerfile:format
+  - ./run dockerfile:lint
+
+"*.{json,yaml,yml}":
+  - ./run prettier:format
+  - ./run prettier:lint
+
+"*.md":
+  - ./run prettier:format
+  - ./run prettier:lint
+  - ./run markdown:lint

@@ -1,4 +1,15 @@
 #!/bin/sh
+
+# shellcheck source=.husky/_/husky.sh
 . "$(dirname "$0")/_/husky.sh"
 
-./run pre-commit
+if [ -n "$INSIDE_DOCKER" ]; then
+  npx lint-staged
+  ./run test
+else
+  ./run --dev dc:build
+  ./run --dev dc:up
+  ./run --dev dc:exec ./run install-deps
+  ./run --dev dc:exec npx lint-staged
+  ./run --dev dc:exec ./run test
+fi
