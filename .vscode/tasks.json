@@ -2,7 +2,7 @@
   "version": "2.0.0",
   "tasks": [
     /* -------------------------------------------- */
-    /*                     Main                     */
+    /*                  Application                 */
     /* -------------------------------------------- */
     {
       "label": "format",
@@ -11,6 +11,14 @@
       "args": ["format"],
       "problemMatcher": [],
       "detail": "Format code of the whole project"
+    },
+    {
+      "label": "install-deps",
+      "type": "shell",
+      "command": "./run",
+      "args": ["install-deps"],
+      "problemMatcher": [],
+      "detail": "Install all dependencies"
     },
     {
       "label": "lint",
@@ -40,38 +48,39 @@
     /*                docker-compose                */
     /* -------------------------------------------- */
     {
+      "label": "dc:build",
+      "type": "shell",
+      "command": "./run dc:build ${input:dcOpts}",
+      "problemMatcher": [],
+      "detail": "Build all docker services"
+    },
+    {
+      "label": "dc:console",
+      "type": "shell",
+      "command": "./run dc:console ${input:dcOpts}",
+      "problemMatcher": [],
+      "detail": "Build, start, up all services and console of 'app' docker service"
+    },
+    {
+      "label": "dc:exec",
+      "type": "shell",
+      "command": "./run dc:exec ${input:dcOpts} ",
+      "problemMatcher": [],
+      "detail": "Execute a command in a 'app' docker service"
+    },
+    {
       "label": "dc:run",
       "type": "shell",
-      "command": "./run dc:run ${input:fun}",
+      "command": "./run dc:run ${input:dcOpts} ${input:cmd}",
       "problemMatcher": [],
-      "detail": "Run a function from './run' inside the 'app' docker service"
-    },
-    /* -------------------------------------------- */
-    /*                      Dev                     */
-    /* -------------------------------------------- */
-    {
-      "label": "dev:code",
-      "type": "shell",
-      "command": "./run",
-      "args": ["dev:code"],
-      "problemMatcher": [],
-      "detail": "Build, run a command and down a docker service"
+      "detail": "Run a command inside the 'app' docker service and remove stopped containers"
     },
     {
-      "label": "dev:dc",
+      "label": "dc:up",
       "type": "shell",
-      "command": "./run",
-      "args": ["dev:dc", "${input:dockerCmd}"],
+      "command": "./run dc:up ${input:dcOpts}",
       "problemMatcher": [],
-      "detail": "Run docker-compose with development configuration"
-    },
-    {
-      "label": "dev:build",
-      "type": "shell",
-      "command": "./run",
-      "args": ["dev:build"],
-      "problemMatcher": [],
-      "detail": "Build docker service with development configuration"
+      "detail": "Starts all docker services"
     },
     /* -------------------------------------------- */
     /*                     Shell                    */
@@ -114,38 +123,14 @@
   ],
   "inputs": [
     {
-      "id": "dockerService",
-      "type": "pickString",
-      "description": "Docker service?",
-      "options": ["app"],
-      "default": "app"
-    },
-    {
       "id": "cmd",
       "type": "promptString",
       "description": "Command? (e.g. ./run test)"
     },
     {
-      "id": "fun",
+      "id": "dcOpts",
       "type": "promptString",
-      "description": "Function from './run'? (e.g. lint)"
-    },
-    {
-      "id": "dockerCmd",
-      "type": "promptString",
-      "description": "Docker command? (e.g. up -d)"
-    },
-    {
-      "id": "userUid",
-      "type": "promptString",
-      "description": "User ID?",
-      "default": "1000"
-    },
-    {
-      "id": "groupUid",
-      "type": "promptString",
-      "description": "Group ID?",
-      "default": "1000"
+      "description": "Options? (e.g. --dev)"
     }
   ]
 }
