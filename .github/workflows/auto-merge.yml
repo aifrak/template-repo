@@ -8,6 +8,7 @@ jobs:
     if: github.actor == 'dependabot[bot]'
     steps:
       - name: Dependabot auto merge
-        uses: KeisukeYamashita/auto-dependabot-pull-request-merge@v1
+        uses: akheron/dependabot-cron-action@v1.0.0
         with:
-          strategy: squash
+          token: ${{ secrets.GITHUB_TOKEN }}
+          merge-method: squash
