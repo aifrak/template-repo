@@ -1,21 +1,13 @@
 name: Dependabot auto merge
 
-# Check Dependabot PRs every weekday at 06:30 UTC (after Dependabot)
-on:
-  schedule:
-    - cron: "30 6 * * 1-5"
+on: pull_request
 
 jobs:
   auto-merge:
     runs-on: ubuntu-20.04
+    if: github.actor == "dependabot[bot]"
     steps:
       - name: Dependabot auto merge
-        uses: PabioHQ/dependabot-pr-action@v1.1.12
+        uses: KeisukeYamashita/auto-dependabot-pull-request-merge@v1
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          auto-label: true
-          approve: true
-          merge-minor: true
-          merge-patch: true
-          merge-preminor: true
-          merge-prepatch: true
+          strategy: squash
