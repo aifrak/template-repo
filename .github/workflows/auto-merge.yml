@@ -2,6 +2,7 @@ name: Dependabot auto merge
 
 # Check Dependabot PRs every weekday at 06:30 UTC (after Dependabot)
 on:
+  workflow_dispatch:
   schedule:
     - cron: "30 6 * * 1-5"
 
