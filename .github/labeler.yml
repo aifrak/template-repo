@@ -5,6 +5,7 @@
 source:
   - src/**/*
   - lib/**/*
+
 tests:
   - tests/**/*
 
