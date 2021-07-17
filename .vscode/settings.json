@@ -61,6 +61,9 @@
   "[dockerfile]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
   },
+  "[html]": {
+    "editor.rulers": [120]
+  },
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
