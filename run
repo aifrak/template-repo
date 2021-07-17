@@ -19,9 +19,11 @@ $0 [command] [--dev] [sub-command]
 Example: $0 --dev dc:exec ./run test
 
 Options:
+  -h, --help                  Print this message
   --dev                       Use "dev" file when docker compose
 
 Main commands:
+  help                        Print this message
   format                      Format code of the whole project
   install-deps                Install all dependencies
   lint                        Lint the whole project
@@ -184,6 +186,10 @@ for opt in "${@}"; do
     --dev)
       dc_options=("${dev_dc_options[@]}")
       shift
+      ;;
+    -h | --help)
+      help
+      close
       ;;
   esac
 done
