@@ -13,7 +13,7 @@ dependencies:
   - package*.json
 
 documentation:
-  - ./**/*.md
+  - "**/*.md"
 
 chore:
   - .devcontainer
@@ -45,7 +45,7 @@ github_actions:
 shellscript:
   - pre-commit
   - run
-  - ./**/*.sh
+  - "**/*.sh"
 
 vscode:
   - .vscode/**/*

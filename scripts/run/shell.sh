@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 shell_scripts_globs=(
-  ./run
-  ./scripts/**/*.sh
+  run
+  scripts/**/*.sh
 )
 
 function shell:help {
