@@ -10,7 +10,7 @@ tests:
   - tests/**/*
 
 dependencies:
-  - package*.json
+  - "**/package*.json"
 
 documentation:
   - "**/*.md"
@@ -18,12 +18,13 @@ documentation:
 chore:
   - .devcontainer
   - .editorconfig
-  - .gitignore
+  - "**/.gitignore"
+  - "**/.gitkeep"
   - .hadolint*
   - .husky/**/*
   - .lintstaged*
   - .markdownlint*
-  - .npmrc
+  - "**/.npmrc"
   - .prettier*
   - .vscode/**/*
   - scripts/**/*
@@ -41,6 +42,14 @@ docker:
 
 github_actions:
   - .github/**/*
+
+html:
+  - "**/*.html*"
+
+javascript:
+  - "**/*.js"
+  - "**/.npmrc"
+  - "**/package*.json"
 
 shellscript:
   - pre-commit
