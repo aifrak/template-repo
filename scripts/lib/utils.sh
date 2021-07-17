@@ -45,3 +45,8 @@ function alert {
 function die {
   exit 1
 }
+
+# Wrapper for "exit" without error.
+function close {
+  exit 0
+}

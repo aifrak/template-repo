@@ -50,35 +50,35 @@
     {
       "label": "dc:build",
       "type": "shell",
-      "command": "./run dc:build ${input:dcOpts}",
+      "command": "./run ${input:dcOpts} dc:build",
       "problemMatcher": [],
       "detail": "Build all docker services"
     },
     {
       "label": "dc:console",
       "type": "shell",
-      "command": "./run dc:console ${input:dcOpts}",
+      "command": "./run ${input:dcOpts} dc:console",
       "problemMatcher": [],
       "detail": "Build, start, up all services and console of 'app' docker service"
     },
     {
       "label": "dc:exec",
       "type": "shell",
-      "command": "./run dc:exec ${input:dcOpts} ",
+      "command": "./run ${input:dcOpts} dc:exec",
       "problemMatcher": [],
       "detail": "Execute a command in a 'app' docker service"
     },
     {
       "label": "dc:run",
       "type": "shell",
-      "command": "./run dc:run ${input:dcOpts} ${input:cmd}",
+      "command": "./run ${input:dcOpts} dc:run ${input:cmd}",
       "problemMatcher": [],
       "detail": "Run a command inside the 'app' docker service and remove stopped containers"
     },
     {
       "label": "dc:up",
       "type": "shell",
-      "command": "./run dc:up ${input:dcOpts}",
+      "command": "./run ${input:dcOpts} dc:up",
       "problemMatcher": [],
       "detail": "Starts all docker services"
     },
@@ -130,6 +130,7 @@
     {
       "id": "dcOpts",
       "type": "promptString",
+      "default": "--dev",
       "description": "Options? (e.g. --dev)"
     }
   ]
