@@ -110,6 +110,7 @@
     "chmod",
     "deps",
     "devcontainer",
+    "dockerfiles",
     "dockerignore",
     "editorconfig",
     "gitkeep",
