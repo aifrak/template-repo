@@ -131,6 +131,7 @@
     "shellcheck",
     "shfmt",
     "uncommented",
+    "xargs",
     "xtype"
   ],
   "cSpell.ignoreWords": [
