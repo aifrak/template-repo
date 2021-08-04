@@ -81,7 +81,7 @@ jobs:
       - name: Install node modules
         if: steps.node-modules-cache.outputs.cache-hit != 'true'
         run: |
-          ./run dc:exec bash -c "npm ci --quiet && touch node_modules/.gitkeep"
+          ./run dc:exec bash -c "npm ci --quiet"
 
       # ---------------------------------------------- #
       #                   Application                  #
