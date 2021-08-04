@@ -2,11 +2,15 @@
 
 set -euo pipefail
 
-. ./scripts/run/docker-file.sh
-. ./scripts/run/markdown.sh
-. ./scripts/run/prettier.sh
-. ./scripts/run/shell.sh
-. ./scripts/lib/utils.sh
+if [[ -z "${APP_DIR:-""}" ]]; then
+  APP_DIR="$(dirname "${0}")"
+fi
+
+. "${APP_DIR}/scripts/run/docker-file.sh"
+. "${APP_DIR}/scripts/run/markdown.sh"
+. "${APP_DIR}/scripts/run/prettier.sh"
+. "${APP_DIR}/scripts/run/shell.sh"
+. "${APP_DIR}/scripts/lib/utils.sh"
 
 export DOCKER_BUILDKIT=1
 export COMPOSE_DOCKER_CLI_BUILD=1
