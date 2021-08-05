@@ -73,8 +73,13 @@ jobs:
         uses: actions/cache@v2.1.6
         id: node-modules-cache
         with:
-          path: node_modules
-          key: ${{ runner.os }}-node-${{ env.NODE_VERSION }}-${{ hashFiles('**/package-lock.json') }}
+          path: |
+            **/node_modules
+          key: "\
+            ${{ runner.os }}-node-\
+            ${{ env.NODE_VERSION }}-\
+            ${{ hashFiles('**/package-lock.json') }}\
+            "
           restore-keys: |
             ${{ runner.os }}-node-${{ env.NODE_VERSION }}-
 
