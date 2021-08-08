@@ -16,7 +16,8 @@
     // VSCode
     "**/.history/**": true,
     // NodeJS
-    "**/node_modules/**": true
+    "**/node_modules/**": true,
+    "**/npm_cache/**": true
   },
   "files.exclude": {
     "**/.git": true,
@@ -30,7 +31,8 @@
     // VSCode
     "**/.history/**": true,
     // NodeJS
-    "**/node_modules": true
+    "**/node_modules": true,
+    "**/npm_cache": true
   },
 
   // Prettier:
@@ -48,7 +50,8 @@
   "taskExplorer.exclude": [
     "**/.history/**",
     // NodeJS
-    "**/node_modules/**"
+    "**/node_modules/**",
+    "**/npm_cache/**"
   ],
 
   // Comment Divider:
