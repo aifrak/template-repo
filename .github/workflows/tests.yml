@@ -62,26 +62,27 @@ jobs:
           ./run dc:up
 
       # ---------------------------------------------- #
-      #                     NodeJS                     #
+      #                      Cache                     #
       # ---------------------------------------------- #
 
-      - name: Add NodeJS version as environment variable
+      - name: Get versions
         run: |
           echo "NODE_VERSION=$(./run dc:exec npm -v)" >> $GITHUB_ENV
 
-      - name: Build node modules cache
+      - name: Cache node modules
         uses: actions/cache@v2.1.6
         id: node-modules-cache
         with:
           path: |
             **/node_modules
-          key: "\
-            ${{ runner.os }}-node-\
-            ${{ env.NODE_VERSION }}-\
-            ${{ hashFiles('**/package-lock.json') }}\
-            "
+          key: |
+            ${{ runner.os }}-node-${{ env.NODE_VERSION }}-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-${{ env.NODE_VERSION }}-
+
+      # ---------------------------------------------- #
+      #                  Dependencies                  #
+      # ---------------------------------------------- #
 
       - name: Install node modules
         if: steps.node-modules-cache.outputs.cache-hit != 'true'
