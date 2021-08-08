@@ -3,6 +3,7 @@
 
 # NodeJS
 node_modules/
+npm_cache/
 
 # Docker compose
 docker-compose.override.yml
