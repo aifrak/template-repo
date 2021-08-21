@@ -2,7 +2,7 @@
 
 This is a template repository.
 
-[![Tests](https://github.com/aifrak/template-repo/actions/workflows/tests.yml/badge.svg)](https://github.com/aifrak/template-repo/actions/workflows/tests.yml)
+[![CI](https://github.com/aifrak/template-repo/actions/workflows/ci.yml/badge.svg)](https://github.com/aifrak/template-repo/actions/workflows/ci.yml)
 [![License](https://img.shields.io/github/license/aifrak/template-repo?color=blue)](https://github.com/aifrak/template-repo/blob/master/LICENSE)
 
 After cloning this template repository, rework the content of `README.md` and
