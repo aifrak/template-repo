@@ -1,10 +1,10 @@
-name: Tests
+name: CI
 
 on: [push, workflow_dispatch]
 
 jobs:
-  test:
-    name: Tests
+  ci:
+    name: CI
     runs-on: ubuntu-20.04
 
     env:
