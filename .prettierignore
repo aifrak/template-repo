@@ -1,6 +1,6 @@
 vendor/
 
-# VSCode
+# Local history (VSCode extension)
 .history/
 
 # NodeJS
