@@ -37,6 +37,9 @@
     "**/npm_cache": true
   },
 
+  // Git:
+  "git.inputValidationSubjectLength": 100,
+
   // Prettier:
   "prettier.useEditorConfig": true,
 
@@ -65,6 +68,12 @@
   // Override languages:
   "[dockerfile]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "[git-commit]": {
+    "editor.rulers": [100]
+  },
+  "[git-rebase]": {
+    "editor.rulers": [100]
   },
   "[html]": {
     "editor.rulers": [120]
