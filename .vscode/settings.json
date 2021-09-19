@@ -7,8 +7,9 @@
 
   // Files:
   "files.associations": {
-    "run": "shellscript",
-    "pre-commit": "shellscript"
+    ".czrc": "json",
+    "pre-commit": "shellscript",
+    "run": "shellscript"
   },
   "files.watcherExclude": {
     "**/.git": true,

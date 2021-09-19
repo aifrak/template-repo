@@ -6,7 +6,7 @@
   - ./run dockerfile:format
   - ./run dockerfile:lint
 
-"*.{json,yaml,yml}":
+"{*.json,*.yaml,*.yml,.czrc}":
   - ./run prettier:format
   - ./run prettier:lint
 
