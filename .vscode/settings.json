@@ -8,6 +8,7 @@
   // Files:
   "files.associations": {
     ".czrc": "json",
+    "commit-msg": "shellscript",
     "pre-commit": "shellscript",
     "run": "shellscript"
   },

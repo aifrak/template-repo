@@ -1,4 +1,4 @@
-"{run,pre-commit,*.sh}":
+"{run,commit-msg,pre-commit,*.sh}":
   - ./run shell:format
   - ./run shell:lint
 

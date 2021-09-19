@@ -14,7 +14,7 @@ quote_type = auto
 [*.html]
 max_line_length = 120
 
-[{run,pre-commit,*.sh}]
+[{run,commit-msg,pre-commit,*.sh}]
 binary_next_line = true
 switch_case_indent = true
 
