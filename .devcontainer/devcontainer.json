@@ -14,6 +14,10 @@
     // EditorConfig
     "editorconfig.editorconfig",
 
+    // Commit:
+    "joshbolduc.commitlint",
+    "vivaxy.vscode-conventional-commits",
+
     // Github Actions
     "cschleiden.vscode-github-actions",
 

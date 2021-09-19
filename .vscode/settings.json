@@ -65,6 +65,11 @@
   // Markdown All in One:
   "markdown.extension.orderedList.marker": "one",
 
+  // Conventional Commits:
+  "conventionalCommits.autoCommit": false,
+  "conventionalCommits.gitmoji": false,
+  "conventionalCommits.lineBreak": "\\n",
+
   // Override languages:
   "[dockerfile]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"

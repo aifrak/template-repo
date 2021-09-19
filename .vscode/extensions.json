@@ -9,6 +9,10 @@
     // Tasks / Makefile targets
     "spmeesseman.vscode-taskexplorer",
 
+    // Commit:
+    "joshbolduc.commitlint",
+    "vivaxy.vscode-conventional-commits",
+
     // Github Actions:
     "cschleiden.vscode-github-actions",
 
