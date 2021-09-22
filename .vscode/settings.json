@@ -70,6 +70,11 @@
   "conventionalCommits.gitmoji": false,
   "conventionalCommits.lineBreak": "\\n",
 
+  // YAML:
+  "yaml.schemas": {
+    "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json": "cspell.yml"
+  },
+
   // Override languages:
   "[dockerfile]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
@@ -109,65 +114,5 @@
       "extensions": [".markdownlintignore"],
       "filename": true
     }
-  ],
-
-  // Spelling:
-  "cSpell.enableFiletypes": [
-    "dockercompose",
-    "dockerfile",
-    "editorconfig",
-    "ignore",
-    "properties",
-    "shellscript"
-  ],
-  "cSpell.words": [
-    "BUILDKIT",
-    "Dependabot",
-    "GROUPNAME",
-    "NOPASSWD",
-    "TIMEFORMAT",
-    "WORKDIR",
-    "autoremove",
-    "buildx",
-    "chmod",
-    "commitlint",
-    "commitlintrc",
-    "commitizen",
-    "czrc",
-    "deps",
-    "devcontainer",
-    "dockerfiles",
-    "dockerignore",
-    "editorconfig",
-    "gitkeep",
-    "gnupg",
-    "hadolint",
-    "lintstaged",
-    "markdownlint",
-    "markdownlintignore",
-    "mkdir",
-    "noninteractive",
-    "npmrc",
-    "preminor",
-    "prepatch",
-    "semver",
-    "shellcheck",
-    "shfmt",
-    "uncommented",
-    "xargs",
-    "xtype"
-  ],
-  "cSpell.ignoreWords": [
-    "aifrak",
-    "akheron",
-    "davidanson",
-    "esbenp",
-    "exiasr",
-    "keisuke",
-    "koalaman",
-    "mvdan",
-    "pabio",
-    "softprops",
-    "tvdias"
   ]
 }
