@@ -1,4 +1,4 @@
-"{run,pre-commit,*.sh}":
+"{run,commit-msg,pre-commit,*.sh}":
   - ./run shell:format
   - ./run shell:lint
 
@@ -6,7 +6,7 @@
   - ./run dockerfile:format
   - ./run dockerfile:lint
 
-"*.{json,yaml,yml}":
+"{*.json,*.yaml,*.yml,.czrc}":
   - ./run prettier:format
   - ./run prettier:lint
 

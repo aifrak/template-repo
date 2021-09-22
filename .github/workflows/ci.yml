@@ -101,3 +101,7 @@ jobs:
       - name: Lint
         run: |
           ./run dc:exec ./run lint
+
+      - name: Lint latest git commit message
+        run: |
+          ./run dc:exec ./run lint-latest-commit

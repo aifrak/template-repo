@@ -7,8 +7,10 @@
 
   // Files:
   "files.associations": {
-    "run": "shellscript",
-    "pre-commit": "shellscript"
+    ".czrc": "json",
+    "commit-msg": "shellscript",
+    "pre-commit": "shellscript",
+    "run": "shellscript"
   },
   "files.watcherExclude": {
     "**/.git": true,
@@ -35,6 +37,9 @@
     "**/npm_cache": true
   },
 
+  // Git:
+  "git.inputValidationSubjectLength": 100,
+
   // Prettier:
   "prettier.useEditorConfig": true,
 
@@ -60,9 +65,20 @@
   // Markdown All in One:
   "markdown.extension.orderedList.marker": "one",
 
+  // Conventional Commits:
+  "conventionalCommits.autoCommit": false,
+  "conventionalCommits.gitmoji": false,
+  "conventionalCommits.lineBreak": "\\n",
+
   // Override languages:
   "[dockerfile]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "[git-commit]": {
+    "editor.rulers": [100]
+  },
+  "[git-rebase]": {
+    "editor.rulers": [100]
   },
   "[html]": {
     "editor.rulers": [120]
@@ -114,6 +130,10 @@
     "autoremove",
     "buildx",
     "chmod",
+    "commitlint",
+    "commitlintrc",
+    "commitizen",
+    "czrc",
     "deps",
     "devcontainer",
     "dockerfiles",

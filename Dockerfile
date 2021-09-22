@@ -12,12 +12,14 @@ USER root
 ENV INSIDE_DOCKER=1
 ENV LANG=en_US.UTF-8
 
-# 1. Install `locales` package and setup locale
-# 2. Clean
+# 1. Install `git`
+# 2. Install `locales` package and setup locale
+# 3. Clean
 RUN set -e \
   && export DEBIAN_FRONTEND=noninteractive \
   && apt-get update -qq \
   && apt-get install -y -qq --no-install-recommends \
+    git=1:2.25.1-* \
     locales=2.31-* \
   && sed -i "/${LANG}/s/^# //g" /etc/locale.gen \
   && locale-gen ${LANG} \
@@ -79,7 +81,6 @@ RUN set -e \
   && apt-get update -qq \
   && apt-get install -y -qq --no-install-recommends \
     ca-certificates=* \
-    git=* \
     gnupg2=* \
     openssh-client=* \
     sudo=* \
