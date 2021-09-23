@@ -1,3 +1,9 @@
+"*(!**/spelling/dictionaries/**)":
+  - ./run spellcheck:lint
+
+"**/spelling/dictionaries/**":
+  - echo "IGNORED spellcheck dictionaries"
+
 "{run,commit-msg,pre-commit,*.sh}":
   - ./run shell:format
   - ./run shell:lint
