@@ -28,6 +28,7 @@ preminor
 prepatch
 semver
 shellcheck
+shellformat
 shfmt
 TIMEFORMAT
 uncommented
