@@ -31,12 +31,21 @@ ignorePaths:
 ignoreWords:
   - aifrak
   - akheron
+  - azuretools
+  - codezombiech
+  - cschleiden
   - davidanson
   - esbenp
   - exiasr
+  - foxundermoon
+  - joshbolduc
   - keisuke
   - koalaman
   - mvdan
   - pabio
   - softprops
+  - stackbreak
+  - timonwong
   - tvdias
+  - vivaxy
+  - yzhang
