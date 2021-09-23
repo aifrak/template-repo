@@ -1,6 +1,7 @@
 # Ascending sort, case insensitive
 autoremove
 BUILDKIT
+buildx
 chmod
 commitizen
 commitlint
