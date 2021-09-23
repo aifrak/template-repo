@@ -10,9 +10,17 @@ enableFiletypes:
   - shellscript
 
 dictionaries:
+  - abbreviations
+  - vscode-extensions
   - workspace
 
 dictionaryDefinitions:
+  - name: abbreviations
+    path: "./spelling/dictionaries/abbreviations.txt"
+    addWords: true
+  - name: vscode-extensions
+    path: "./spelling/dictionaries/vscode-extensions.txt"
+    addWords: true
   - name: workspace
     path: "./spelling/dictionaries/workspace.txt"
     addWords: true
@@ -20,13 +28,22 @@ dictionaryDefinitions:
 flagWords:
   - hte
 
+overrides:
+  - filename: "{run,.husky/*}"
+    languageId: "shellscript"
+  - filename: ".czrc"
+    languageId: "json"
+
 ignorePaths:
-  - "spelling/**"
-  - ".history/**"
-  - "**/.git"
+  - "**/.git/**"
+  - "**/.history/**"
+  - "**/.husky/_/**"
+  - "**/.vscode-insiders/**"
   - "**/node_modules/**"
   - "**/npm_cache/**"
   - "**/package-lock.json"
+  - "**/vscode-extension/**"
+  - "**/spelling/**"
 
 ignoreWords:
   - aifrak

@@ -114,5 +114,14 @@
       "extensions": [".markdownlintignore"],
       "filename": true
     }
+  ],
+
+  // Code Spell Checker:
+  "cSpell.ignorePaths": [
+    "**/package-lock.json/**",
+    "**/node_modules/**",
+    "**/vscode-extension/**",
+    "**/.git/objects",
+    "**/.vscode-insiders/**"
   ]
 }
