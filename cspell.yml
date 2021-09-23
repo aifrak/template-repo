@@ -20,6 +20,12 @@ dictionaryDefinitions:
 flagWords:
   - hte
 
+overrides:
+  - filename: "{run,.husky/*}"
+    languageId: "shellscript"
+  - filename: ".czrc"
+    languageId: "json"
+
 ignorePaths:
   - "spelling/**"
   - ".history/**"
