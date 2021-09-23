@@ -27,12 +27,15 @@ overrides:
     languageId: "json"
 
 ignorePaths:
-  - "spelling/**"
-  - ".history/**"
-  - "**/.git"
+  - "**/.git/**"
+  - "**/.history/**"
+  - "**/.husky/_/**"
+  - "**/.vscode-insiders/**"
   - "**/node_modules/**"
   - "**/npm_cache/**"
   - "**/package-lock.json"
+  - "**/vscode-extension/**"
+  - "**/spelling/**"
 
 ignoreWords:
   - aifrak
