@@ -10,9 +10,13 @@ enableFiletypes:
   - shellscript
 
 dictionaries:
+  - vscode-extensions
   - workspace
 
 dictionaryDefinitions:
+  - name: vscode-extensions
+    path: "./spelling/dictionaries/vscode-extensions.txt"
+    addWords: true
   - name: workspace
     path: "./spelling/dictionaries/workspace.txt"
     addWords: true

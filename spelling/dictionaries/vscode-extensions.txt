@@ -1,0 +1,7 @@
+# Ascending sort, case insensitive
+azuretools
+gitmoji
+spmeesseman
+taskexplorer
+tumido
+vsicons
