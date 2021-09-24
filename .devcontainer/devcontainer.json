@@ -47,7 +47,7 @@
     // Comments
     "stackbreak.comment-divider",
 
-    // Spelling
+    // Spellcheck
     "streetsidesoftware.code-spell-checker"
   ]
 }

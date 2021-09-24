@@ -16,13 +16,13 @@ dictionaries:
 
 dictionaryDefinitions:
   - name: abbreviations
-    path: "./spelling/dictionaries/abbreviations.txt"
+    path: "./spellcheck/dictionaries/abbreviations.txt"
     addWords: true
   - name: vscode-extensions
-    path: "./spelling/dictionaries/vscode-extensions.txt"
+    path: "./spellcheck/dictionaries/vscode-extensions.txt"
     addWords: true
   - name: workspace
-    path: "./spelling/dictionaries/workspace.txt"
+    path: "./spellcheck/dictionaries/workspace.txt"
     addWords: true
 
 flagWords:
@@ -41,7 +41,7 @@ ignorePaths:
   - "**/npm_cache/**"
   - "**/package-lock.json"
   - "**/vscode-extension/**"
-  - "**/spelling/**"
+  - "**/spellcheck/**"
 
 ignoreWords:
   - aifrak
