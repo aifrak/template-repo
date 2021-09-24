@@ -6,7 +6,6 @@ chmod
 commitizen
 commitlint
 commitlintrc
-czrc
 Dependabot
 deps
 devcontainer

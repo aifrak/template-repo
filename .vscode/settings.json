@@ -7,7 +7,6 @@
 
   // Files:
   "files.associations": {
-    ".czrc": "json",
     "**/.husky/*": "shellscript",
     "run": "shellscript"
   },
