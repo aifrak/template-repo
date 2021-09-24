@@ -54,10 +54,9 @@ javascript:
   - "**/package*.json"
 
 shellscript:
-  - commit-msg
-  - pre-commit
-  - run
   - "**/*.sh"
+  - .husky/*
+  - run
 
 vscode:
   - .vscode/**/*
