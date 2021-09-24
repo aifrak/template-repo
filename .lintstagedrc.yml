@@ -1,7 +1,7 @@
 "*":
   - ./run spellcheck:lint
 
-"{run,commit-msg,pre-commit,*.sh}":
+"{run,.husky/*,*.sh}":
   - ./run shell:format
   - ./run shell:lint
 
