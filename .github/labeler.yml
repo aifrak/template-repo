@@ -16,8 +16,8 @@ documentation:
   - "**/*.md"
 
 chore:
-  - .czrc
   - .commitlintrc.js
+  - .cz.json
   - .devcontainer
   - .editorconfig
   - "**/.gitignore"
