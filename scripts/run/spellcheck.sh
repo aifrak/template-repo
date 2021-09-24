@@ -12,6 +12,7 @@ function spellcheck:lint {
   npx cspell lint \
     --color \
     --no-progress \
+    --no-must-find-files \
     --relative \
     --show-context "${@:-"{**,**/.*,**/.*/**}"}"
 }
