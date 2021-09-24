@@ -104,4 +104,4 @@ jobs:
 
       - name: Lint latest git commit message
         run: |
-          ./run dc:exec ./run lint-latest-commit
+          ./run dc:exec ./run git:commit:lint-latest
