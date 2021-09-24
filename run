@@ -7,6 +7,7 @@ if [[ -z "${APP_DIR:-""}" ]]; then
 fi
 
 . "${APP_DIR}/scripts/run/docker-file.sh"
+. "${APP_DIR}/scripts/run/git.sh"
 . "${APP_DIR}/scripts/run/markdown.sh"
 . "${APP_DIR}/scripts/run/prettier.sh"
 . "${APP_DIR}/scripts/run/shell.sh"
@@ -32,7 +33,6 @@ Main commands:
   format                      Format code of the whole project
   install-deps                Install all dependencies
   lint                        Lint the whole project
-  lint-latest-commit          Lint latest git commit message
   pre-commit                  Format, lint and test the whole project
   test                        Test the whole project
 
@@ -47,8 +47,9 @@ EOF
   markdown:help
   prettier:help
   shell:help
-  spellcheck:help
   dockerfile:help
+  spellcheck:help
+  git:help
 }
 
 # ---------------------------------------------- #
@@ -114,14 +115,6 @@ function lint {
   else
     dc:exec ./run lint
   fi
-}
-
-function lint-latest-commit {
-  local commit_message
-
-  commit_message=$(git log -1 --pretty=format:"%s")
-
-  echo "${commit_message}" | npx commitlint --color
 }
 
 function format {
