@@ -1,0 +1,7 @@
+# Ascending sort, case insensitive
+commitlintrc
+dockerignore
+editorconfig
+gitkeep
+markdownlintignore
+npmrc
