@@ -1,0 +1,5 @@
+# Ascending sort, case insensitive
+commitizen
+commitlint
+lintstaged
+markdownlint

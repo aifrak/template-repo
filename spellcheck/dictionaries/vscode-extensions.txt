@@ -1,7 +1,19 @@
 # Ascending sort, case insensitive
 azuretools
+codezombiech
+cschleiden
+davidanson
+devcontainer
+esbenp
+exiasr
+foxundermoon
 gitmoji
+joshbolduc
 spmeesseman
+stackbreak
 taskexplorer
+timonwong
 tumido
+vivaxy
 vsicons
+yzhang

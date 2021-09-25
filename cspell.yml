@@ -1,6 +1,9 @@
 version: "0.2"
 language: en
 
+flagWords:
+  - hte
+
 enableFiletypes:
   - dockercompose
   - dockerfile
@@ -11,6 +14,10 @@ enableFiletypes:
 
 dictionaries:
   - abbreviations
+  - binaries
+  - file-names
+  - npm-packages
+  - repo-owners
   - vscode-extensions
   - workspace
 
@@ -18,19 +25,55 @@ dictionaryDefinitions:
   - name: abbreviations
     path: "./spellcheck/dictionaries/abbreviations.txt"
     addWords: true
+  - name: bash-custom
+    path: "./spellcheck/dictionaries/bash-custom.txt"
+    addWords: true
+  - name: binaries
+    path: "./spellcheck/dictionaries/binaries.txt"
+    addWords: true
+    noSuggest: true
+  - name: docker
+    path: "./spellcheck/dictionaries/docker.txt"
+    addWords: true
+  - name: file-names
+    path: "./spellcheck/dictionaries/file-names.txt"
+    addWords: true
+    noSuggest: true
+  - name: repo-owners
+    path: "./spellcheck/dictionaries/repo-owners.txt"
+    addWords: true
+    noSuggest: true
+  - name: npm-packages
+    path: "./spellcheck/dictionaries/npm-packages.txt"
+    addWords: true
+    noSuggest: true
   - name: vscode-extensions
     path: "./spellcheck/dictionaries/vscode-extensions.txt"
     addWords: true
+    noSuggest: true
   - name: workspace
     path: "./spellcheck/dictionaries/workspace.txt"
     addWords: true
+    noSuggest: true
 
-flagWords:
-  - hte
+languageSettings:
+  - languageId: shellscript,dockerfile
+    dictionaries:
+      - bash
+      - bash-custom
+  - languageId: dockerfile
+    dictionaries:
+      - docker
 
 overrides:
   - filename: "{run,.husky/*}"
     languageId: "shellscript"
+  - filename: "Dockerfile*"
+    languageId: "dockerfile"
+  - filename: ".github/workflows/ci.yml"
+    dictionaries:
+      - bash
+      - bash-custom
 
 ignorePaths:
   - "**/.git/**"
@@ -40,27 +83,5 @@ ignorePaths:
   - "**/node_modules/**"
   - "**/npm_cache/**"
   - "**/package-lock.json"
-  - "**/vscode-extension/**"
   - "**/spellcheck/**"
-
-ignoreWords:
-  - aifrak
-  - akheron
-  - azuretools
-  - codezombiech
-  - cschleiden
-  - davidanson
-  - esbenp
-  - exiasr
-  - foxundermoon
-  - joshbolduc
-  - keisuke
-  - koalaman
-  - mvdan
-  - pabio
-  - softprops
-  - stackbreak
-  - timonwong
-  - tvdias
-  - vivaxy
-  - yzhang
+  - "**/vscode-extension/**"

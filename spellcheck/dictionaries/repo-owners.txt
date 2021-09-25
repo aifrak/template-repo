@@ -1,0 +1,6 @@
+# Ascending sort, case insensitive
+aifrak
+koalaman
+mvdan
+softprops
+tvdias

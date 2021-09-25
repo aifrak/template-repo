@@ -1,0 +1,5 @@
+# Ascending sort, case insensitive
+hadolint
+shellcheck
+shellformat
+shfmt
