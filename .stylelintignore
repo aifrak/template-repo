@@ -1,0 +1,8 @@
+vendor/
+
+# Local history (VSCode extension)
+.history/
+
+# NodeJS
+node_modules/
+npm_cache/

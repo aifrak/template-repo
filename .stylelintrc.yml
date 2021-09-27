@@ -1,0 +1,50 @@
+# Order is important: top configs are overridden by bottom ones
+extends:
+  - stylelint-config-standard
+  - stylelint-config-recommended
+  - stylelint-config-sass-guidelines
+  - stylelint-config-idiomatic-order
+  - stylelint-a11y/recommended
+  - stylelint-config-prettier # Must be last
+
+plugins:
+  - stylelint-at-rule-no-children
+  - stylelint-a11y
+  - stylelint-csstree-validator
+  - stylelint-color-format
+  - stylelint-declaration-block-no-ignored-properties
+  - stylelint-declaration-strict-value
+  - stylelint-high-performance-animation
+  - stylelint-no-unsupported-browser-features
+  - stylelint-use-logical-spec
+  - stylelint-use-nesting
+
+rules:
+  # Rules from stylelint
+  color-function-notation: modern
+  color-no-hex: true
+
+  # Rules from plugins
+  color-format/format:
+    format: hsl
+  csstools/use-nesting: always
+  csstree/validator: true
+  liberty/use-logical-spec: true
+  order/properties-alphabetical-order: null
+  plugin/declaration-block-no-ignored-properties: true
+  plugin/no-low-performance-animation-properties: true
+  plugin/no-unsupported-browser-features:
+    - true
+    - severity: warning
+  scale-unlimited/declaration-strict-value:
+    - - /color/
+      - fill
+      - stroke
+      - font-family
+      - font-size
+      - line-height
+      - z-index
+    - ignoreValues:
+        /color/: &keywords [currentColor, inherit, transparent]
+        fill: *keywords
+        stroke: *keywords
