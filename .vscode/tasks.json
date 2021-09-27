@@ -119,6 +119,77 @@
       "args": ["dockerfile:lint"],
       "problemMatcher": [],
       "detail": "Lint all Dockerfiles"
+    },
+    /* -------------------------------------------- */
+    /*                      Git                     */
+    /* -------------------------------------------- */
+    {
+      "label": "git:commit:lint-latest",
+      "type": "shell",
+      "command": "./run",
+      "args": ["git:commit:lint-latest"],
+      "problemMatcher": [],
+      "detail": "Lint latest git commit message"
+    },
+    /* -------------------------------------------- */
+    /*                   Markdown                   */
+    /* -------------------------------------------- */
+    {
+      "label": "markdown:lint",
+      "type": "shell",
+      "command": "./run",
+      "args": ["markdown:lint"],
+      "problemMatcher": [],
+      "detail": "Lint markdown files"
+    },
+    /* -------------------------------------------- */
+    /*                   Prettier                   */
+    /* -------------------------------------------- */
+    {
+      "label": "prettier:format",
+      "type": "shell",
+      "command": "./run",
+      "args": ["prettier:format"],
+      "problemMatcher": [],
+      "detail": "Format files handled by Prettier"
+    },
+    {
+      "label": "prettier:lint",
+      "type": "shell",
+      "command": "./run",
+      "args": ["prettier:lint"],
+      "problemMatcher": [],
+      "detail": "Lint files handled by Prettier"
+    },
+    /* -------------------------------------------- */
+    /*                  Spellcheck                  */
+    /* -------------------------------------------- */
+    {
+      "label": "spellcheck:lint",
+      "type": "shell",
+      "command": "./run",
+      "args": ["spellcheck:lint"],
+      "problemMatcher": [],
+      "detail": "Run spellcheck"
+    },
+    /* -------------------------------------------- */
+    /*                      CSS                     */
+    /* -------------------------------------------- */
+    {
+      "label": "css:format",
+      "type": "shell",
+      "command": "./run",
+      "args": ["css:format "],
+      "problemMatcher": [],
+      "detail": "Format SCSS, Sass, Less and all files containing CSS"
+    },
+    {
+      "label": "css:lint",
+      "type": "shell",
+      "command": "./run",
+      "args": ["css:lint "],
+      "problemMatcher": [],
+      "detail": "Lint SCSS, Sass, Less and all files containing CSS"
     }
   ],
   "inputs": [
