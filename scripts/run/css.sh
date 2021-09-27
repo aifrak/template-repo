@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+css_globs="**/*.{css,less,sass,scss}"
+
 function css:help {
   cat <<EOF
 
@@ -14,7 +16,7 @@ function css:lint {
     --color \
     --allow-empty-input \
     --cache \
-    "${@:-"**/*{.css,.less,.scss,.sass}"}"
+    "${@:-${css_globs}}"
 }
 
 function css:format {
@@ -23,5 +25,5 @@ function css:format {
     --allow-empty-input \
     --cache \
     --fix \
-    "${@:-"**/*{.css,.less,.scss,.sass}"}"
+    "${@:-${css_globs}}"
 }
