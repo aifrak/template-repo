@@ -48,3 +48,4 @@ rules:
         /color/: &keywords [currentColor, inherit, transparent]
         fill: *keywords
         stroke: *keywords
+      disableFix: true
