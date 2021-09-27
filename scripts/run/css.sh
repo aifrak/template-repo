@@ -5,6 +5,7 @@ function css:help {
 
 CSS commands:
   css:lint                    Lint SCSS, Sass, Less and all files containing CSS
+  css:format                  Format SCSS, Sass, Less and all files containing CSS
 EOF
 }
 

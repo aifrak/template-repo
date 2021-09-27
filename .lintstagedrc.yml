@@ -1,6 +1,12 @@
 "*":
   - ./run spellcheck:lint
 
+"*.{css,less,scss,sass}":
+  - ./run css:format
+  - ./run prettier:format
+  - ./run css:lint
+  - ./run prettier:lint
+
 "{run,.husky/*,*.sh}":
   - ./run shell:format
   - ./run shell:lint
@@ -9,7 +15,7 @@
   - ./run dockerfile:format
   - ./run dockerfile:lint
 
-"{*.json,*.yaml,*.yml}":
+"*.{json,yaml,yml}":
   - ./run prettier:format
   - ./run prettier:lint
 
