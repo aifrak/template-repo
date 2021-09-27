@@ -44,6 +44,9 @@
     // Formatters
     "esbenp.prettier-vscode",
 
+    // Lints
+    "stylelint.vscode-stylelint",
+
     // Comments
     "stackbreak.comment-divider",
 
