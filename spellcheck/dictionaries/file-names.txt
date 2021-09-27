@@ -5,3 +5,4 @@ editorconfig
 gitkeep
 markdownlintignore
 npmrc
+stylelintcache

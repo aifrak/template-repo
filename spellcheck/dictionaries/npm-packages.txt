@@ -1,5 +1,7 @@
 # Ascending sort, case insensitive
 commitizen
 commitlint
+csstree
 lintstaged
 markdownlint
+stylelint

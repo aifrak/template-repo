@@ -79,6 +79,7 @@ ignorePaths:
   - "**/.git/**"
   - "**/.history/**"
   - "**/.husky/_/**"
+  - "**/.stylelintcache"
   - "**/.vscode-insiders/**"
   - "**/node_modules/**"
   - "**/npm_cache/**"
