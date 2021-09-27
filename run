@@ -6,6 +6,7 @@ if [[ -z "${APP_DIR:-""}" ]]; then
   APP_DIR="$(dirname "${0}")"
 fi
 
+. "${APP_DIR}/scripts/run/css.sh"
 . "${APP_DIR}/scripts/run/docker-file.sh"
 . "${APP_DIR}/scripts/run/git.sh"
 . "${APP_DIR}/scripts/run/markdown.sh"
@@ -45,6 +46,7 @@ docker-compose commands:
 EOF
 
   markdown:help
+  css:help
   prettier:help
   shell:help
   dockerfile:help
@@ -104,6 +106,7 @@ function lint {
     dockerfile:lint || status=${?}
     markdown:lint || status=${?}
     prettier:lint || status=${?}
+    css:lint || status=${?}
     spellcheck:lint || status=${?}
 
     if [[ ${status} -eq 0 ]]; then

@@ -8,5 +8,8 @@ npm_cache/
 # Docker compose
 docker-compose.override.yml
 
+# Stylelint
+.stylelintcache
+
 # Keep .gitkeep files
 !/**/.gitkeep
