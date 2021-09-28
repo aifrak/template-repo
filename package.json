@@ -3,7 +3,7 @@
   "devDependencies": {
     "@commitlint/cli": "^13.1.0",
     "@commitlint/config-conventional": "^13.2.0",
-    "@commitlint/cz-commitlint": "^13.1.0",
+    "@commitlint/cz-commitlint": "^13.2.0",
     "commitizen": "^4.2.4",
     "cspell": "^5.10.1",
     "htmlhint": "^0.15.2",
