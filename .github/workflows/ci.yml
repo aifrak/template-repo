@@ -104,5 +104,11 @@ jobs:
           ./run dc:exec ./run lint
 
       - name: Lint latest git commit message
+        if: >-
+          github.actor != 'dependabot[bot]'
+          && (
+            github.event_name != 'pull_request'
+            || (github.event_name == 'pull_request' && github.event.pull_request.user.login != 'dependabot[bot]')
+          )
         run: |
           ./run dc:exec ./run git:commit:lint-latest
