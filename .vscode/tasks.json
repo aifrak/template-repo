@@ -190,6 +190,17 @@
       "args": ["css:lint "],
       "problemMatcher": [],
       "detail": "Lint SCSS, Sass, Less and all files containing CSS"
+    },
+    /* -------------------------------------------- */
+    /*                     HTML                     */
+    /* -------------------------------------------- */
+    {
+      "label": "html:lint",
+      "type": "shell",
+      "command": "./run",
+      "args": ["html:lint"],
+      "problemMatcher": [],
+      "detail": "Lint HTML files and templates"
     }
   ],
   "inputs": [
