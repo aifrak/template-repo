@@ -129,6 +129,7 @@ function format {
     shell:format
     dockerfile:format
     prettier:format
+    css:format
 
     success "✔ Project formatted"
   else
