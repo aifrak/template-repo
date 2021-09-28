@@ -9,6 +9,7 @@ exiasr
 foxundermoon
 gitmoji
 joshbolduc
+mkaufman
 spmeesseman
 stackbreak
 taskexplorer

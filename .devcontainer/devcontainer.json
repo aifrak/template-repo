@@ -14,6 +14,12 @@
     // EditorConfig
     "editorconfig.editorconfig",
 
+    // HTML
+    "mkaufman.htmlhint",
+
+    // CSS, SCSS, SASS, LESS
+    "stylelint.vscode-stylelint",
+
     // Commit:
     "joshbolduc.commitlint",
     "vivaxy.vscode-conventional-commits",
@@ -43,9 +49,6 @@
 
     // Formatters
     "esbenp.prettier-vscode",
-
-    // Lints
-    "stylelint.vscode-stylelint",
 
     // Comments
     "stackbreak.comment-divider",

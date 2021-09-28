@@ -3,6 +3,12 @@
     // Remote container
     "ms-vscode-remote.remote-containers",
 
+    // HTML:
+    "mkaufman.htmlhint",
+
+    // CSS, SCSS, SASS, LESS:
+    "stylelint.vscode-stylelint",
+
     // EditorConfig:
     "editorconfig.editorconfig",
 
@@ -33,9 +39,6 @@
     "davidanson.vscode-markdownlint",
     "shd101wyy.markdown-preview-enhanced",
     "yzhang.markdown-all-in-one",
-
-    // Lints:
-    "stylelint.vscode-stylelint",
 
     // Formatters:
     "esbenp.prettier-vscode",

@@ -2,6 +2,7 @@
 commitizen
 commitlint
 csstree
+htmlhint
 lintstaged
 markdownlint
 stylelint
