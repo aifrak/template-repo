@@ -16,16 +16,18 @@ documentation:
   - "**/*.md"
 
 chore:
-  - .commitlintrc.js
+  - .commitlint*
   - .cz.json
   - .devcontainer
   - .editorconfig
   - "**/.gitignore"
   - "**/.gitkeep"
   - .hadolint*
+  - .htmlhint*
   - .husky/**/*
   - .lintstaged*
   - .markdownlint*
+  - .stylelint*
   - "**/.npmrc"
   - .prettier*
   - .vscode/**/*
