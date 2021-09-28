@@ -9,6 +9,7 @@ fi
 . "${APP_DIR}/scripts/run/css.sh"
 . "${APP_DIR}/scripts/run/docker-file.sh"
 . "${APP_DIR}/scripts/run/git.sh"
+. "${APP_DIR}/scripts/run/html.sh"
 . "${APP_DIR}/scripts/run/markdown.sh"
 . "${APP_DIR}/scripts/run/prettier.sh"
 . "${APP_DIR}/scripts/run/shell.sh"
@@ -45,8 +46,9 @@ docker-compose commands:
   dc:up                       Starts all docker services
 EOF
 
-  markdown:help
   css:help
+  html:help
+  markdown:help
   prettier:help
   shell:help
   dockerfile:help
@@ -107,6 +109,7 @@ function lint {
     markdown:lint || status=${?}
     prettier:lint || status=${?}
     css:lint || status=${?}
+    html:lint || status=${?}
     spellcheck:lint || status=${?}
 
     if [[ ${status} -eq 0 ]]; then

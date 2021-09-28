@@ -3,6 +3,7 @@ commitlintrc
 dockerignore
 editorconfig
 gitkeep
+htmlhintrc
 markdownlintignore
 npmrc
 stylelintcache
