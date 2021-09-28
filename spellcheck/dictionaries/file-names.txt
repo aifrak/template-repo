@@ -1,8 +1,8 @@
 # Ascending sort, case insensitive
-commitlintrc
 dockerignore
 editorconfig
 gitkeep
+htmlhintrc
 markdownlintignore
 npmrc
 stylelintcache

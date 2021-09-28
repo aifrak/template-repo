@@ -7,6 +7,11 @@
   - ./run css:lint
   - ./run prettier:lint
 
+"*.{htm,html}":
+  - ./run prettier:format
+  - ./run html:lint
+  - ./run prettier:lint
+
 "{run,.husky/*,*.sh}":
   - ./run shell:format
   - ./run shell:lint
@@ -15,7 +20,7 @@
   - ./run dockerfile:format
   - ./run dockerfile:lint
 
-"*.{json,yaml,yml}":
+"*.{json,yaml,yml,htmlhintrc}":
   - ./run prettier:format
   - ./run prettier:lint
 

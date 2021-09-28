@@ -6,4 +6,6 @@ GROUPNAME
 preminor
 prepatch
 semver
+specialchars
+tagname
 uncommented
