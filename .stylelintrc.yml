@@ -20,7 +20,10 @@ plugins:
   - stylelint-use-nesting
 
 rules:
-  # Rules from stylelint
+  # Rules from core
+  alpha-value-notation: number
+  hue-degree-notation: number
+  font-weight-notation: numeric
   color-function-notation: modern
   color-no-hex: true
 
