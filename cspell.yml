@@ -76,7 +76,7 @@ overrides:
       - bash-custom
 
 ignorePaths:
-  - "**/.git/**"
+  - "**/.git/**/!(COMMIT_EDITMSG)*"
   - "**/.history/**"
   - "**/.husky/_/**"
   - "**/.stylelintcache"
