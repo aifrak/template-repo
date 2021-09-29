@@ -3,6 +3,7 @@ autoremove
 BUILDKIT
 buildx
 chmod
+FUNCNAME
 gnupg
 mkdir
 noninteractive
