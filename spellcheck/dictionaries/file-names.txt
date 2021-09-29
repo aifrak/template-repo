@@ -1,4 +1,5 @@
 # Ascending sort, case insensitive
+COMMIT_EDITMSG
 dockerignore
 editorconfig
 gitkeep
