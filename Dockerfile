@@ -2,7 +2,7 @@ FROM node:16.10.0-buster as node
 RUN npm install -g npm@7.24.0 --quiet
 
 FROM koalaman/shellcheck:v0.7.2 as shellcheck
-FROM mvdan/shfmt:v3.3.1 as shfmt
+FROM mvdan/shfmt:v3.4.0 as shfmt
 FROM hadolint/hadolint:v2.7.0 as hadolint
 
 FROM ubuntu:focal-20210921 as base
