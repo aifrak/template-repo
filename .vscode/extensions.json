@@ -9,6 +9,9 @@
     // CSS, SCSS, SASS, LESS:
     "stylelint.vscode-stylelint",
 
+    // Javascript:
+    "dbaeumer.vscode-eslint",
+
     // EditorConfig:
     "editorconfig.editorconfig",
 
