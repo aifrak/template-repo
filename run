@@ -10,6 +10,7 @@ fi
 . "${APP_DIR}/scripts/run/docker-file.sh"
 . "${APP_DIR}/scripts/run/git.sh"
 . "${APP_DIR}/scripts/run/html.sh"
+. "${APP_DIR}/scripts/run/javascript.sh"
 . "${APP_DIR}/scripts/run/markdown.sh"
 . "${APP_DIR}/scripts/run/prettier.sh"
 . "${APP_DIR}/scripts/run/shell.sh"
@@ -48,6 +49,7 @@ EOF
 
   css:help
   html:help
+  js:help
   markdown:help
   prettier:help
   shell:help
@@ -110,6 +112,7 @@ function lint {
     prettier:lint || status=${?}
     css:lint || status=${?}
     html:lint || status=${?}
+    js:lint || status=${?}
     spellcheck:lint || status=${?}
 
     if [[ ${status} -eq 0 ]]; then

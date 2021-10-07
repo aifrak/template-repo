@@ -201,6 +201,25 @@
       "args": ["html:lint"],
       "problemMatcher": [],
       "detail": "Lint HTML files and templates"
+    },
+    /* -------------------------------------------- */
+    /*                  Javascript                  */
+    /* -------------------------------------------- */
+    {
+      "label": "js:format",
+      "type": "shell",
+      "command": "./run",
+      "args": ["js:format"],
+      "problemMatcher": [],
+      "detail": "Format JS files and any files containing Javascript"
+    },
+    {
+      "label": "js:lint",
+      "type": "shell",
+      "command": "./run",
+      "args": ["js:lint"],
+      "problemMatcher": [],
+      "detail": "Lint JS files and any files containing Javascript"
     }
   ],
   "inputs": [
