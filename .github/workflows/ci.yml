@@ -76,6 +76,7 @@ jobs:
           path: |
             **/node_modules
             **/npm_cache
+            **/.eslintcache
             **/.stylelintcache
           key: |
             ${{ runner.os }}-node-${{ env.NODE_VERSION }}-${{ hashFiles('**/package-lock.json') }}
