@@ -6,24 +6,24 @@ function css:help {
   cat <<EOF
 
 CSS commands:
-  css:format                  Format SCSS, Sass, Less and all files containing CSS
-  css:lint                    Lint SCSS, Sass, Less and all files containing CSS
+  css:format                  Format CSS, SCSS, SASS, LESS and any files containing CSS
+  css:lint                    Lint CSS, SCSS, SASS, LESS and any files containing CSS
 EOF
 }
 
 function css:lint {
   npx stylelint \
-    --color \
     --allow-empty-input \
+    --color \
     --cache \
     "${@:-${css_globs}}"
 }
 
 function css:format {
   npx stylelint \
-    --color \
-    --allow-empty-input \
-    --cache \
     --fix \
+    --allow-empty-input \
+    --color \
+    --cache \
     "${@:-${css_globs}}"
 }
