@@ -144,7 +144,7 @@ function format {
       "./run shell:format" \
       || status=${?}
 
-    # Should be done after CSS format
+    # Prettier format should be done after CSS and JS format
     prettier:format
 
     if [[ ${status} -ne 0 ]]; then
