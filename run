@@ -106,21 +106,25 @@ function lint {
   if is_inside_docker; then
     local status=0
 
-    shell:lint || status=${?}
-    dockerfile:lint || status=${?}
-    markdown:lint || status=${?}
-    prettier:lint || status=${?}
-    css:lint || status=${?}
-    html:lint || status=${?}
-    js:lint || status=${?}
-    spellcheck:lint || status=${?}
+    npx concurrently \
+      --prefix command \
+      --prefix-length 50 \
+      "./run css:lint" \
+      "./run dockerfile:lint" \
+      "./run html:lint" \
+      "./run js:lint" \
+      "./run markdown:lint" \
+      "./run prettier:lint" \
+      "./run shell:lint" \
+      "./run spellcheck:lint" \
+      || status=${?}
 
-    if [[ ${status} -eq 0 ]]; then
-      success "✔ Project linted"
-    else
+    if [[ ${status} -ne 0 ]]; then
       alert "✖ Project linted: issue(s) found"
       exit ${status}
     fi
+
+    success "✔ Project linted"
   else
     dc:exec ./run lint
   fi
@@ -129,10 +133,24 @@ function lint {
 function format {
   # shellcheck disable=SC2119
   if is_inside_docker; then
-    shell:format
-    dockerfile:format
+    local status=0
+
+    npx concurrently \
+      --prefix command \
+      --prefix-length 50 \
+      "./run css:format" \
+      "./run dockerfile:format" \
+      "./run js:format" \
+      "./run shell:format" \
+      || status=${?}
+
+    # Prettier format should be done after CSS and JS format
     prettier:format
-    css:format
+
+    if [[ ${status} -ne 0 ]]; then
+      alert "✖ Project could not be formatted completely: issue(s) found"
+      exit ${status}
+    fi
 
     success "✔ Project formatted"
   else
