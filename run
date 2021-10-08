@@ -140,6 +140,7 @@ function format {
       --prefix-length 50 \
       "./run css:format" \
       "./run dockerfile:format" \
+      "./run js:format" \
       "./run shell:format" \
       || status=${?}
 
