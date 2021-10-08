@@ -15,7 +15,7 @@ enableFiletypes:
 dictionaries:
   - abbreviations
   - binaries
-  - file-names
+  - filenames
   - npm-packages
   - repo-owners
   - vscode-extensions
@@ -35,8 +35,8 @@ dictionaryDefinitions:
   - name: docker
     path: "./spellcheck/dictionaries/docker.txt"
     addWords: true
-  - name: file-names
-    path: "./spellcheck/dictionaries/file-names.txt"
+  - name: filenames
+    path: "./spellcheck/dictionaries/filenames.txt"
     addWords: true
     noSuggest: true
   - name: repo-owners
