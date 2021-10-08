@@ -119,12 +119,12 @@ function lint {
       "./run spellcheck:lint" \
       || status=${?}
 
-    if [[ ${status} -eq 0 ]]; then
-      success "✔ Project linted"
-    else
+    if [[ ${status} -ne 0 ]]; then
       alert "✖ Project linted: issue(s) found"
       exit ${status}
     fi
+
+    success "✔ Project linted"
   else
     dc:exec ./run lint
   fi
