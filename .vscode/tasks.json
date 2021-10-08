@@ -181,7 +181,7 @@
       "command": "./run",
       "args": ["css:format "],
       "problemMatcher": [],
-      "detail": "Format SCSS, Sass, Less and all files containing CSS"
+      "detail": "Format CSS, SCSS, SASS, LESS and any files containing CSS"
     },
     {
       "label": "css:lint",
@@ -189,7 +189,7 @@
       "command": "./run",
       "args": ["css:lint "],
       "problemMatcher": [],
-      "detail": "Lint SCSS, Sass, Less and all files containing CSS"
+      "detail": "Lint CSS, SCSS, SASS, LESS and any files containing CSS"
     },
     /* -------------------------------------------- */
     /*                     HTML                     */
