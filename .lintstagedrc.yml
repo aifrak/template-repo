@@ -12,6 +12,12 @@
   - ./run html:lint
   - ./run prettier:lint
 
+"*.js":
+  - ./run js:format
+  - ./run prettier:format
+  - ./run js:lint
+  - ./run prettier:lint
+
 "{run,.husky/*,*.sh}":
   - ./run shell:format
   - ./run shell:lint

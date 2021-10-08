@@ -1,6 +1,8 @@
 # Ascending sort, case insensitive
+airbnb
 commitizen
 commitlint
+compat
 csstree
 htmlhint
 lintstaged

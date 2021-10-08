@@ -2,6 +2,7 @@
 COMMIT_EDITMSG
 dockerignore
 editorconfig
+eslintcache
 gitkeep
 htmlhintrc
 markdownlintignore

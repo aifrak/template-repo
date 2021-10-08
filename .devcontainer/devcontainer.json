@@ -20,6 +20,9 @@
     // CSS, SCSS, SASS, LESS
     "stylelint.vscode-stylelint",
 
+    // Javascript:
+    "dbaeumer.vscode-eslint",
+
     // Commit:
     "joshbolduc.commitlint",
     "vivaxy.vscode-conventional-commits",

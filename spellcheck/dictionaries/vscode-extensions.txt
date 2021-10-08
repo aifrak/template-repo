@@ -3,6 +3,7 @@ azuretools
 codezombiech
 cschleiden
 davidanson
+dbaeumer
 devcontainer
 esbenp
 exiasr

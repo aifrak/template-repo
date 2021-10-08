@@ -14,6 +14,11 @@ quote_type = auto
 [*.html]
 max_line_length = 120
 
+# Follow rules from eslint-config-airbnb-base
+[*.js]
+max_line_length = 100
+quote_type = single
+
 [{run,.husky/*,*.sh}]
 binary_next_line = true
 switch_case_indent = true
