@@ -109,13 +109,13 @@ function lint {
     npx concurrently \
       --prefix command \
       --prefix-length 50 \
-      "./run shell:lint" \
-      "./run dockerfile:lint" \
-      "./run markdown:lint" \
-      "./run prettier:lint" \
       "./run css:lint" \
+      "./run dockerfile:lint" \
       "./run html:lint" \
       "./run js:lint" \
+      "./run markdown:lint" \
+      "./run prettier:lint" \
+      "./run shell:lint" \
       "./run spellcheck:lint" \
       || status=${?}
 
@@ -136,9 +136,9 @@ function format {
     npx concurrently \
       --prefix command \
       --prefix-length 50 \
-      "./run shell:format" \
+      "./run css:format" \
       "./run dockerfile:format" \
-      "./run css:format"
+      "./run shell:format"
 
     # Should be done after CSS format
     prettier:format
