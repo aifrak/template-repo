@@ -133,15 +133,23 @@ function lint {
 function format {
   # shellcheck disable=SC2119
   if is_inside_docker; then
+    local status=0
+
     npx concurrently \
       --prefix command \
       --prefix-length 50 \
       "./run css:format" \
       "./run dockerfile:format" \
-      "./run shell:format"
+      "./run shell:format" \
+      || status=${?}
 
     # Should be done after CSS format
     prettier:format
+
+    if [[ ${status} -ne 0 ]]; then
+      alert "✖ Project could not be formatted completely: issue(s) found"
+      exit ${status}
+    fi
 
     success "✔ Project formatted"
   else
