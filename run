@@ -106,17 +106,19 @@ function lint {
   if is_inside_docker; then
     local status=0
 
-    npx concurrently \
-      --prefix command \
-      --prefix-length 50 \
-      "./run css:lint" \
-      "./run dockerfile:lint" \
-      "./run html:lint" \
-      "./run js:lint" \
-      "./run markdown:lint" \
-      "./run prettier:lint" \
-      "./run shell:lint" \
-      "./run spellcheck:lint" \
+    # Run all lints concurrently
+    (
+      cat <<EOF
+css
+dockerfile
+html
+js
+markdown
+prettier
+shell
+spellcheck
+EOF
+    ) | parallel --keep-order --tagstring "[{1}]" "./run {1}:lint" \
       || status=${?}
 
     if [[ ${status} -ne 0 ]]; then
@@ -135,17 +137,20 @@ function format {
   if is_inside_docker; then
     local status=0
 
-    npx concurrently \
-      --prefix command \
-      --prefix-length 50 \
-      "./run css:format" \
-      "./run dockerfile:format" \
-      "./run js:format" \
-      "./run shell:format" \
+    # Run all formatters concurrently
+    (
+      cat <<EOF
+css
+dockerfile
+js
+shell
+EOF
+    ) | parallel --keep-order --tagstring "[{1}]" "./run {1}:format" \
       || status=${?}
 
     # Prettier format should be done after CSS and JS format
-    prettier:format
+    print "\e[30;47m---[prettier]---\e[0m"
+    ./run prettier:format || status=${?}
 
     if [[ ${status} -ne 0 ]]; then
       alert "✖ Project could not be formatted completely: issue(s) found"
