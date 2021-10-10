@@ -12,8 +12,8 @@ USER root
 ENV INSIDE_DOCKER=1
 ENV LANG=en_US.UTF-8
 
-# 1. Install `git`
-# 2. Install `locales` package and setup locale
+# 1. Install packages
+# 2. Install setup locales
 # 3. Clean
 RUN set -e \
   && export DEBIAN_FRONTEND=noninteractive \
@@ -21,6 +21,7 @@ RUN set -e \
   && apt-get install -y -qq --no-install-recommends \
     git=1:2.25.1-* \
     locales=2.31-* \
+    parallel=20161222-* \
   && sed -i "/${LANG}/s/^# //g" /etc/locale.gen \
   && locale-gen ${LANG} \
   && apt-get clean \
