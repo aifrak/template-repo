@@ -22,7 +22,7 @@
     "husky": "^7.0.2",
     "lint-staged": "^11.2.0",
     "markdownlint-cli": "^0.29.0",
-    "prettier": "~2.4.1",
+    "prettier": "^2.4.1",
     "stylelint": "^13.13.1",
     "stylelint-a11y": "^1.2.3",
     "stylelint-at-rule-no-children": "^0.3.1",
