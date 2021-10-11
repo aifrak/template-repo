@@ -20,7 +20,7 @@
     "eslint-plugin-unicorn": "^36.0.0",
     "htmlhint": "^0.15.2",
     "husky": "^7.0.2",
-    "lint-staged": "^11.2.0",
+    "lint-staged": "^11.2.3",
     "markdownlint-cli": "^0.29.0",
     "prettier": "^2.4.1",
     "stylelint": "^13.13.1",
