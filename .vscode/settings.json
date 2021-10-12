@@ -59,6 +59,9 @@
 
   // Comment Divider:
   "comment-divider.length": 50,
+  "comment-divider.lineFiller": "—",
+  "comment-divider.mainHeaderFiller": "—",
+  "comment-divider.subheaderFiller": "—",
 
   // Markdown All in One:
   "markdown.extension.orderedList.marker": "one",
