@@ -1,5 +1,5 @@
 FROM node:16.11.0-buster as node
-RUN npm install -g npm@7.24.0 --quiet
+RUN npm install -g npm@8.0.0 --quiet
 
 FROM koalaman/shellcheck:v0.7.2 as shellcheck
 FROM mvdan/shfmt:v3.4.0 as shfmt
