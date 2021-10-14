@@ -57,11 +57,74 @@
     "**/npm_cache/**"
   ],
 
-  // Comment Divider:
+  // Comments:
   "comment-divider.length": 50,
   "comment-divider.lineFiller": "—",
   "comment-divider.mainHeaderFiller": "—",
   "comment-divider.subheaderFiller": "—",
+  "commentAnchors.workspace.excludeFiles": "**/{node_modules,npm_cache,.husky/_,.history}/**/*",
+  "commentAnchors.tags.list": [
+    {
+      "tag": "TEMP",
+      "iconColor": "pink",
+      "highlightColor": "#e84393",
+      "scope": "workspace"
+    },
+    {
+      "tag": "DEPRECATED",
+      "iconColor": "pink",
+      "highlightColor": "#e84393",
+      "scope": "workspace"
+    },
+    {
+      "tag": "IDEA",
+      "iconColor": "purple",
+      "highlightColor": "#ba68c8",
+      "scope": "workspace"
+    },
+    {
+      "tag": "QUESTION",
+      "iconColor": "purple",
+      "highlightColor": "#ba68c8",
+      "scope": "workspace"
+    },
+    {
+      "tag": "DEBUG",
+      "iconColor": "red",
+      "highlightColor": "#F44336",
+      "scope": "workspace"
+    },
+    {
+      "tag": "WARNING",
+      "iconColor": "orange",
+      "highlightColor": "#ffa100",
+      "scope": "workspace"
+    },
+    {
+      "tag": "FIX",
+      "iconColor": "emerald",
+      "highlightColor": "#2ecc71",
+      "scope": "file"
+    },
+    {
+      "tag": "HACK",
+      "iconColor": "orange",
+      "highlightColor": "#ffa100",
+      "scope": "workspace"
+    },
+    {
+      "tag": "!!!",
+      "iconColor": "#ff2d00",
+      "highlightColor": "#ff2d00",
+      "scope": "workspace"
+    },
+    {
+      "tag": "???",
+      "iconColor": "#3498db",
+      "highlightColor": "#3498db",
+      "scope": "workspace"
+    }
+  ],
 
   // Markdown All in One:
   "markdown.extension.orderedList.marker": "one",

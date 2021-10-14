@@ -55,6 +55,7 @@
 
     // Comments
     "stackbreak.comment-divider",
+    "exodiusstudios.comment-anchors",
 
     // Spellcheck
     "streetsidesoftware.code-spell-checker"
