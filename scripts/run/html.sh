@@ -3,7 +3,7 @@
 function html:help {
   cat <<EOF
 
-CSS commands:
+HTML commands:
   html:lint                   Lint HTML files and templates
 EOF
 }
