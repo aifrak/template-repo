@@ -3,6 +3,9 @@
     // Remote container
     "ms-vscode-remote.remote-containers",
 
+    // EditorConfig:
+    "editorconfig.editorconfig",
+
     // HTML:
     "mkaufman.htmlhint",
 
@@ -11,9 +14,6 @@
 
     // Javascript:
     "dbaeumer.vscode-eslint",
-
-    // EditorConfig:
-    "editorconfig.editorconfig",
 
     // Tasks / Makefile targets
     "spmeesseman.vscode-taskexplorer",
