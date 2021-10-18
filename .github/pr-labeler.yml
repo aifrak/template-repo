@@ -1,3 +1,5 @@
+# Labels for TimonVS/pr-labeler-action
+
 bug: ["bug/*", "fix/*"]
 ci: ["ci/*"]
 dependencies: ["dep/*", "deps/*", "dependency/*", "dependencies/*"]
