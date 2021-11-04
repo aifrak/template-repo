@@ -22,4 +22,15 @@ extends:
   - plugin:unicorn/recommended
   - prettier # Must be last
 
-rules: { no-warning-comments: warn }
+rules:
+  {
+    import/no-extraneous-dependencies:
+      ["error", { "devDependencies": ["./scripts/**/*.js"] }],
+    no-warning-comments: warn,
+  }
+
+overrides:
+  - files:
+      - "./scripts/**/*.js"
+    rules:
+      unicorn/prefer-module: "off"

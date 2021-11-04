@@ -1,8 +1,11 @@
 # Ascending sort, case insensitive
+calver
+conventionalcommits
 Dependabot
 dockercompose
 dockerfiles
 GROUPNAME
+infile
 preminor
 prepatch
 semver

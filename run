@@ -37,6 +37,7 @@ Main commands:
   install-deps                Install all dependencies
   lint                        Lint the whole project
   pre-commit                  Format, lint and test the whole project
+  release                     Cut a release, tag and publish it to Github
   test                        Test the whole project
 
 docker-compose commands:
@@ -161,6 +162,10 @@ EOF
   else
     dc:exec ./run format
   fi
+}
+
+function release {
+  npm run release
 }
 
 function pre-commit {

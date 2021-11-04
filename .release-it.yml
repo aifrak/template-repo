@@ -1,0 +1,37 @@
+# Calver date tags 0Y, 0M, 0W and 0D are not supported by "@release-it/bumper"
+# and "@release-it/conventional-changelog"
+# Reason: Those plugins support semver only.
+
+git:
+  commitMessage: "chore: Release v${version}"
+  requireBranch: main
+
+github:
+  release: true
+
+npm: false
+
+plugins:
+  "@release-it/bumper":
+    in:
+      file: VERSION
+      type: text/plain
+    out:
+      file: VERSION
+      type: text/plain
+
+  "./scripts/release-it/calver-bumper.js": {}
+
+  "@release-it/conventional-changelog":
+    preset: conventionalcommits
+    infile: CHANGELOG.md
+    ignoreRecommendedBump: true
+    types:
+      - type: feat
+        section: Features
+      - type: fix
+        section: Bug Fixes
+      - type: perf
+        section: Performances
+      - type: refactor
+        section: Code Refactoring
