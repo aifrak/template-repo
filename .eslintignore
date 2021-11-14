@@ -4,3 +4,6 @@
 # NodeJS
 node_modules/
 npm_cache/
+
+# release-it config file
+!.release-it.js

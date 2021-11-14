@@ -25,12 +25,13 @@ extends:
 rules:
   {
     import/no-extraneous-dependencies:
-      ["error", { "devDependencies": ["./scripts/**/*.js"] }],
+      ["error", { "devDependencies": ["./scripts/**/*.js", ".release-it.js"] }],
     no-warning-comments: warn,
   }
 
 overrides:
   - files:
       - "./scripts/**/*.js"
+      - ".release-it.js"
     rules:
       unicorn/prefer-module: "off"

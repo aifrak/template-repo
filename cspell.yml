@@ -82,6 +82,9 @@ ignorePaths:
   - "**/.husky/_/**"
   - "**/.stylelintcache"
   - "**/.vscode-insiders/**"
+  # Text is generated automatically.
+  # Also, as the file grows, it will take longer to lint and format.
+  - "CHANGELOG.md"
   - "**/node_modules/**"
   - "**/npm_cache/**"
   - "**/package-lock.json"
