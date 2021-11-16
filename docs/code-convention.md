@@ -1,5 +1,12 @@
 # Code convention
 
+## Git workflow
+
+The follow git workflow is [Scaled Trunk-Based Development](https://trunkbaseddevelopment.com).
+
+1. `main` is the only long-lived branch
+1. All other branches are short-lived branches
+
 ## Git commit messages
 
 Commit messages must follow the specification from [Conventional Commits](https://www.conventionalcommits.org).
