@@ -3,7 +3,9 @@
 # shellcheck source=.husky/_/husky.sh
 . "$(dirname "$0")/_/husky.sh"
 
-if [ -n "$INSIDE_DOCKER" ]; then
+if [ -n "$RELEASE" ]; then
+  npx lint-staged
+elif [ -n "$INSIDE_DOCKER" ]; then
   npx lint-staged
   ./run test
 else

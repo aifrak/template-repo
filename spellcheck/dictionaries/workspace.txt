@@ -6,6 +6,7 @@ dockercompose
 dockerfiles
 GROUPNAME
 infile
+noreply
 preminor
 prepatch
 semver

@@ -70,7 +70,7 @@ overrides:
     languageId: "shellscript"
   - filename: "Dockerfile*"
     languageId: "dockerfile"
-  - filename: ".github/workflows/ci.yml"
+  - filename: ".github/workflows/*.yml"
     dictionaries:
       - bash
       - bash-custom

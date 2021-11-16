@@ -3,5 +3,6 @@ aifrak
 csstools
 koalaman
 mvdan
+nrwl
 softprops
 tvdias
