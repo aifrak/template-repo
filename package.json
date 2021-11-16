@@ -49,12 +49,6 @@
     "npm": "8"
   },
   "scripts": {
-    "prepare": "husky install",
-    "release": "release-it --ci --dry-run",
-    "release.dry-run": "npm run release --dry-run",
-    "release.dev": "npm run release -- calendar.dev --github.preRelease",
-    "release.alpha": "npm run release -- calendar.alpha --github.preRelease",
-    "release.beta": "npm run release -- calendar.beta --github.preRelease",
-    "release.rc": "npm run release -- calendar.rc --github.preRelease"
+    "prepare": "husky install"
   }
 }

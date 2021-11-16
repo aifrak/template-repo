@@ -13,6 +13,7 @@ fi
 . "${APP_DIR}/scripts/run/javascript.sh"
 . "${APP_DIR}/scripts/run/markdown.sh"
 . "${APP_DIR}/scripts/run/prettier.sh"
+. "${APP_DIR}/scripts/run/release.sh"
 . "${APP_DIR}/scripts/run/shell.sh"
 . "${APP_DIR}/scripts/run/spellcheck.sh"
 . "${APP_DIR}/scripts/lib/utils.sh"
@@ -37,7 +38,6 @@ Main commands:
   install-deps                Install all dependencies
   lint                        Lint the whole project
   pre-commit                  Format, lint and test the whole project
-  release                     Cut a release, tag and publish it to Github
   test                        Test the whole project
 
 docker-compose commands:
@@ -48,6 +48,7 @@ docker-compose commands:
   dc:up                       Starts all docker services
 EOF
 
+  release:help
   css:help
   html:help
   js:help
@@ -95,8 +96,23 @@ fi
 
 function test {
   if is_inside_docker; then
-    # TODO: Call internal test function here
-    warning "TESTS MISSING. Call your functions in ./run file."
+    local status=0
+
+    # Run all tests concurrently
+    # TODO: Call your application tests below
+    (
+      cat <<EOF
+release:test
+EOF
+    ) | parallel --keep-order --tagstring "[{1}]" "./run {1}" \
+      || status=${?}
+
+    if [[ ${status} -ne 0 ]]; then
+      alert "✖ Project tested: issue(s) found"
+      exit ${status}
+    fi
+
+    success "✔ Project tested"
   else
     dc:exec ./run test
   fi
@@ -162,10 +178,6 @@ EOF
   else
     dc:exec ./run format
   fi
-}
-
-function release {
-  npm run release
 }
 
 function pre-commit {
