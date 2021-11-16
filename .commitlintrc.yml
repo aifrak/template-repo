@@ -16,7 +16,6 @@ rules:
       - config
       - deps
       - deps-dev
-      - dev
       - docker
       - git
       - lint
@@ -24,6 +23,7 @@ rules:
       - npm
       - license
       - readme
+      - release
       - security
       - scripts
       - vscode
