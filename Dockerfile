@@ -19,6 +19,7 @@ RUN set -e \
   && export DEBIAN_FRONTEND=noninteractive \
   && apt-get update -qq \
   && apt-get install -y -qq --no-install-recommends \
+    ca-certificates=* \
     git=1:2.25.1-* \
     locales=2.31-* \
     parallel=20161222-* \
@@ -81,7 +82,6 @@ RUN set -e \
   && export DEBIAN_FRONTEND=noninteractive \
   && apt-get update -qq \
   && apt-get install -y -qq --no-install-recommends \
-    ca-certificates=* \
     gnupg2=* \
     openssh-client=* \
     sudo=* \
