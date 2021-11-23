@@ -7,7 +7,7 @@ if [[ -z "${APP_DIR:-""}" ]]; then
 fi
 
 . "${APP_DIR}/scripts/run/css.sh"
-. "${APP_DIR}/scripts/run/docker-file.sh"
+. "${APP_DIR}/scripts/run/docker_file.sh"
 . "${APP_DIR}/scripts/run/git.sh"
 . "${APP_DIR}/scripts/run/html.sh"
 . "${APP_DIR}/scripts/run/javascript.sh"
