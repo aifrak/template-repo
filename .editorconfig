@@ -28,3 +28,6 @@ binary_next_line = true
 
 [*.md]
 trim_trailing_whitespace = false
+
+[*.hbs]
+insert_final_newline = false
