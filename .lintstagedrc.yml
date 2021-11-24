@@ -30,7 +30,9 @@
   - ./run prettier:format
   - ./run prettier:lint
 
-"*.md":
+# CHANGELOG.md text is generated automatically.
+# Also, as the file grows, it will take longer to lint and format.
+"!(CHANGELOG).md":
   - ./run prettier:format
   - ./run prettier:lint
   - ./run markdown:lint

@@ -7,12 +7,13 @@ if [[ -z "${APP_DIR:-""}" ]]; then
 fi
 
 . "${APP_DIR}/scripts/run/css.sh"
-. "${APP_DIR}/scripts/run/docker-file.sh"
+. "${APP_DIR}/scripts/run/docker_file.sh"
 . "${APP_DIR}/scripts/run/git.sh"
 . "${APP_DIR}/scripts/run/html.sh"
 . "${APP_DIR}/scripts/run/javascript.sh"
 . "${APP_DIR}/scripts/run/markdown.sh"
 . "${APP_DIR}/scripts/run/prettier.sh"
+. "${APP_DIR}/scripts/run/release.sh"
 . "${APP_DIR}/scripts/run/shell.sh"
 . "${APP_DIR}/scripts/run/spellcheck.sh"
 . "${APP_DIR}/scripts/lib/utils.sh"
@@ -47,6 +48,7 @@ docker-compose commands:
   dc:up                       Starts all docker services
 EOF
 
+  release:help
   css:help
   html:help
   js:help
@@ -58,9 +60,9 @@ EOF
   git:help
 }
 
-# ---------------------------------------------- #
+# —————————————————————————————————————————————— #
 #                Helper functions                #
-# ---------------------------------------------- #
+# —————————————————————————————————————————————— #
 
 # Check if the command is from the docker container or the host.
 # INSIDE_DOCKER=1 is set from the Dockerfile
@@ -88,14 +90,29 @@ if [[ ! -t 1 ]] || is_ci; then
   TTY="-T"
 fi
 
-# ---------------------------------------------- #
+# —————————————————————————————————————————————— #
 #                   Application                  #
-# ---------------------------------------------- #
+# —————————————————————————————————————————————— #
 
 function test {
   if is_inside_docker; then
-    # TODO: Call internal test function here
-    warning "TESTS MISSING. Call your functions in ./run file."
+    local status=0
+
+    # Run all tests concurrently
+    # TODO: Call your application tests below
+    (
+      cat <<EOF
+release:test
+EOF
+    ) | parallel --keep-order --tagstring "[{1}]" "./run {1}" \
+      || status=${?}
+
+    if [[ ${status} -ne 0 ]]; then
+      alert "✖ Project tested: issue(s) found"
+      exit ${status}
+    fi
+
+    success "✔ Project tested"
   else
     dc:exec ./run test
   fi
@@ -149,7 +166,7 @@ EOF
       || status=${?}
 
     # Prettier format should be done after CSS and JS format
-    print "\e[30;47m---[prettier]---\e[0m"
+    print "\e[30;47m———[prettier]———\e[0m"
     ./run prettier:format || status=${?}
 
     if [[ ${status} -ne 0 ]]; then
@@ -181,9 +198,9 @@ function install-deps {
   fi
 }
 
-# ---------------------------------------------- #
+# —————————————————————————————————————————————— #
 #                 docker-compose                 #
-# ---------------------------------------------- #
+# —————————————————————————————————————————————— #
 
 dc_options=()
 
@@ -219,9 +236,9 @@ function dc:console {
   dc:exec bash
 }
 
-# ---------------------------------------------- #
+# —————————————————————————————————————————————— #
 #                       run                      #
-# ---------------------------------------------- #
+# —————————————————————————————————————————————— #
 
 for opt in "${@}"; do
   case ${opt} in

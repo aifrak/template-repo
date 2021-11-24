@@ -1,0 +1,56 @@
+name: Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version-modifier:
+        description: "Version modifier; optional (dev, alpha, beta, rc)"
+        required: false
+
+jobs:
+  create-release:
+    name: Release
+    runs-on: ubuntu-20.04
+
+    steps:
+      - name: Check if main branch
+        if: ${{ github.ref != 'refs/heads/main' }}
+        uses: actions/github-script@v5.0.0
+        with:
+          script: |
+            core.setFailed('Error: Release is possible only on the main branch')
+
+      - name: Checkout code
+        uses: actions/checkout@v2.4.0
+        with:
+          fetch-depth: 0
+
+      - name: Setup git config
+        run: |
+          git config user.name "${GITHUB_ACTOR}"
+          git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+
+      # —————————————————————————————————————————————— #
+      #                  Dependencies                  #
+      # —————————————————————————————————————————————— #
+
+      - name: Setup NodeJS
+        uses: actions/setup-node@v2.4.1
+        with:
+          node-version: 16
+          cache: npm
+          cache-dependency-path: "**/package-lock.json"
+
+      - name: Install node modules
+        run: npm ci --quiet
+
+      # —————————————————————————————————————————————— #
+      #                   Application                  #
+      # —————————————————————————————————————————————— #
+
+      - name: Update changelog, update all versions, tag and cut a release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RELEASE: true
+        run: |
+          ./run release:ci ${{ github.event.inputs.version-modifier }}

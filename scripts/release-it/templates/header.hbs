@@ -1,0 +1,34 @@
+{{! Code inspired from
+https://github.com/conventional-changelog/conventional-changelog/blob/840d139c40a2c4e773794d794c34bc4dbfde27c2/packages/conventional-changelog-angular/templates/header.hbs
+}}
+## [{{version}}](
+{{~#if @root.repository~}}
+  {{~#if @root.host}}
+    {{~@root.host}}/
+  {{~/if}}
+  {{~#if @root.owner}}
+    {{~@root.owner}}/
+  {{~/if}}
+  {{~@root.repository}}
+{{~else}}
+  {{~@root.repoUrl}}
+{{~/if~}}
+/releases/{{currentTag}})
+{{~#if title}} "{{title}}"{{~/if}}
+{{~#if date}} ({{date}}){{/if}}
+
+{{#if @root.linkCompare~}}
+  [Version diffs](
+  {{~#if @root.repository~}}
+    {{~#if @root.host}}
+      {{~@root.host}}/
+    {{~/if}}
+    {{~#if @root.owner}}
+      {{~@root.owner}}/
+    {{~/if}}
+    {{~@root.repository}}
+  {{~else}}
+    {{~@root.repoUrl}}
+  {{~/if~}}
+  /compare/{{previousTag}}...{{currentTag}})
+{{~/if}}

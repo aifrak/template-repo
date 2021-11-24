@@ -1,11 +1,11 @@
-FROM node:16.11.0-buster as node
-RUN npm install -g npm@7.24.0 --quiet
+FROM node:16.13.0-buster as node
+RUN npm install -g npm@8.1.2 --quiet
 
-FROM koalaman/shellcheck:v0.7.2 as shellcheck
-FROM mvdan/shfmt:v3.4.0 as shfmt
-FROM hadolint/hadolint:v2.7.0 as hadolint
+FROM koalaman/shellcheck:v0.8.0 as shellcheck
+FROM mvdan/shfmt:v3.4.1 as shfmt
+FROM hadolint/hadolint:v2.8.0 as hadolint
 
-FROM ubuntu:focal-20210921 as base
+FROM ubuntu:focal-20211006 as base
 
 USER root
 
@@ -19,6 +19,7 @@ RUN set -e \
   && export DEBIAN_FRONTEND=noninteractive \
   && apt-get update -qq \
   && apt-get install -y -qq --no-install-recommends \
+    ca-certificates=* \
     git=1:2.25.1-* \
     locales=2.31-* \
     parallel=20161222-* \
@@ -81,7 +82,6 @@ RUN set -e \
   && export DEBIAN_FRONTEND=noninteractive \
   && apt-get update -qq \
   && apt-get install -y -qq --no-install-recommends \
-    ca-certificates=* \
     gnupg2=* \
     openssh-client=* \
     sudo=* \
