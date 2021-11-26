@@ -4,8 +4,8 @@ function release:help {
   cat <<EOF
 
 Release commands:
-  release                     Cut a release, tag it and publish it to Github
-  release:ci                  Tag and cut a release from CI
+  release                     Update CHANGELOG.md and version files, cut a release and publish to Github
+  release:ci [MODIFIER]       Release from CI. If modifier given, it will prerelease.
   release:dry-run             Simulate cutting a release without updating files or pushing to git
   release:test                Dry run release, run tests for release
   release:hooks:test          Run tests for hooks during a release
@@ -49,15 +49,6 @@ function prerelease {
   fi
 
   release "calendar.${modifier}" --github.preRelease
-}
-
-function changelog {
-  release \
-    --no-git.commit \
-    --no-git.push \
-    --no-git.tag \
-    --no-git.requireBranch \
-    --no-git.requireCleanWorkingDir
 }
 
 function release-it:custom:test {
