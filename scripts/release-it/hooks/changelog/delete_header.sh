@@ -1,4 +1,6 @@
-#!/bin/sh
+#!/usr/bin/env bash
+
+set -euo pipefail
 
 changelog="CHANGELOG.md"
 tag_cut_limit="<!-- changelog-header:end -->"

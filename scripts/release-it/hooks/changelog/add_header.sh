@@ -1,4 +1,6 @@
-#!/bin/sh
+#!/usr/bin/env bash
+
+set -euo pipefail
 
 header="./scripts/release-it/hooks/changelog/header-template.md"
 changelog="CHANGELOG.md"

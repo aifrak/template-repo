@@ -7,8 +7,8 @@ Release commands:
   release                     Cut a release, tag it and publish it to Github
   release:ci                  Tag and cut a release from CI
   release:dry-run             Simulate cutting a release without updating files or pushing to git
-  release:test                Dry run release, run tests for release and generate changelog temporary
-  changelog                   Generate/Update CHANGELOG.md without pushing to git
+  release:test                Dry run release, run tests for release
+  release:hooks:test          Run tests for hooks during a release
   prerelease                  Cut a prerelease, tag with a suffix it and publish it to Github (default: dev)
   - Usage: prerelease [dev|alpha|beta|rc]
   release-it:custom:test      Run tests related to custom hooks and/or plugins for release-it
@@ -34,20 +34,9 @@ function release:dry-run {
 }
 
 function release:test {
-  function reset_updated_files {
-    local updated_files=(
-      CHANGELOG.md
-      VERSION
-    )
-
-    git checkout -- "${updated_files[@]}"
-  }
-
   release-it:custom:test
   release:dry-run
-  changelog
-
-  trap '$(reset_updated_files)' EXIT
+  release:hooks:test
 }
 
 function prerelease {
@@ -75,4 +64,20 @@ function release-it:custom:test {
   for path in ./scripts/release-it/tests/**/*.test.js; do
     node "${path}"
   done
+}
+
+function release:hooks:test {
+  function reset_updated_files {
+    local updated_files=(
+      CHANGELOG.md
+    )
+
+    git checkout -- "${updated_files[@]}"
+  }
+
+  for path in ./scripts/release-it/hooks/**/*.sh; do
+    bash "${path}"
+  done
+
+  trap '$(reset_updated_files)' EXIT
 }

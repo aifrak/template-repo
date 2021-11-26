@@ -22,8 +22,8 @@ module.exports = {
   },
   npm: false,
   hooks: {
-    'before:conventional-changelog:beforeRelease': `sh ${hooksPath}/changelog/delete_header.sh`,
-    'after:conventional-changelog:beforeRelease': `sh ${hooksPath}/changelog/add_header.sh`,
+    'before:conventional-changelog:beforeRelease': `bash ${hooksPath}/changelog/delete_header.sh`,
+    'after:conventional-changelog:beforeRelease': `bash ${hooksPath}/changelog/add_header.sh`,
   },
   plugins: {
     '@release-it/bumper': {
