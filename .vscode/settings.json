@@ -177,7 +177,11 @@
   "vsicons.associations.files": [
     {
       "icon": "docker",
-      "extensions": ["docker-compose.dev.yml", "docker-compose.override.yml"],
+      "extensions": [
+        "docker-compose.ci.yml",
+        "docker-compose.dev.yml",
+        "docker-compose.override.yml"
+      ],
       "filename": true
     },
     {

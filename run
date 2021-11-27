@@ -24,13 +24,14 @@ export COMPOSE_DOCKER_CLI_BUILD=1
 function help {
   cat <<EOF
 
-$0 [command] [--dev] [sub-command]
+$0 [command] [OPTIONS] [sub-command]
 
-Example: $0 --dev dc:exec ./run test
+Example: $0 --dc-dev dc:exec ./run test
 
 Options:
   -h, --help                  Print this message
-  --dev                       Use "dev" file when docker compose
+  --dc-ci                        Use "ci" file when docker compose
+  --dc-dev                       Use "dev" file when docker compose
 
 Main commands:
   help                        Print this message
@@ -204,6 +205,11 @@ function install-deps {
 
 dc_options=()
 
+ci_dc_options=(
+  -f docker-compose.yml
+  -f docker-compose.ci.yml
+)
+
 dev_dc_options=(
   -f docker-compose.yml
   -f docker-compose.dev.yml
@@ -240,10 +246,29 @@ function dc:console {
 #                       run                      #
 # —————————————————————————————————————————————— #
 
+opt_dc_ci=
+opt_dc_dev=
+
 for opt in "${@}"; do
   case ${opt} in
-    --dev)
+    --dc-ci)
+      if [[ -n ${opt_dc_dev} ]]; then
+        alert_die "--dc-ci is not compatible with --dc-dev"
+      fi
+
+      dc_options=("${ci_dc_options[@]}")
+      opt_dc_ci=1
+
+      shift
+      ;;
+    --dc-dev)
+      if [[ -n ${opt_dc_ci} ]]; then
+        alert_die "--dc-dev is not compatible with --dc-ci"
+      fi
+
       dc_options=("${dev_dc_options[@]}")
+      opt_dc_dev=1
+
       shift
       ;;
     -h | --help)

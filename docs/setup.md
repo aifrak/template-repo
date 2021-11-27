@@ -16,7 +16,7 @@
 
 ### Development without VSCode
 
-1. Run `./run --dev dc:console` to enter the container.
+1. Run `./run --dc-dev dc:console` to enter the container.
 1. Run `./run install-deps` to install all dependencies.
 1. Run `./run help` to see all commands for this project.
 
