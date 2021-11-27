@@ -8,6 +8,10 @@ parserOptions:
 
 reportUnusedDisableDirectives: true
 
+plugins:
+  - prefer-object-spread
+  - switch-case
+
 # Order is important: top configs are overridden by bottom ones
 extends:
   - eslint:recommended
@@ -19,19 +23,24 @@ extends:
   - plugin:no-use-extend-native/recommended
   - plugin:promise/recommended
   - plugin:regexp/recommended
+  - plugin:switch-case/recommended
   - plugin:unicorn/recommended
   - prettier # Must be last
 
-rules:
-  {
+rules: {
+    # Core rules
+    no-warning-comments: error,
+    # Plugin rules
     import/no-extraneous-dependencies:
-      ["error", { "devDependencies": ["./scripts/**/*.js", ".release-it.js"] }],
-    no-warning-comments: warn,
+      [error, { devDependencies: [./scripts/**/*.js, .release-it.js] }],
+    prefer-object-spread/prefer-object-spread: error,
+    switch-case/newline-between-switch-case:
+      [error, always, { fallthrough: never }],
   }
 
 overrides:
   - files:
-      - "./scripts/**/*.js"
-      - ".release-it.js"
+      - ./scripts/**/*.js
+      - .release-it.js
     rules:
-      unicorn/prefer-module: "off"
+      unicorn/prefer-module: off
