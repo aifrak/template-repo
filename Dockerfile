@@ -1,9 +1,6 @@
-FROM node:16.13.0-buster as node
-RUN npm install -g npm@8.1.2 --quiet
-
-FROM koalaman/shellcheck:v0.8.0 as shellcheck
-FROM mvdan/shfmt:v3.4.1 as shfmt
-FROM hadolint/hadolint:v2.8.0 as hadolint
+# —————————————————————————————————————————————— #
+#                      base                      #
+# —————————————————————————————————————————————— #
 
 FROM ubuntu:focal-20211006 as base
 
@@ -13,16 +10,14 @@ ENV INSIDE_DOCKER=1
 ENV LANG=en_US.UTF-8
 
 # 1. Install packages
-# 2. Install setup locales
+# 2. Setup locales
 # 3. Clean
 RUN set -e \
   && export DEBIAN_FRONTEND=noninteractive \
   && apt-get update -qq \
   && apt-get install -y -qq --no-install-recommends \
-    ca-certificates=* \
     git=1:2.25.1-* \
     locales=2.31-* \
-    parallel=20161222-* \
   && sed -i "/${LANG}/s/^# //g" /etc/locale.gen \
   && locale-gen ${LANG} \
   && apt-get clean \
@@ -49,6 +44,38 @@ RUN set -e \
   && mkdir ${APP_DIR} \
   && chown ${USERNAME}: ${APP_DIR}
 
+USER ${USERNAME}
+
+WORKDIR ${APP_DIR}
+
+CMD [ "bash" ]
+
+# —————————————————————————————————————————————— #
+#                       ci                       #
+# —————————————————————————————————————————————— #
+
+FROM koalaman/shellcheck:v0.8.0 as shellcheck
+FROM mvdan/shfmt:v3.4.1 as shfmt
+FROM hadolint/hadolint:v2.8.0 as hadolint
+
+FROM node:16.13.0-buster as node
+RUN npm install -g npm@8.1.2 --quiet
+
+FROM base as ci
+
+USER root
+
+# 1. Install packages
+# 2. Clean
+RUN set -e \
+  && export DEBIAN_FRONTEND=noninteractive \
+  && apt-get update -qq \
+  && apt-get install -y -qq --no-install-recommends \
+    parallel=20161222-* \
+  && apt-get clean \
+  && apt-get autoremove \
+  && rm -rf /var/lib/apt/lists/*
+
 # Add shellcheck
 COPY --from=shellcheck --chown=root /bin/shellcheck /usr/local/bin/
 
@@ -68,20 +95,24 @@ RUN find /usr/local/bin/. -xtype l -exec rm {} \; 2>/dev/null
 
 USER ${USERNAME}
 
-WORKDIR ${APP_DIR}
-
 ENV CI=true
 
-CMD [ "bash" ]
+# —————————————————————————————————————————————— #
+#                       dev                      #
+# —————————————————————————————————————————————— #
 
-FROM base as dev
+FROM ci as dev
 
 USER root
 
+# 1. Install packages
+# 2. Give sudo rights to "USERNAME"
+# 3. Clean
 RUN set -e \
   && export DEBIAN_FRONTEND=noninteractive \
   && apt-get update -qq \
   && apt-get install -y -qq --no-install-recommends \
+    ca-certificates=* \
     gnupg2=* \
     openssh-client=* \
     sudo=* \
@@ -94,6 +125,10 @@ RUN set -e \
 ENV CI=false
 
 USER ${USERNAME}
+
+# —————————————————————————————————————————————— #
+#                     vscode                     #
+# —————————————————————————————————————————————— #
 
 FROM dev as vscode
 

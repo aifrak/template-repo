@@ -231,8 +231,8 @@
     {
       "id": "dcOpts",
       "type": "promptString",
-      "default": "--dev",
-      "description": "Options? (e.g. --dev)"
+      "default": "--dc-dev",
+      "description": "Options? (e.g. --dc-dev, --dc-ci)"
     }
   ]
 }

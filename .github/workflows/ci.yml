@@ -8,8 +8,8 @@ jobs:
     runs-on: ubuntu-20.04
 
     env:
-      IMAGE_TARGET: base
-      IMAGE_TAG: aifrak/template-repo:latest
+      IMAGE_TARGET: ci
+      IMAGE_TAG: aifrak/template-repo:ci
       DOCKER_CACHE_OLD: /tmp/.buildx-cache
       DOCKER_CACHE_NEW: /tmp/.buildx-cache-new
 
@@ -59,7 +59,7 @@ jobs:
 
       - name: Starts all docker services
         run: |
-          ./run dc:up
+          ./run --dc-ci dc:up
 
       # —————————————————————————————————————————————— #
       #                      Cache                     #
@@ -67,7 +67,7 @@ jobs:
 
       - name: Get versions
         run: |
-          echo "NODE_VERSION=$(./run dc:exec npm -v)" >> $GITHUB_ENV
+          echo "NODE_VERSION=$(./run --dc-ci dc:exec npm -v)" >> $GITHUB_ENV
 
       - name: Cache node modules
         uses: actions/cache@v2.1.7
@@ -90,7 +90,7 @@ jobs:
       - name: Install node modules
         if: steps.node-modules-cache.outputs.cache-hit != 'true'
         run: |
-          ./run dc:exec bash -c "npm ci --quiet"
+          ./run --dc-ci dc:exec bash -c "npm ci --quiet"
 
       # —————————————————————————————————————————————— #
       #                   Application                  #
@@ -98,11 +98,11 @@ jobs:
 
       - name: Test
         run: |
-          ./run dc:exec ./run test
+          ./run --dc-ci dc:exec ./run test
 
       - name: Lint
         run: |
-          ./run dc:exec ./run lint
+          ./run --dc-ci dc:exec ./run lint
 
       - name: Lint latest git commit message
         if: >-
@@ -112,4 +112,4 @@ jobs:
             || (github.event_name == 'pull_request' && github.event.pull_request.user.login != 'dependabot[bot]')
           )
         run: |
-          ./run dc:exec ./run git:commit:lint-latest
+          ./run --dc-ci dc:exec ./run git:commit:lint-latest
