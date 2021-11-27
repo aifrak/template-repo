@@ -1,4 +1,5 @@
 # Ascending sort, case insensitive
+!hte
 calver
 conventionalcommits
 Dependabot
