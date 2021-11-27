@@ -1,9 +1,6 @@
 version: "0.2"
 language: en
 
-flagWords:
-  - hte
-
 enableFiletypes:
   - dockercompose
   - dockerfile
