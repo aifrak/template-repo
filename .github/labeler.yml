@@ -22,20 +22,21 @@ chore:
   - .cz.json
   - .devcontainer
   - .editorconfig
-  - "**/.gitignore"
-  - "**/.gitkeep"
   - .hadolint*
   - .htmlhint*
   - .husky/**/*
   - .lintstaged*
   - .markdownlint*
-  - .stylelint*
-  - "**/.npmrc"
   - .prettier*
+  - .release-it*
+  - .stylelint*
   - .vscode/**/*
-  - scripts/**/*
-  - run
+  - "**/.gitignore"
+  - "**/.gitkeep"
+  - "**/.npmrc"
   - LICENSE
+  - run
+  - scripts/**/*
 
 # —————————————————————————————————————————————— #
 #         Labels by technology / language        #
