@@ -35,6 +35,7 @@ Options:
 
 Main commands:
   help                        Print this message
+  check                       Test and lint the whole project
   format                      Format code of the whole project
   install-deps                Install all dependencies
   lint                        Lint the whole project
@@ -95,17 +96,55 @@ fi
 #                   Application                  #
 # —————————————————————————————————————————————— #
 
+# TODO: Call your application tests below
+
+test_checks=$(
+  cat <<EOF
+release:test
+EOF
+)
+
+lint_checks=$(
+  cat <<EOF
+css:lint
+dockerfile:lint
+html:lint
+js:lint
+markdown:lint
+prettier:lint
+shell:lint
+spellcheck:lint
+EOF
+)
+
+function check {
+  local status=0
+  local all_checks
+
+  all_checks=$(
+    print "${test_checks}" \
+      && print "${lint_checks}"
+  )
+
+  # Run all checks concurrently
+  echo "${all_checks}" \
+    | parallel --keep-order --tagstring "[{1}]" "./run {1}" \
+    || status=${?}
+
+  if [[ ${status} -ne 0 ]]; then
+    alert "✖ Project checked: issue(s) found"
+    exit ${status}
+  fi
+
+  success "✔ Project checked"
+}
+
 function test {
   if is_inside_docker; then
     local status=0
 
     # Run all tests concurrently
-    # TODO: Call your application tests below
-    (
-      cat <<EOF
-release:test
-EOF
-    ) | parallel --keep-order --tagstring "[{1}]" "./run {1}" \
+    echo "${test_checks}" | parallel --keep-order --tagstring "[{1}]" "./run {1}" \
       || status=${?}
 
     if [[ ${status} -ne 0 ]]; then
@@ -125,18 +164,7 @@ function lint {
     local status=0
 
     # Run all lints concurrently
-    (
-      cat <<EOF
-css
-dockerfile
-html
-js
-markdown
-prettier
-shell
-spellcheck
-EOF
-    ) | parallel --keep-order --tagstring "[{1}]" "./run {1}:lint" \
+    echo "${lint_checks}" | parallel --keep-order --tagstring "[{1}]" "./run {1}" \
       || status=${?}
 
     if [[ ${status} -ne 0 ]]; then
@@ -184,8 +212,7 @@ EOF
 function pre-commit {
   if is_inside_docker; then
     format
-    lint
-    test
+    check
   else
     dc:exec ./run pre-commit
   fi
