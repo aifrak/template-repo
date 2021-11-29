@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       version-modifier:
-        description: "Version modifier; optional (dev, alpha, beta, rc)"
+        description: Version modifier; optional (dev, alpha, beta, rc)
         required: false
 
 jobs:

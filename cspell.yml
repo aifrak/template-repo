@@ -20,36 +20,36 @@ dictionaries:
 
 dictionaryDefinitions:
   - name: abbreviations
-    path: "./spellcheck/dictionaries/abbreviations.txt"
+    path: ./spellcheck/dictionaries/abbreviations.txt
     addWords: true
   - name: bash-custom
-    path: "./spellcheck/dictionaries/bash-custom.txt"
+    path: ./spellcheck/dictionaries/bash-custom.txt
     addWords: true
   - name: binaries
-    path: "./spellcheck/dictionaries/binaries.txt"
+    path: ./spellcheck/dictionaries/binaries.txt
     addWords: true
     noSuggest: true
   - name: docker
-    path: "./spellcheck/dictionaries/docker.txt"
+    path: ./spellcheck/dictionaries/docker.txt
     addWords: true
   - name: filenames
-    path: "./spellcheck/dictionaries/filenames.txt"
+    path: ./spellcheck/dictionaries/filenames.txt
     addWords: true
     noSuggest: true
   - name: repo-owners
-    path: "./spellcheck/dictionaries/repo-owners.txt"
+    path: ./spellcheck/dictionaries/repo-owners.txt
     addWords: true
     noSuggest: true
   - name: npm-packages
-    path: "./spellcheck/dictionaries/npm-packages.txt"
+    path: ./spellcheck/dictionaries/npm-packages.txt
     addWords: true
     noSuggest: true
   - name: vscode-extensions
-    path: "./spellcheck/dictionaries/vscode-extensions.txt"
+    path: ./spellcheck/dictionaries/vscode-extensions.txt
     addWords: true
     noSuggest: true
   - name: workspace
-    path: "./spellcheck/dictionaries/workspace.txt"
+    path: ./spellcheck/dictionaries/workspace.txt
     addWords: true
     noSuggest: true
 
@@ -64,26 +64,26 @@ languageSettings:
 
 overrides:
   - filename: "{run,.husky/*}"
-    languageId: "shellscript"
-  - filename: "Dockerfile*"
-    languageId: "dockerfile"
-  - filename: ".github/workflows/*.yml"
+    languageId: shellscript
+  - filename: Dockerfile*
+    languageId: dockerfile
+  - filename: .github/workflows/*.yml
     dictionaries:
       - bash
       - bash-custom
 
 ignorePaths:
-  - "**/.git/**/!(COMMIT_EDITMSG)*"
   - "**/.eslintcache"
+  - "**/.git/**/!(COMMIT_EDITMSG)*"
   - "**/.history/**"
   - "**/.husky/_/**"
   - "**/.stylelintcache"
   - "**/.vscode-insiders/**"
-  # Text is generated automatically.
-  # Also, as the file grows, it will take longer to lint and format.
-  - "CHANGELOG.md"
   - "**/node_modules/**"
   - "**/npm_cache/**"
   - "**/package-lock.json"
   - "**/spellcheck/**"
   - "**/vscode-extension/**"
+  # Also, as the file grows, it will take longer to lint and format.
+  # Text is generated automatically.
+  - CHANGELOG.md
