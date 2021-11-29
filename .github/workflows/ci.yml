@@ -96,13 +96,9 @@ jobs:
       #                   Application                  #
       # —————————————————————————————————————————————— #
 
-      - name: Test
+      - name: Test and lint
         run: |
-          ./run --dc-ci dc:exec ./run test
-
-      - name: Lint
-        run: |
-          ./run --dc-ci dc:exec ./run lint
+          ./run --dc-ci dc:exec ./run check
 
       - name: Lint latest git commit message
         if: >-

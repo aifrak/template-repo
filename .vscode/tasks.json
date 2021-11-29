@@ -5,6 +5,14 @@
     /*                  Application                 */
     /* ———————————————————————————————————————————— */
     {
+      "label": "check",
+      "type": "shell",
+      "command": "./run",
+      "args": ["check"],
+      "problemMatcher": [],
+      "detail": "Test and lint the whole project"
+    },
+    {
       "label": "format",
       "type": "shell",
       "command": "./run",
