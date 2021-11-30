@@ -5,8 +5,8 @@
 # —————————————————————————————————————————————— #
 
 source:
-  - src/**/*
   - lib/**/*
+  - src/**/*
 
 tests:
   - tests/**/*
@@ -15,13 +15,17 @@ dependencies:
   - "**/package*.json"
 
 documentation:
-  - "**/*.md"
+  - docs/**/*
+  - README.md
+  - RELEASE.md
 
 chore:
+  - .browserslist*
   - .commitlint*
   - .cz.json
   - .devcontainer
   - .editorconfig
+  - .eslint*
   - .hadolint*
   - .htmlhint*
   - .husky/**/*
@@ -34,9 +38,11 @@ chore:
   - "**/.gitignore"
   - "**/.gitkeep"
   - "**/.npmrc"
+  - cspell.yml
   - LICENSE
   - run
   - scripts/**/*
+  - spellcheck/**/*
 
 # —————————————————————————————————————————————— #
 #         Labels by technology / language        #
