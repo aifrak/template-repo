@@ -11,6 +11,7 @@ docker-compose.override.yml
 # Cache for lints
 .eslintcache
 .stylelintcache
+.cspellcache
 
 # Keep .gitkeep files
 !/**/.gitkeep

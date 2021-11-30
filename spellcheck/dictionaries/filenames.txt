@@ -1,5 +1,6 @@
 # Ascending sort, case insensitive
 COMMIT_EDITMSG
+cspellcache
 dockerignore
 editorconfig
 eslintcache
