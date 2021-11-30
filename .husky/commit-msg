@@ -5,5 +5,5 @@
 
 commit_message_path="$1"
 
-npx --no-install commitlint --color --edit "$commit_message_path"
-npx --no-install cspell lint --color "$commit_message_path"
+npx commitlint --color --edit "$commit_message_path"
+npx cspell lint --color "$commit_message_path"
