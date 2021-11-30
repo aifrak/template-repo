@@ -5,6 +5,7 @@ conventionalcommits
 Dependabot
 dockercompose
 dockerfiles
+dotfiles
 GROUPNAME
 infile
 noreply
