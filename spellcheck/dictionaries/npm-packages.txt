@@ -1,5 +1,6 @@
 # Ascending sort, case insensitive
 airbnb
+browserslist
 commitizen
 commitlint
 compat
