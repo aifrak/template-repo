@@ -73,6 +73,7 @@ overrides:
       - bash-custom
 
 ignorePaths:
+  - "**/.cspellcache"
   - "**/.eslintcache"
   - "**/.git/**/!(COMMIT_EDITMSG)*"
   - "**/.history/**"

@@ -10,6 +10,7 @@ EOF
 
 function spellcheck:lint {
   npx cspell lint \
+    --cache \
     --color \
     --no-progress \
     --no-must-find-files \
