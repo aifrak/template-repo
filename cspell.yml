@@ -85,6 +85,6 @@ ignorePaths:
   - "**/package-lock.json"
   - "**/spellcheck/**"
   - "**/vscode-extension/**"
-  # Also, as the file grows, it will take longer to lint and format.
   # Text is generated automatically.
+  # Also, as the file grows, it will take longer to lint and format.
   - CHANGELOG.md
