@@ -19,3 +19,4 @@ jobs:
         uses: FantasticFiasco/action-update-license-year@v2.1.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+          commitTitle: "docs(license): Update copyright year to {{currentYear}}"

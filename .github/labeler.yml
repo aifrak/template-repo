@@ -16,6 +16,7 @@ dependencies:
 
 documentation:
   - docs/**/*
+  - LICENSE
   - README.md
   - RELEASE.md
 
@@ -39,7 +40,6 @@ chore:
   - "**/.gitkeep"
   - "**/.npmrc"
   - cspell.yml
-  - LICENSE
   - run
   - scripts/**/*
   - spellcheck/**/*
