@@ -40,7 +40,7 @@ Main commands:
   install-deps                Install all dependencies
   lint                        Lint the whole project
   lint-staged                 Lint staged files
-  pre-commit                  Lint staged and test the whole project
+  pre-commit                  Lint staged files and test the whole project
   test                        Test the whole project
 
 docker-compose commands:
