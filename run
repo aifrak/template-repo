@@ -30,8 +30,8 @@ Example: $0 --dc-dev dc:exec ./run test
 
 Options:
   -h, --help                  Print this message
-  --dc-ci                        Use "ci" file when docker compose
-  --dc-dev                       Use "dev" file when docker compose
+  --dc-ci                     Use "ci" file when docker compose
+  --dc-dev                    Use "dev" file when docker compose
 
 Main commands:
   help                        Print this message
@@ -39,7 +39,8 @@ Main commands:
   format                      Format code of the whole project
   install-deps                Install all dependencies
   lint                        Lint the whole project
-  pre-commit                  Format, lint and test the whole project
+  lint-staged                 Lint staged files
+  pre-commit                  Lint staged and test the whole project
   test                        Test the whole project
 
 docker-compose commands:
@@ -122,8 +123,8 @@ function check {
   local all_checks
 
   all_checks=$(
-    print "${test_checks}" \
-      && print "${lint_checks}"
+    echo "${test_checks}" \
+      && echo "${lint_checks}"
   )
 
   # Run all checks concurrently
@@ -211,11 +212,32 @@ EOF
 
 function pre-commit {
   if is_inside_docker; then
-    format
-    check
+    local status=0
+    local pre_commit_checks
+
+    pre_commit_checks=$(
+      echo "${test_checks}" \
+        && echo lint-staged
+    )
+
+    # Run all checks concurrently
+    echo "${pre_commit_checks}" \
+      | parallel --keep-order --tagstring "[{1}]" "./run {1}" \
+      || status=${?}
+
+    if [[ ${status} -ne 0 ]]; then
+      alert "✖ Project checked: issue(s) found"
+      exit ${status}
+    fi
+
+    success "✔ Project checked"
   else
     dc:exec ./run pre-commit
   fi
+}
+
+function lint-staged {
+  npx lint-staged
 }
 
 function install-deps {
