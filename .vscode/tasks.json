@@ -40,7 +40,7 @@
       "label": "lint-staged",
       "type": "shell",
       "command": "./run",
-      "args": ["lint"],
+      "args": ["lint-staged"],
       "problemMatcher": [],
       "detail": "Lint staged files"
     },
