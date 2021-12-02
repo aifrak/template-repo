@@ -34,7 +34,7 @@
       "command": "./run",
       "args": ["lint"],
       "problemMatcher": [],
-      "detail": "Lint of the whole project"
+      "detail": "Lint the whole project"
     },
     {
       "label": "lint-staged",
