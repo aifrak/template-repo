@@ -4,14 +4,12 @@
 . "$(dirname "$0")/_/husky.sh"
 
 if [ -n "$RELEASE" ]; then
-  npx lint-staged
+  ./run lint-staged
 elif [ -n "$INSIDE_DOCKER" ]; then
-  npx lint-staged
-  ./run test
+  ./run pre-commit
 else
   ./run --dc-dev dc:build
   ./run --dc-dev dc:up
   ./run --dc-dev dc:exec ./run install-deps
-  ./run --dc-dev dc:exec npx lint-staged
-  ./run --dc-dev dc:exec ./run test
+  ./run --dc-dev dc:exec ./run pre-commit
 fi
