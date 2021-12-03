@@ -7,12 +7,6 @@ jobs:
     name: CI
     runs-on: ubuntu-20.04
 
-    env:
-      IMAGE_TARGET: ci
-      IMAGE_TAG: aifrak/template-repo:ci
-      DOCKER_CACHE_OLD: /tmp/.buildx-cache
-      DOCKER_CACHE_NEW: /tmp/.buildx-cache-new
-
     steps:
       - name: Checkout
         uses: actions/checkout@v2.4.0
@@ -21,10 +15,22 @@ jobs:
       #                     Docker                     #
       # —————————————————————————————————————————————— #
 
-      - name: Add environment variables used by Docker build
+      # Docker Compose is used by "./run --dc-ci dc:*"
+      - name: Add environment variables used by Docker Compose
         run: |
           echo "USER_UID=$(id -u)" >> $GITHUB_ENV
           echo "USER_GID=$(id -g)" >> $GITHUB_ENV
+
+      - name: Add output parameters used by Docker build
+        id: docker-params
+        run: |
+          image_target="ci"
+          image_repository="aifrak/template-repo"
+
+          echo "::set-output name=image-target::$image_target"
+          echo "::set-output name=image-tag::$image_repository:$image_target"
+          echo "::set-output name=cache-old::/tmp/.buildx-cache"
+          echo "::set-output name=cache-new::/tmp/.buildx-cache-new"
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1.6.0
@@ -32,7 +38,7 @@ jobs:
       - name: Cache Docker layers
         uses: actions/cache@v2.1.7
         with:
-          path: ${{ env.DOCKER_CACHE_OLD }}
+          path: ${{ steps.docker-params.outputs.cache-old }}
           key: |
             ${{ runner.os }}-buildx-${{ github.sha }}
           restore-keys: |
@@ -42,33 +48,38 @@ jobs:
         uses: docker/build-push-action@v2.7.0
         with:
           load: true
-          target: ${{ env.IMAGE_TARGET }}
-          tags: ${{ env.IMAGE_TAG }}
+          target: ${{ steps.docker-params.outputs.image-target }}
+          tags: ${{ steps.docker-params.outputs.image-tag }}
           build-args: |
             USER_UID=${{ env.USER_UID }}
             USER_GID=${{ env.USER_GID }}
-          cache-from: type=local,src=${{ env.DOCKER_CACHE_OLD }}
-          cache-to: type=local,dest=${{ env.DOCKER_CACHE_NEW }}
+          cache-from: type=local,src=${{ steps.docker-params.outputs.cache-old }}
+          cache-to: type=local,dest=${{ steps.docker-params.outputs.cache-new }}
 
       # Temp fix
       # https://github.com/docker/build-push-action/issues/252
       # https://github.com/moby/buildkit/issues/1896
       - name: Move Docker cache
         run: |
-          rm -rf ${{ env.DOCKER_CACHE_OLD }}
-          mv ${{ env.DOCKER_CACHE_NEW }} ${{ env.DOCKER_CACHE_OLD }}
+          rm -rf ${{ steps.docker-params.outputs.cache-old }}
+          mv ${{ steps.docker-params.outputs.cache-new }} ${{ steps.docker-params.outputs.cache-old }}
 
       - name: Starts all docker services
         run: |
           ./run --dc-ci dc:up
 
       # —————————————————————————————————————————————— #
-      #                      Cache                     #
+      #                    Versions                    #
       # —————————————————————————————————————————————— #
 
       - name: Get versions
+        id: versions
         run: |
-          echo "NODE_VERSION=$(./run --dc-ci dc:exec npm -v)" >> $GITHUB_ENV
+          echo "::set-output name=node::$(./run --dc-ci dc:exec npm -v)"
+
+      # —————————————————————————————————————————————— #
+      #                      Cache                     #
+      # —————————————————————————————————————————————— #
 
       - name: Cache node modules
         uses: actions/cache@v2.1.7
@@ -81,9 +92,9 @@ jobs:
             **/.eslintcache
             **/.stylelintcache
           key: |
-            ${{ runner.os }}-node-${{ env.NODE_VERSION }}-${{ hashFiles('**/package-lock.json') }}
+            ${{ runner.os }}-node-${{ steps.versions.outputs.node }}-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
-            ${{ runner.os }}-node-${{ env.NODE_VERSION }}-
+            ${{ runner.os }}-node-${{ steps.versions.outputs.node }}-
 
       # —————————————————————————————————————————————— #
       #                  Dependencies                  #
