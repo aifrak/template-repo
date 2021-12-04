@@ -10,6 +10,7 @@ EOF
 
 function html:lint {
   local ignore_globs=(
+    **/.git/**
     **/.history/**
     **/node_modules/**
     **/npm_cache/**
