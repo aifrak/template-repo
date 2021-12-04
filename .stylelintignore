@@ -1,3 +1,6 @@
+# Git
+.git/
+
 # Local history (VSCode extension)
 .history/
 
