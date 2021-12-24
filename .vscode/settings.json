@@ -144,34 +144,18 @@
   "[dockerfile]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
   },
-  "[git-commit]": {
+  "[git-commit][git-rebase][javascript]": {
+    // javascript: Follow rule from eslint-config-airbnb-base
     "editor.rulers": [100]
   },
-  "[git-rebase]": {
-    "editor.rulers": [100]
-  },
-  "[handlebars]": {
+  "[handlebars][html][javascript][json][jsonc][markdown][yaml]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[html]": {
     "editor.rulers": [120]
   },
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.rulers": [100] // Follow rule from eslint-config-airbnb-base
-  },
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
   "[markdown]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
     "files.trimTrailingWhitespace": false
-  },
-  "[yaml]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
 
   // VSCode icons:
