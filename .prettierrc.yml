@@ -1,1 +1,7 @@
 htmlWhitespaceSensitivity: ignore
+
+overrides:
+  - files:
+      - "*.hbs"
+    options:
+      htmlWhitespaceSensitivity: css
