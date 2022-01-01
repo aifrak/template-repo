@@ -18,7 +18,7 @@ bash ./scripts/rename_project.sh [PROJECT_NAME] [OWNER_NAME]
 
 - [Create a Personal Access Token (PAT)](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
   with all scopes for `repo` checked
-- Add a new action secret named `PAT_PR_AUTO_MERGE` with the value of the PAT
+- Add a new action secret named `PAT_GITHUB` with the value of the PAT
 
 ## License
 
