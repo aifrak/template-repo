@@ -2,7 +2,7 @@
 #                      base                      #
 # —————————————————————————————————————————————— #
 
-FROM ubuntu:focal-20211006 as base
+FROM ubuntu:focal-20220105 as base
 
 USER root
 
