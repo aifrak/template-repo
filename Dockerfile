@@ -58,7 +58,7 @@ FROM koalaman/shellcheck:v0.8.0 as shellcheck
 FROM mvdan/shfmt:v3.4.2 as shfmt
 FROM hadolint/hadolint:v2.8.0 as hadolint
 
-FROM node:16.13.1-buster as node
+FROM node:16.13.2-buster as node
 RUN npm install -g npm@8.3.0 --quiet
 
 FROM base as ci
