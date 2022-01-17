@@ -27,9 +27,9 @@
     "husky": "^7.0.4",
     "lint-staged": "^12.1.7",
     "markdownlint-cli": "^0.30.0",
-    "prettier": "^2.5.0",
+    "prettier": "^2.5.1",
     "release-it": "^14.12.3",
-    "stylelint": "^14.1.0",
+    "stylelint": "^14.2.0",
     "stylelint-a11y": "^1.2.3",
     "stylelint-at-rule-no-children": "^0.3.1",
     "stylelint-color-format": "^1.1.0",
@@ -52,6 +52,12 @@
     },
     "htmlhint": {
       "glob-parent": "^6.0.2"
+    },
+    "markdownlint-cli": {
+      "markdownlint": "^0.25.1"
+    },
+    "stylelint-config-idiomatic-order": {
+      "stylelint-order": "^5.0.0"
     }
   },
   "engines": {
