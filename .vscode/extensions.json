@@ -8,12 +8,18 @@
 
     // HTML:
     "mkaufman.htmlhint",
+    "bradgashler.htmltagwrap",
+    "formulahendry.auto-rename-tag",
 
     // CSS, SCSS, SASS, LESS:
     "stylelint.vscode-stylelint",
+    "gencer.html-slim-scss-css-class-completion",
+    "mrmlnc.vscode-scss",
 
     // Javascript:
     "dbaeumer.vscode-eslint",
+    "xabikos.javascriptsnippets",
+    "nathanchapman.javascriptsnippets",
 
     // Tasks / Makefile targets
     "spmeesseman.vscode-taskexplorer",
@@ -34,6 +40,10 @@
     // Shell:
     "foxundermoon.shell-format",
     "timonwong.shellcheck",
+    "sadeghpm.sql-snippets",
+
+    // SQL
+    "sadeghpm.sql-snippets",
 
     // YAML
     "redhat.vscode-yaml",
