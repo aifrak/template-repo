@@ -140,8 +140,6 @@
     "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json": "cspell.yml"
   },
 
-  "cSpell.files": ["**", "**/.*"],
-
   // Override languages:
   "[dockerfile]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
