@@ -77,7 +77,7 @@ function is_inside_docker {
 }
 
 function is_ci {
-  if [[ "${CI:-false}" = true ]]; then
+  if [[ "${CI:-false}" == true ]]; then
     return 0
   else
     return 1
