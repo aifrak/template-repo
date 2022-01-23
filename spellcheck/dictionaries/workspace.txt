@@ -1,4 +1,3 @@
-# Ascending sort, case insensitive
 !hte
 calver
 conventionalcommits
@@ -9,6 +8,7 @@ dotfiles
 GROUPNAME
 infile
 noreply
+POSIX
 prealpha
 preminor
 prepatch
