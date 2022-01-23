@@ -12,7 +12,7 @@ services:
     user: ${USER_UID:-1000}:${USER_GID:-1000}
     command: sleep infinity
     environment:
-      - INSIDE_DOCKER=1
+      - INSIDE_DOCKER=true
       - LANG=en_US.UTF-8
     volumes:
       - .:/app

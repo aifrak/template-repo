@@ -68,9 +68,8 @@ EOF
 # —————————————————————————————————————————————— #
 
 # Check if the command is from the docker container or the host.
-# INSIDE_DOCKER=1 is set from the Dockerfile
 function is_inside_docker {
-  if [[ ${INSIDE_DOCKER:-0} -eq 1 ]]; then
+  if [[ ${INSIDE_DOCKER:-false} == true ]]; then
     return 0
   else
     return 1
