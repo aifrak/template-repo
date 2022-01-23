@@ -5,3 +5,5 @@ services:
     image: aifrak/template-repo:ci
     build:
       target: ci
+    environment:
+      - CI=true
