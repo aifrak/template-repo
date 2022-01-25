@@ -30,7 +30,12 @@ function release:ci {
 }
 
 function release:dry-run {
-  release --dry-run --no-git.requireBranch --no-git.requireCleanWorkingDir
+  release \
+    --dry-run \
+    --no-git.requireBranch \
+    --no-git.requireCleanWorkingDir \
+    --no-git.requireUpstream \
+    --git.pushRepo="git://fake.host.for.dry.run:user/repo"
 }
 
 function release:test {
