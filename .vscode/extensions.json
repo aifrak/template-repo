@@ -36,6 +36,9 @@
     // Github Actions:
     "cschleiden.vscode-github-actions",
 
+    // Gitignore
+    "codezombiech.gitignore",
+
     // Dockerfile:
     "exiasr.hadolint",
 
