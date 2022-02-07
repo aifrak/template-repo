@@ -53,9 +53,6 @@
     "htmlhint": {
       "glob-parent": "^6.0.2"
     },
-    "markdownlint-cli": {
-      "markdownlint": "^0.25.1"
-    },
     "stylelint-config-idiomatic-order": {
       "stylelint-order": "^5.0.0"
     }
