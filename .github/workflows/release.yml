@@ -15,7 +15,7 @@ jobs:
     steps:
       - name: Check if main branch
         if: ${{ github.ref != 'refs/heads/main' }}
-        uses: actions/github-script@v5.1.0
+        uses: actions/github-script@v6
         with:
           script: |
             core.setFailed('Error: Release is possible only on the main branch')
