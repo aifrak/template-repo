@@ -47,7 +47,7 @@ module.exports = {
         types,
       },
       writerOpts: {
-        headerPartial: readFileSync(`${templatesPath}/header.hbs`, 'utf-8'),
+        headerPartial: readFileSync(`${templatesPath}/header.hbs`, 'utf8'),
         commitGroupsSort,
       },
     },
