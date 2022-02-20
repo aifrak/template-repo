@@ -30,6 +30,10 @@ function git:commit:is-contributor-dependabot {
   is_author_dependabot || is_co_author_dependabot
 }
 
+# —————————————————————————————————————————————— #
+#                Helper functions                #
+# —————————————————————————————————————————————— #
+
 function git_log() {
   local format="${1}"
 

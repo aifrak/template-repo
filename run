@@ -69,19 +69,11 @@ EOF
 
 # Check if the command is from the docker container or the host.
 function is_inside_docker {
-  if [[ ${INSIDE_DOCKER:-false} == true ]]; then
-    return 0
-  else
-    return 1
-  fi
+  [[ ${INSIDE_DOCKER:-false} == true ]]
 }
 
 function is_ci {
-  if [[ "${CI:-false}" == true ]]; then
-    return 0
-  else
-    return 1
-  fi
+  [[ "${CI:-false}" == true ]]
 }
 
 # If we're running in CI we need to disable TTY allocation for docker-compose
