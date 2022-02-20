@@ -140,12 +140,12 @@
     /*                      Git                     */
     /* ———————————————————————————————————————————— */
     {
-      "label": "git:commit:lint-latest",
+      "label": "git:commit:lint",
       "type": "shell",
       "command": "./run",
-      "args": ["git:commit:lint-latest"],
+      "args": ["git:commit:lint"],
       "problemMatcher": [],
-      "detail": "Lint latest git commit message"
+      "detail": "Lint git commit message"
     },
     /* ———————————————————————————————————————————— */
     /*                   Markdown                   */
