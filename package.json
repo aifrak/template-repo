@@ -11,7 +11,7 @@
     "cspell": "^5.18.5",
     "eslint": "^8.9.0",
     "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-prettier": "^8.4.0",
     "eslint-formatter-pretty": "^4.1.0",
     "eslint-plugin-array-func": "^3.1.7",
     "eslint-plugin-compat": "^4.0.2",
