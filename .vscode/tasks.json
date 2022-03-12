@@ -61,7 +61,7 @@
       "detail": "Test and lint the whole project"
     },
     /* ———————————————————————————————————————————— */
-    /*                docker-compose                */
+    /*                docker compose                */
     /* ———————————————————————————————————————————— */
     {
       "label": "dc:build",
@@ -80,7 +80,7 @@
     {
       "label": "dc:exec",
       "type": "shell",
-      "command": "./run ${input:dcOpts} dc:exec",
+      "command": "./run ${input:dcOpts} dc:exec ${input:cmd}",
       "problemMatcher": [],
       "detail": "Execute a command in a 'app' docker service"
     },
