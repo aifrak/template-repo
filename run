@@ -43,7 +43,7 @@ Main commands:
   pre-commit                  Lint staged files and test the whole project
   test                        Test the whole project
 
-docker-compose commands:
+docker compose commands:
   dc:build                    Build all docker services
   dc:console                  Build, start, up all services and console of "app" docker service
   dc:exec                     Execute a command in a "app" docker service
@@ -240,7 +240,7 @@ function install-deps {
 }
 
 # —————————————————————————————————————————————— #
-#                 docker-compose                 #
+#                 docker compose                 #
 # —————————————————————————————————————————————— #
 
 dc_options=()
@@ -256,7 +256,7 @@ dev_dc_options=(
 )
 
 function dc {
-  docker-compose "${dc_options[@]}" "${@}"
+  docker compose "${dc_options[@]}" "${@}"
 }
 
 function dc:build {

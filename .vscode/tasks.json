@@ -61,7 +61,7 @@
       "detail": "Test and lint the whole project"
     },
     /* ———————————————————————————————————————————— */
-    /*                docker-compose                */
+    /*                docker compose                */
     /* ———————————————————————————————————————————— */
     {
       "label": "dc:build",
