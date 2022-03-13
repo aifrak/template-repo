@@ -1,5 +1,5 @@
-# Ascending sort, case insensitive
 COMMIT_EDITMSG
+commitlintrc
 cspellcache
 dockerignore
 editorconfig
@@ -8,4 +8,6 @@ gitkeep
 htmlhintrc
 markdownlintignore
 npmrc
+prettierrc
 stylelintcache
+stylelintrc
