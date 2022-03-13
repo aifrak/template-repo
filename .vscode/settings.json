@@ -4,6 +4,19 @@
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
   "editor.formatOnType": true,
+  "explorer.experimental.fileNesting.enabled": true,
+  "explorer.experimental.fileNesting.expand": false,
+  "explorer.experimental.fileNesting.patterns": {
+    ".commitlintrc*": ".cz.*",
+    ".eslintrc*": ".eslint*",
+    ".markdownlint*": ".markdownlintignore",
+    ".prettierrc*": ".prettier*",
+    ".release-it.*": "VERSION",
+    ".stylelintrc*": ".stylelint*",
+    "cspell.*": ".cspell*",
+    "Dockerfile": ".docker*, docker-compose.*, Dockerfile*",
+    "README.*": "*.md, LICENSE"
+  },
 
   // Files:
   "files.associations": {
