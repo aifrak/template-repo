@@ -52,7 +52,7 @@ FROM koalaman/shellcheck:v0.8.0 as shellcheck
 FROM mvdan/shfmt:v3.4.3 as shfmt
 FROM hadolint/hadolint:v2.10.0 as hadolint
 
-FROM node:16.14.2-buster as node
+FROM node:16.15.0-buster as node
 RUN npm install -g npm@8.5.4 --quiet
 
 FROM base as ci
