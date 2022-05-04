@@ -1,3 +1,4 @@
+cjs
 COMMIT_EDITMSG
 commitlintrc
 cspellcache

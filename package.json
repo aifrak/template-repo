@@ -4,8 +4,8 @@
     "@commitlint/cli": "^16.2.4",
     "@commitlint/config-conventional": "^16.2.4",
     "@commitlint/cz-commitlint": "^16.2.4",
-    "@release-it/bumper": "^3.0.1",
-    "@release-it/conventional-changelog": "^4.3.0",
+    "@release-it/bumper": "^4.0.0",
+    "@release-it/conventional-changelog": "^5.0.0",
     "calver": "^21.11.3",
     "commitizen": "^4.2.4",
     "cspell": "^5.20.0",
@@ -28,7 +28,7 @@
     "lint-staged": "^12.4.1",
     "markdownlint-cli": "^0.31.1",
     "prettier": "^2.6.2",
-    "release-it": "^14.14.3",
+    "release-it": "^15.0.0",
     "stylelint": "^14.8.2",
     "stylelint-a11y": "^1.2.3",
     "stylelint-at-rule-no-children": "^0.3.1",
@@ -54,6 +54,7 @@
       "stylelint-order": "^5.0.0"
     }
   },
+  "type": "module",
   "engines": {
     "node": "16",
     "npm": "8"

@@ -15,7 +15,7 @@ quote_type = auto
 max_line_length = 120
 
 # Follow rules from eslint-config-airbnb-base
-[*.js]
+[*.{js,cjs}]
 max_line_length = 100
 quote_type = single
 
