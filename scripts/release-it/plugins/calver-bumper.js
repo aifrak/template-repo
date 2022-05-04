@@ -8,6 +8,7 @@
  * Inspired from on https://github.com/release-it/conventional-changelog/blob/5.0.0/index.js
  */
 
+/* eslint import/no-extraneous-dependencies: ["error", {"devDependencies": true}] */
 import calver from 'calver';
 // eslint-disable-next-line import/no-unresolved
 import { Plugin } from 'release-it';
