@@ -1,4 +1,3 @@
-# Ascending sort, case insensitive
 airbnb
 browserslist
 commitizen
@@ -8,4 +7,5 @@ csstree
 htmlhint
 lintstaged
 markdownlint
+minimist
 stylelint
