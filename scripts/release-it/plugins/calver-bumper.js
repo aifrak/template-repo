@@ -1,10 +1,12 @@
 // @ts-nocheck
-// Custom plugin to calculate the next CalVer.
-
-// Replace https://github.com/casmith/release-it-calver-plugin because
-// it does not support "MODIFIER" (alpha, beta, rc, dev)
-
-// Inspired from on https://github.com/release-it/conventional-changelog/blob/5.0.0/index.js
+/**
+ * Custom plugin to calculate the next CalVer.
+ *
+ * Replace https://github.com/casmith/release-it-calver-plugin because
+ * it does not support "MODIFIER" (alpha, beta, rc, dev)
+ *
+ * Inspired from on https://github.com/release-it/conventional-changelog/blob/5.0.0/index.js
+ */
 
 import calver from 'calver';
 // eslint-disable-next-line import/no-unresolved

@@ -2,8 +2,10 @@ import assert from 'node:assert';
 // eslint-disable-next-line import/extensions
 import CalverBumper from '../../plugins/calver-bumper.js';
 
-// Fixed timestamp for testing
-// 1637580780451: 22 Nov 2021
+/**
+ * Fixed timestamp for testing
+ * 1637580780451: 22 Nov 2021
+ */
 Date.now = function now() {
   return 1_637_580_780_451;
 };
