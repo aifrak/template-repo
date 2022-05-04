@@ -4,8 +4,10 @@
 
 // This file uses CommonJS because `cosmiconfig`.
 const { readFileSync } = require('fs');
-const commitGroupsSort = require('./scripts/release-it/plugins/conventional-changelog/commit-groups-sort.cjs');
-const types = require('./scripts/release-it/types.cjs');
+const {
+  commitGroupsSort,
+} = require('./scripts/release-it/plugins/conventional-changelog/commit-groups-sort.cjs');
+const { types } = require('./scripts/release-it/types.cjs');
 
 const scriptsPath = './scripts/release-it';
 const hooksPath = `${scriptsPath}/hooks`;

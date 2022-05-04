@@ -10,4 +10,4 @@ const types = [
   { type: 'perf', section: 'Performance Improvements' },
 ];
 
-module.exports = types;
+module.exports = { types };
