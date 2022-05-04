@@ -53,7 +53,7 @@ FROM mvdan/shfmt:v3.4.3 as shfmt
 FROM hadolint/hadolint:v2.10.0 as hadolint
 
 FROM node:16.15.0-buster as node
-RUN npm install -g npm@8.5.4 --quiet
+RUN npm install -g npm@8.9.0 --quiet
 
 FROM base as ci
 
