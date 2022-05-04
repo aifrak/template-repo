@@ -1,5 +1,6 @@
-const assert = require('assert');
-const CalverBumper = require('../../plugins/calver-bumper');
+import assert from 'node:assert';
+// eslint-disable-next-line import/extensions
+import CalverBumper from '../../plugins/calver-bumper.js';
 
 // Fixed timestamp for testing
 // 1637580780451: 22 Nov 2021

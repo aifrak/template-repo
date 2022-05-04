@@ -5,8 +5,10 @@ Dependabot
 dockercompose
 dockerfiles
 dotfiles
+ESM
 GROUPNAME
 infile
+nocheck
 noreply
 POSIX
 prealpha

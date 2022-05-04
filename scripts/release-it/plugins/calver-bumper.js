@@ -1,12 +1,14 @@
+// @ts-nocheck
 // Custom plugin to calculate the next CalVer.
 
 // Replace https://github.com/casmith/release-it-calver-plugin because
 // it does not support "MODIFIER" (alpha, beta, rc, dev)
 
-// Inspired from on https://github.com/release-it/conventional-changelog/blob/3.3.0/index.js
+// Inspired from on https://github.com/release-it/conventional-changelog/blob/5.0.0/index.js
 
-const calver = require('calver');
-const Plugin = require('release-it/lib/plugin/Plugin');
+import calver from 'calver';
+// eslint-disable-next-line import/no-unresolved
+import { Plugin } from 'release-it';
 
 const DEFAULT_LEVEL = 'minor';
 const DEFAULT_FORMAT = `yyyy.mm.${DEFAULT_LEVEL}`;
@@ -121,4 +123,4 @@ class CalverBumper extends Plugin {
   }
 }
 
-module.exports = CalverBumper;
+export default CalverBumper;

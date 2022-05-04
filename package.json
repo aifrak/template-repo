@@ -54,6 +54,7 @@
       "stylelint-order": "^5.0.0"
     }
   },
+  "type": "module",
   "engines": {
     "node": "16",
     "npm": "8"
