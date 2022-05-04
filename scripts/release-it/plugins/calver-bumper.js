@@ -20,7 +20,7 @@ const DEFAULT_RELEASE_TYPE = `calendar.${DEFAULT_LEVEL}`;
 const LEVEL_SEPARATOR = '.';
 const MODIFIERS = new Set(['alpha', 'beta', 'dev', 'rc']);
 
-class CalverBumper extends Plugin {
+export default class CalverBumper extends Plugin {
   /* ———————————————————————————————————————————— */
   /*          Implement Plugin interfaces         */
   /* ———————————————————————————————————————————— */
@@ -124,5 +124,3 @@ class CalverBumper extends Plugin {
     return calver.parseVersion(latestVersion, format, levels);
   }
 }
-
-export default CalverBumper;

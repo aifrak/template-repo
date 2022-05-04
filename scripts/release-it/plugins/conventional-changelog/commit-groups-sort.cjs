@@ -7,7 +7,7 @@
  * but without the static array.
  */
 
-const types = require('../../types.cjs');
+const { types } = require('../../types.cjs');
 
 function commitGroupsSort(a, b) {
   const groupA = a.title;
@@ -21,4 +21,4 @@ function commitGroupsSort(a, b) {
   return -1;
 }
 
-module.exports = commitGroupsSort;
+module.exports = { commitGroupsSort };
