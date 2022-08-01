@@ -111,10 +111,35 @@ function check {
   local status=0
   local all_checks
 
-  all_checks=$(
-    echo "${test_checks}" \
-      && echo "${lint_checks}"
-  )
+  all_checks=$(echo "${test_checks}" && echo "${lint_checks}")
+
+  # Options
+  for opt in "${@}"; do
+    case ${opt} in
+      --include)
+        local param_value="${2:-}"
+        if [[ -z "${param_value}" ]]; then alert_die "'--include' should contains a string"; fi
+
+        all_checks=$(echo "${all_checks}" && echo "${param_value}")
+
+        shift 2
+        ;;
+      -h | --help)
+        cat <<EOF
+Test and lint the whole project
+
+$0 check [OPTIONS]
+
+Example: $0 check
+
+Options:
+  --include cmd1              Include an additional check from "./run"
+  -h, --help                  Print this message
+EOF
+        close
+        ;;
+    esac
+  done
 
   # Run all checks concurrently
   echo "${all_checks}" \
@@ -204,10 +229,7 @@ function pre-commit {
     local status=0
     local pre_commit_checks
 
-    pre_commit_checks=$(
-      echo "${test_checks}" \
-        && echo lint-staged
-    )
+    pre_commit_checks=$(echo "${test_checks}" && echo lint-staged)
 
     # Run all checks concurrently
     echo "${pre_commit_checks}" \
@@ -287,6 +309,7 @@ function dc:console {
 opt_dc_ci=
 opt_dc_dev=
 
+# Options
 for opt in "${@}"; do
   case ${opt} in
     --dc-ci)
@@ -310,8 +333,10 @@ for opt in "${@}"; do
       shift
       ;;
     -h | --help)
-      help
-      close
+      if [[ "${#}" -eq 1 ]]; then
+        help
+        close
+      fi
       ;;
   esac
 done

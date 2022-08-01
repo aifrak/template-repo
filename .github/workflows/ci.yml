@@ -109,22 +109,27 @@ jobs:
       #                   Application                  #
       # —————————————————————————————————————————————— #
 
+      - name: Set check flag for git-commit-lint
+        id: git-commit-lint
+        run: |
+          is_contributor_dependabot=false
+          run_git_commit_lint=false
+
+          if ./run git:commit:is-contributor-dependabot; then is_contributor_dependabot=true; fi
+
+          if [[ github.actor != "dependabot[bot]" && $is_contributor_dependabot = false ]]; then
+            run_git_commit_lint=true;
+          fi
+
+          echo "::set-output name=flag::$run_git_commit_lint"
+
       - name: Test and lint
         run: |
-          ./run --dc-ci dc:exec ./run check
+          check_args=
+          included_opts=
 
-      - name: Set commit information
-        id: commit
-        run: |
-          is_contributor_dependabot="false"
+          if [[ ${{ steps.git-commit-lint.outputs.flag }} = true ]]; then
+            included_opts="--include git:commit:lint"
+          fi
 
-          if ./run git:commit:is-contributor-dependabot; then is_contributor_dependabot="true"; fi
-
-          echo "::set-output name=is-contributor-dependabot::$is_contributor_dependabot"
-
-      - name: Lint git commit message
-        if: >-
-          github.actor != 'dependabot[bot]'
-          && steps.commit.outputs.is-contributor-dependabot == 'false'
-        run: |
-          ./run --dc-ci dc:exec ./run git:commit:lint
+          ./run --dc-ci dc:exec ./run check $included_opts
