@@ -109,7 +109,7 @@ jobs:
       #                   Application                  #
       # —————————————————————————————————————————————— #
 
-      - name: Set check flag for git-commit-lint
+      - name: Set check flag for git:commit:lint
         id: git-commit-lint
         run: |
           is_contributor_dependabot=false
