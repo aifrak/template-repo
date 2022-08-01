@@ -2,21 +2,19 @@
 
 set -euo pipefail
 
-if [[ -z "${APP_DIR:-""}" ]]; then
-  APP_DIR="$(dirname "${0}")"
-fi
+current_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd -P)"
 
-. "${APP_DIR}/scripts/run/css.sh"
-. "${APP_DIR}/scripts/run/docker_file.sh"
-. "${APP_DIR}/scripts/run/git.sh"
-. "${APP_DIR}/scripts/run/html.sh"
-. "${APP_DIR}/scripts/run/javascript.sh"
-. "${APP_DIR}/scripts/run/markdown.sh"
-. "${APP_DIR}/scripts/run/prettier.sh"
-. "${APP_DIR}/scripts/run/release.sh"
-. "${APP_DIR}/scripts/run/shell.sh"
-. "${APP_DIR}/scripts/run/spellcheck.sh"
-. "${APP_DIR}/scripts/lib/utils.sh"
+. "${current_dir}/scripts/run/css.sh"
+. "${current_dir}/scripts/run/docker_file.sh"
+. "${current_dir}/scripts/run/git.sh"
+. "${current_dir}/scripts/run/html.sh"
+. "${current_dir}/scripts/run/javascript.sh"
+. "${current_dir}/scripts/run/markdown.sh"
+. "${current_dir}/scripts/run/prettier.sh"
+. "${current_dir}/scripts/run/release.sh"
+. "${current_dir}/scripts/run/shell.sh"
+. "${current_dir}/scripts/run/spellcheck.sh"
+. "${current_dir}/scripts/lib/utils.sh"
 
 export DOCKER_BUILDKIT=1
 export COMPOSE_DOCKER_CLI_BUILD=1
