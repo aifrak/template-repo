@@ -7,6 +7,14 @@
   ],
   "service": "app",
   "workspaceFolder": "/app",
+  /*
+  Workaround to set APP_DIR to current workspace directory.
+  devcontainer is ignoring "workspaceFolder" when repository is cloned into a
+  container volume from VSCode.
+  */
+  "remoteEnv": {
+    "APP_DIR": "${containerWorkspaceFolder}"
+  },
   "settings": {
     "shellformat.path": "/usr/local/bin/shfmt"
   },
