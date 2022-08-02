@@ -254,6 +254,8 @@ function lint-staged {
 function install-deps {
   if is_inside_docker; then
     npm ci --quiet
+
+    success "✔ Dependencies installed"
   else
     dc:exec ./run install-deps
   fi

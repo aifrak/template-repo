@@ -15,6 +15,7 @@
   "remoteEnv": {
     "APP_DIR": "${containerWorkspaceFolder}"
   },
+  "postAttachCommand": "bash .devcontainer/setup-dev-env.sh",
   "settings": {
     "shellformat.path": "/usr/local/bin/shfmt"
   },

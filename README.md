@@ -28,9 +28,9 @@ All information about the setup of the development environment can be found [her
 
 ## Documentation
 
-Most documentation are listed under the [docs](docs) directory.
+Most documentation is listed under the [docs](docs) directory.
 
-To see the full list of available bash command, run this command:
+To see the full list of available bash commands, run this command:
 
 ```bash
 ./run help
