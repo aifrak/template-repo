@@ -46,10 +46,6 @@
     "stylelint-use-logical-spec": "^4.1.0"
   },
   "overrides": {
-    "commitizen": {
-      "ansi-regex": "^6.0.1",
-      "minimist": "^1.2.6"
-    },
     "stylelint-config-idiomatic-order": {
       "stylelint-order": "^5.0.0"
     }
