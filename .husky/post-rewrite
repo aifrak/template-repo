@@ -1,0 +1,13 @@
+#!/usr/bin/env sh
+
+# shellcheck source=.husky/_/husky.sh
+. "$(dirname -- "$0")/_/husky.sh"
+. "$(dirname -- "$0")/common.sh"
+
+if [ "${CI:-false}" = false ] && [ -n "$INSIDE_DOCKER" ]; then
+  echo "Git Hook triggered: 'post-rewrite'"
+
+  diff=$(git diff-tree -r --name-only --no-commit-id HEAD@\{1\} HEAD)
+
+  run_cmd_when_changed_files "package-lock.json" "npm ci" "$diff"
+fi
