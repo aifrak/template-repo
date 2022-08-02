@@ -3,6 +3,12 @@
 # shellcheck source=.husky/_/husky.sh
 . "$(dirname "$0")/_/husky.sh"
 
+branch=$(git rev-parse --abbrev-ref HEAD)
+if [ "${CI:-false}" = false ] && [ "$branch" = "main" ]; then
+  echo "Commit not allowed on '${branch}' branch."
+  exit 1
+fi
+
 if [ -n "$RELEASE" ]; then
   ./run lint-staged
 elif [ -n "$INSIDE_DOCKER" ]; then
