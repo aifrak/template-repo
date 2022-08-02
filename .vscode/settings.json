@@ -4,9 +4,9 @@
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
   "editor.formatOnType": true,
-  "explorer.experimental.fileNesting.enabled": true,
-  "explorer.experimental.fileNesting.expand": false,
-  "explorer.experimental.fileNesting.patterns": {
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.expand": false,
+  "explorer.fileNesting.patterns": {
     ".commitlintrc*": ".cz.*",
     ".eslintrc*": ".eslint*",
     ".markdownlint*": ".markdownlintignore",
@@ -15,7 +15,9 @@
     ".stylelintrc*": ".stylelint*",
     "cspell.*": ".cspell*",
     "Dockerfile": ".docker*, docker-compose.*, Dockerfile*",
-    "README.*": "*.md, LICENSE"
+    ".gitignore": ".git*",
+    "README.*": "*.md, LICENSE",
+    "package.json": ".npmrc, package-lock.json"
   },
 
   // Files:
