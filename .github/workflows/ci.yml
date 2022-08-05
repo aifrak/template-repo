@@ -125,7 +125,6 @@ jobs:
 
       - name: Test and lint
         run: |
-          check_args=
           included_opts=
 
           if [[ ${{ steps.git-commit-lint.outputs.flag }} = true ]]; then

@@ -9,13 +9,13 @@
   "explorer.fileNesting.patterns": {
     ".commitlintrc*": ".cz.*",
     ".eslintrc*": ".eslint*",
+    ".gitignore": ".git*",
     ".markdownlint*": ".markdownlintignore",
     ".prettierrc*": ".prettier*",
     ".release-it.*": "VERSION",
     ".stylelintrc*": ".stylelint*",
     "cspell.*": ".cspell*",
     "Dockerfile": ".docker*, docker-compose.*, Dockerfile*",
-    ".gitignore": ".git*",
     "README.*": "*.md, LICENSE",
     "package.json": ".npmrc, package-lock.json"
   },
