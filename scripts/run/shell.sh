@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 
 shell_scripts_globs=(
+  .husky/*.sh
+  .husky/commit-msg
+  .husky/post-*
+  .husky/pre-*
   run
   scripts/**/*.sh
 )
