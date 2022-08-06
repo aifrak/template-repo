@@ -109,6 +109,10 @@ jobs:
       #                   Application                  #
       # —————————————————————————————————————————————— #
 
+      - name: Install npm prepare scripts
+        run: |
+          npm run prepare
+
       - name: Set check flag for git:commit:lint
         id: git-commit-lint
         run: |
