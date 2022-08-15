@@ -113,13 +113,13 @@ jobs:
         run: |
           npm run prepare
 
-      - name: Set check flag for git:commit:lint
+      - name: Set check flag for lint:git:commit
         id: git-commit-lint
         run: |
           is_contributor_dependabot=false
           run_git_commit_lint=false
 
-          if ./run git:commit:is-contributor-dependabot; then is_contributor_dependabot=true; fi
+          if ./run is-contributor-dependabot:git:commit; then is_contributor_dependabot=true; fi
 
           if [[ github.actor != "dependabot[bot]" && $is_contributor_dependabot = false ]]; then
             run_git_commit_lint=true;
@@ -132,7 +132,7 @@ jobs:
           included_opts=
 
           if [[ ${{ steps.git-commit-lint.outputs.flag }} = true ]]; then
-            included_opts="--include git:commit:lint"
+            included_opts="--include lint:git:commit"
           fi
 
           ./run --dc-ci dc:exec ./run check $included_opts

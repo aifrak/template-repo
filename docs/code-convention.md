@@ -20,13 +20,15 @@ To help you to choose the right `type` or `scope`, you can commit:
 
 ### Function names
 
+- Format as following: `[purpose]:[scope]` where it may have multiple sub-scopes
+  separated by `:`
 - Use `:` to separate scopes
 - Use `-` (kebab-case) for scope names or purposes
 - Use `_` (snake_case) for helper functions that should not directly be used by
   the CLI
 
 ```shellscript
-function dev:dotnet-core:global-install {
+function install:dev:dotnet-core:global {
   ...
 }
 ```

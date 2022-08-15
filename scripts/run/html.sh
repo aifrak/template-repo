@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 
-function html:help {
+function help:html {
   cat <<EOF
 
 HTML commands:
-  html:lint                   Lint HTML files and templates
+  lint:html                   Lint HTML files and templates
 EOF
 }
 
-function html:lint {
+function lint:html {
   local ignore_globs=(
     **/.git/**
     **/.history/**

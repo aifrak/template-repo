@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
-function markdown:help {
+function help:markdown {
   cat <<EOF
 
 Markdown commands:
-  markdown:lint               Lint markdown files
+  lint:markdown               Lint markdown files
 EOF
 }
 
-function markdown:lint {
+function lint:markdown {
   npx markdownlint "${@:-.}"
 }

@@ -1,15 +1,15 @@
 #!/usr/bin/env bash
 
-function js:help {
+function help:js {
   cat <<EOF
 
 Javascript commands:
-  js:format                  Format JS files and any files containing Javascript
-  js:lint                    Lint JS files and any files containing Javascript
+  format:js                  Format JS files and any files containing Javascript
+  lint:js                    Lint JS files and any files containing Javascript
 EOF
 }
 
-function js:lint {
+function lint:js {
   npx eslint \
     --cache \
     --color \
@@ -19,7 +19,7 @@ function js:lint {
     "${@:-.}"
 }
 
-function js:format {
+function format:js {
   npx eslint \
     --fix \
     --fix-type layout \

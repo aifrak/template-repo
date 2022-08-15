@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-./run install-deps
+./run install:deps
 
 cat <<EOF
 

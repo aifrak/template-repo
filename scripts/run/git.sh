@@ -1,21 +1,21 @@
 #!/usr/bin/env bash
 
-function git:help {
+function help:git {
   cat <<EOF
 
 Git commands:
-  git:commit:lint                       Lint git commit message
-  git:commit:is-contributor-dependabot  Check if Dependabot is (co-)author of the commit
+  lint:git:commit                       Lint git commit message
+  is-contributor-dependabot:git:commit  Check if Dependabot is (co-)author of the commit
 EOF
 }
 
 # NOTE: Dependabot is not flexible to apply commitlint rules
 # see: https://github.com/dependabot/dependabot-core/issues/1666
 # see: https://github.com/dependabot/dependabot-core/issues/2056
-function git:commit:lint {
+function lint:git:commit {
   local commit_message
 
-  if git:commit:is-contributor-dependabot; then
+  if is-contributor-dependabot:git:commit; then
     warning "SKIPPED './run ${FUNCNAME[0]}': Dependabot is (co-)author of latest commit"
 
     close
@@ -26,7 +26,7 @@ function git:commit:lint {
   echo "${commit_message}" | npx commitlint --color
 }
 
-function git:commit:is-contributor-dependabot {
+function is-contributor-dependabot:git:commit {
   is_author_dependabot || is_co_author_dependabot
 }
 

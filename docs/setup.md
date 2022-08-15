@@ -11,13 +11,13 @@
 1. Install the extension `ms-vscode-remote.remote-containers`.
 1. `Ctrl+Shift+P` and choose `Remote-Containers: Open Folder in Container...`
 1. Wait container to be built (it takes a while).
-1. Run `./run install-deps` to install all dependencies.
+1. Run `./run install:deps` to install all dependencies.
 1. Run `./run help` to see all commands for this project.
 
 ### Development without VSCode
 
 1. Run `./run --dc-dev dc:console` to enter the container.
-1. Run `./run install-deps` to install all dependencies.
+1. Run `./run install:deps` to install all dependencies.
 1. Run `./run help` to see all commands for this project.
 
 ## UID and GID inside the container

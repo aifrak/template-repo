@@ -2,19 +2,19 @@
 
 dockerfile_globs=(Dockerfile*)
 
-function dockerfile:help {
+function help:dockerfile {
   cat <<EOF
 
 Dockerfile commands:
-  dockerfile:format           Format all Dockerfiles
-  dockerfile:lint             Lint all Dockerfiles
+  format:dockerfile           Format all Dockerfiles
+  lint:dockerfile             Lint all Dockerfiles
 EOF
 }
 
-function dockerfile:lint {
+function lint:dockerfile {
   hadolint "${@:-${dockerfile_globs[@]}}"
 }
 
-function dockerfile:format {
+function format:dockerfile {
   shfmt -w "${@:-${dockerfile_globs[@]}}"
 }
