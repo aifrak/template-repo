@@ -35,9 +35,9 @@ Main commands:
   help                        Print this message
   check                       Test and lint the whole project
   format                      Format code of the whole project
-  install-deps                Install all dependencies
+  install:deps                Install all dependencies
   lint                        Lint the whole project
-  lint-staged                 Lint staged files
+  lint:staged                 Lint staged files
   pre-commit                  Lint staged files and test the whole project
   test                        Test the whole project
 
@@ -49,16 +49,16 @@ docker compose commands:
   dc:up                       Starts all docker services
 EOF
 
-  release:help
-  css:help
-  html:help
-  js:help
-  markdown:help
-  prettier:help
-  shell:help
-  dockerfile:help
-  spellcheck:help
-  git:help
+  help:release
+  help:css
+  help:html
+  help:js
+  help:markdown
+  help:prettier
+  help:shell
+  help:dockerfile
+  help:spellcheck
+  help:git
 }
 
 # —————————————————————————————————————————————— #
@@ -90,20 +90,20 @@ fi
 
 test_checks=$(
   cat <<EOF
-release:test
+test:release
 EOF
 )
 
 lint_checks=$(
   cat <<EOF
-css:lint
-dockerfile:lint
-html:lint
-js:lint
-markdown:lint
-prettier:lint
-shell:lint
-spellcheck:lint
+lint:css
+lint:dockerfile
+lint:html
+lint:js
+lint:markdown
+lint:prettier
+lint:shell
+lint:spellcheck
 EOF
 )
 
@@ -201,17 +201,17 @@ function format {
     # Run all formatters concurrently
     (
       cat <<EOF
-css
-dockerfile
-js
-shell
+format:css
+format:dockerfile
+format:js
+format:shell
 EOF
-    ) | parallel --keep-order --tagstring "[{1}]" "./run {1}:format" \
+    ) | parallel --keep-order --tagstring "[{1}]" "./run {1}" \
       || status=${?}
 
     # Prettier format should be done after CSS and JS format
     print "\e[30;47m———[prettier]———\e[0m"
-    ./run prettier:format || status=${?}
+    ./run format:prettier || status=${?}
 
     if [[ ${status} -ne 0 ]]; then
       alert "✖ Project could not be formatted completely: issue(s) found"
@@ -229,7 +229,7 @@ function pre-commit {
     local status=0
     local pre_commit_checks
 
-    pre_commit_checks=$(echo "${test_checks}" && echo lint-staged)
+    pre_commit_checks=$(echo "${test_checks}" && echo lint:staged)
 
     # Run all checks concurrently
     echo "${pre_commit_checks}" \
@@ -247,17 +247,17 @@ function pre-commit {
   fi
 }
 
-function lint-staged {
+function lint:staged {
   npx lint-staged
 }
 
-function install-deps {
+function install:deps {
   if is_inside_docker; then
     npm ci --quiet
 
     success "✔ Dependencies installed"
   else
-    dc:exec ./run install-deps
+    dc:exec ./run install:deps
   fi
 }
 

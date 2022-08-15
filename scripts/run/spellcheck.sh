@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 
-function spellcheck:help {
+function help:spellcheck {
   cat <<EOF
 
 Spellcheck commands:
-  spellcheck:lint             Run spellcheck
+  lint:spellcheck             Run spellcheck
 EOF
 }
 
-function spellcheck:lint {
+function lint:spellcheck {
   npx cspell lint \
     --cache \
     --color \

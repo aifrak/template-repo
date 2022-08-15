@@ -1,18 +1,18 @@
 #!/usr/bin/env bash
 
-function prettier:help {
+function help:prettier {
   cat <<EOF
 
 Prettier commands:
-  prettier:format             Format files handled by Prettier
-  prettier:lint               Lint files handled by Prettier
+  format:prettier             Format files handled by Prettier
+  lint:prettier               Lint files handled by Prettier
 EOF
 }
 
-function prettier:lint {
+function lint:prettier {
   npx prettier --check "${@:-.}"
 }
 
-function prettier:format {
+function format:prettier {
   npx prettier --list-different --write "${@:-.}"
 }

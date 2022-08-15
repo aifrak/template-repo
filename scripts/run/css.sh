@@ -2,16 +2,16 @@
 
 css_globs="**/*.{css,less,sass,scss}"
 
-function css:help {
+function help:css {
   cat <<EOF
 
 CSS commands:
-  css:format                  Format CSS, SCSS, SASS, LESS and any files containing CSS
-  css:lint                    Lint CSS, SCSS, SASS, LESS and any files containing CSS
+  format:css                  Format CSS, SCSS, SASS, LESS and any files containing CSS
+  lint:css                    Lint CSS, SCSS, SASS, LESS and any files containing CSS
 EOF
 }
 
-function css:lint {
+function lint:css {
   npx stylelint \
     --allow-empty-input \
     --color \
@@ -19,7 +19,7 @@ function css:lint {
     "${@:-${css_globs}}"
 }
 
-function css:format {
+function format:css {
   npx stylelint \
     --fix \
     --allow-empty-input \

@@ -1,29 +1,29 @@
 "*":
-  - ./run spellcheck:lint
+  - ./run lint:spellcheck
 
 "*.{css,less,sass,scss}":
-  - ./run css:lint
-  - ./run prettier:lint
+  - ./run lint:css
+  - ./run lint:prettier
 
 "*.{htm,html}":
-  - ./run html:lint
-  - ./run prettier:lint
+  - ./run lint:html
+  - ./run lint:prettier
 
 "*.js":
-  - ./run js:lint
-  - ./run prettier:lint
+  - ./run lint:js
+  - ./run lint:prettier
 
 "{run,.husky/*,*.sh}":
-  - ./run shell:lint
+  - ./run lint:shell
 
 "Dockerfile*":
-  - ./run dockerfile:lint
+  - ./run lint:dockerfile
 
 "*.{json,yaml,yml,htmlhintrc}":
-  - ./run prettier:lint
+  - ./run lint:prettier
 
 # CHANGELOG.md text is generated automatically.
 # Also, as the file grows, it will take longer to lint and format.
 "!(CHANGELOG).md":
-  - ./run prettier:lint
-  - ./run markdown:lint
+  - ./run lint:prettier
+  - ./run lint:markdown

@@ -21,10 +21,10 @@
       "detail": "Format code of the whole project"
     },
     {
-      "label": "install-deps",
+      "label": "install:deps",
       "type": "shell",
       "command": "./run",
-      "args": ["install-deps"],
+      "args": ["install:deps"],
       "problemMatcher": [],
       "detail": "Install all dependencies"
     },
@@ -37,10 +37,10 @@
       "detail": "Lint the whole project"
     },
     {
-      "label": "lint-staged",
+      "label": "lint:staged",
       "type": "shell",
       "command": "./run",
-      "args": ["lint-staged"],
+      "args": ["lint:staged"],
       "problemMatcher": [],
       "detail": "Lint staged files"
     },
@@ -102,18 +102,18 @@
     /*                     Shell                    */
     /* ———————————————————————————————————————————— */
     {
-      "label": "shell:format",
+      "label": "format:shell",
       "type": "shell",
       "command": "./run",
-      "args": ["shell:format"],
+      "args": ["format:shell"],
       "problemMatcher": [],
       "detail": "Format Shell scripts"
     },
     {
-      "label": "shell:lint",
+      "label": "lint:shell",
       "type": "shell",
       "command": "./run",
-      "args": ["shell:lint"],
+      "args": ["lint:shell"],
       "problemMatcher": [],
       "detail": "Lint Shell scripts"
     },
@@ -121,18 +121,18 @@
     /*                  Dockerfile                  */
     /* ———————————————————————————————————————————— */
     {
-      "label": "dockerfile:format",
+      "label": "format:dockerfile",
       "type": "shell",
       "command": "./run",
-      "args": ["dockerfile:format"],
+      "args": ["format:dockerfile"],
       "problemMatcher": [],
       "detail": "Format all Dockerfiles"
     },
     {
-      "label": "dockerfile:lint",
+      "label": "lint:dockerfile",
       "type": "shell",
       "command": "./run",
-      "args": ["dockerfile:lint"],
+      "args": ["lint:dockerfile"],
       "problemMatcher": [],
       "detail": "Lint all Dockerfiles"
     },
@@ -140,10 +140,10 @@
     /*                      Git                     */
     /* ———————————————————————————————————————————— */
     {
-      "label": "git:commit:lint",
+      "label": "lint:git:commit",
       "type": "shell",
       "command": "./run",
-      "args": ["git:commit:lint"],
+      "args": ["lint:git:commit"],
       "problemMatcher": [],
       "detail": "Lint git commit message"
     },
@@ -151,10 +151,10 @@
     /*                   Markdown                   */
     /* ———————————————————————————————————————————— */
     {
-      "label": "markdown:lint",
+      "label": "lint:markdown",
       "type": "shell",
       "command": "./run",
-      "args": ["markdown:lint"],
+      "args": ["lint:markdown"],
       "problemMatcher": [],
       "detail": "Lint markdown files"
     },
@@ -162,18 +162,18 @@
     /*                   Prettier                   */
     /* ———————————————————————————————————————————— */
     {
-      "label": "prettier:format",
+      "label": "format:prettier",
       "type": "shell",
       "command": "./run",
-      "args": ["prettier:format"],
+      "args": ["format:prettier"],
       "problemMatcher": [],
       "detail": "Format files handled by Prettier"
     },
     {
-      "label": "prettier:lint",
+      "label": "lint:prettier",
       "type": "shell",
       "command": "./run",
-      "args": ["prettier:lint"],
+      "args": ["lint:prettier"],
       "problemMatcher": [],
       "detail": "Lint files handled by Prettier"
     },
@@ -181,10 +181,10 @@
     /*                  Spellcheck                  */
     /* ———————————————————————————————————————————— */
     {
-      "label": "spellcheck:lint",
+      "label": "lint:spellcheck",
       "type": "shell",
       "command": "./run",
-      "args": ["spellcheck:lint"],
+      "args": ["lint:spellcheck"],
       "problemMatcher": [],
       "detail": "Run spellcheck"
     },
@@ -192,18 +192,18 @@
     /*             CSS, SCSS, SASS, LESS            */
     /* ———————————————————————————————————————————— */
     {
-      "label": "css:format",
+      "label": "format:css",
       "type": "shell",
       "command": "./run",
-      "args": ["css:format "],
+      "args": ["format:css "],
       "problemMatcher": [],
       "detail": "Format CSS, SCSS, SASS, LESS and any files containing CSS"
     },
     {
-      "label": "css:lint",
+      "label": "lint:css",
       "type": "shell",
       "command": "./run",
-      "args": ["css:lint "],
+      "args": ["lint:css "],
       "problemMatcher": [],
       "detail": "Lint CSS, SCSS, SASS, LESS and any files containing CSS"
     },
@@ -211,10 +211,10 @@
     /*                     HTML                     */
     /* ———————————————————————————————————————————— */
     {
-      "label": "html:lint",
+      "label": "lint:html",
       "type": "shell",
       "command": "./run",
-      "args": ["html:lint"],
+      "args": ["lint:html"],
       "problemMatcher": [],
       "detail": "Lint HTML files and templates"
     },
@@ -222,18 +222,18 @@
     /*                  Javascript                  */
     /* ———————————————————————————————————————————— */
     {
-      "label": "js:format",
+      "label": "format:js",
       "type": "shell",
       "command": "./run",
-      "args": ["js:format"],
+      "args": ["format:js"],
       "problemMatcher": [],
       "detail": "Format JS files and any files containing Javascript"
     },
     {
-      "label": "js:lint",
+      "label": "lint:js",
       "type": "shell",
       "command": "./run",
-      "args": ["js:lint"],
+      "args": ["lint:js"],
       "problemMatcher": [],
       "detail": "Lint JS files and any files containing Javascript"
     }

@@ -10,12 +10,12 @@ if [ "${CI:-false}" = false ] && [ "$branch" = "main" ]; then
 fi
 
 if [ -n "$RELEASE" ]; then
-  ./run lint-staged
+  ./run lint:staged
 elif [ -n "$INSIDE_DOCKER" ]; then
   ./run pre-commit
 else
   ./run --dc-dev dc:build
   ./run --dc-dev dc:up
-  ./run --dc-dev dc:exec ./run install-deps
+  ./run --dc-dev dc:exec ./run install:deps
   ./run --dc-dev dc:exec ./run pre-commit
 fi

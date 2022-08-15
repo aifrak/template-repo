@@ -9,19 +9,19 @@ shell_scripts_globs=(
   scripts/**/*.sh
 )
 
-function shell:help {
+function help:shell {
   cat <<EOF
 
 Shell commands:
-  shell:format                Format given Shell scripts
-  shell:lint                  Lint given Shell scripts
+  format:shell                Format given Shell scripts
+  lint:shell                  Lint given Shell scripts
 EOF
 }
 
-function shell:lint {
+function lint:shell {
   shellcheck -x "${@:-${shell_scripts_globs[@]}}"
 }
 
-function shell:format {
+function format:shell {
   shfmt -w "${@:-${shell_scripts_globs[@]}}"
 }

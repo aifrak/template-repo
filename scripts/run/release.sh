@@ -1,17 +1,17 @@
 #!/usr/bin/env bash
 
-function release:help {
+function help:release {
   cat <<EOF
 
 Release commands:
   release                     Update CHANGELOG.md and version files, cut a release and publish to Github
   release:ci [MODIFIER]       Release from CI. If modifier given, it will prerelease.
   release:dry-run             Simulate cutting a release without updating files or pushing to git
-  release:test                Dry run release, run tests for release
-  release:hooks:test          Run tests for hooks during a release
+  test:release                Dry run release, run tests for release
+  test:release:hooks          Run tests for hooks during a release
   prerelease                  Cut a prerelease, tag with a suffix it and publish it to Github (default: dev)
   - Usage: prerelease [dev|alpha|beta|rc]
-  release-it:custom:test      Run tests related to custom hooks and/or plugins for release-it
+  test:release-it:custom      Run tests related to custom hooks and/or plugins for release-it
 EOF
 }
 
@@ -38,10 +38,10 @@ function release:dry-run {
     --git.pushRepo="git://fake.host.for.dry.run:user/repo"
 }
 
-function release:test {
-  release-it:custom:test
+function test:release {
+  test:release-it:custom
   release:dry-run
-  release:hooks:test
+  test:release:hooks
 }
 
 function prerelease {
@@ -56,13 +56,13 @@ function prerelease {
   release "calendar.${modifier}" --github.preRelease
 }
 
-function release-it:custom:test {
+function test:release-it:custom {
   for path in ./scripts/release-it/tests/**/*.test.js; do
     node "${path}"
   done
 }
 
-function release:hooks:test {
+function test:release:hooks {
   function reset_updated_files {
     local updated_files=(
       CHANGELOG.md
