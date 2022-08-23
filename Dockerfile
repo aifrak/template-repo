@@ -62,7 +62,7 @@ RUN set -e \
   && echo "--- Install packages ---" \
   && apt-get update -qq \
   && apt-get install -y -qq --no-install-recommends \
-    parallel=20210822+ds-* \
+    parallel=20210822+* \
   && echo "--- Clean ---" \
   && apt-get clean \
   && apt-get autoremove \
