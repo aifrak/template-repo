@@ -2,7 +2,7 @@
 #                      base                      #
 # —————————————————————————————————————————————— #
 
-FROM ubuntu:focal-20220801 as base
+FROM ubuntu:jammy-20220801 as base
 
 USER root
 
@@ -11,8 +11,8 @@ RUN set -e \
   && echo "--- Install packages ---" \
   && apt-get update -qq \
   && apt-get install -y -qq --no-install-recommends \
-    git=1:2.25.1-* \
-    locales=2.31-* \
+    git=1:2.34.1-* \
+    locales=2.35-* \
   && echo "--- Add locales ---" \
   && sed -i "/en_US.UTF-8/s/^# //g" /etc/locale.gen \
   && locale-gen "en_US.UTF-8" \
@@ -62,7 +62,7 @@ RUN set -e \
   && echo "--- Install packages ---" \
   && apt-get update -qq \
   && apt-get install -y -qq --no-install-recommends \
-    parallel=20161222-* \
+    parallel=20210822+ds-* \
   && echo "--- Clean ---" \
   && apt-get clean \
   && apt-get autoremove \
