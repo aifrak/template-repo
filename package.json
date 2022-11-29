@@ -23,7 +23,7 @@
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-regexp": "^1.11.0",
     "eslint-plugin-switch-case": "^1.1.2",
-    "eslint-plugin-unicorn": "^45.0.0",
+    "eslint-plugin-unicorn": "^45.0.1",
     "htmlhint": "^1.1.4",
     "husky": "^8.0.2",
     "lint-staged": "^13.0.4",
