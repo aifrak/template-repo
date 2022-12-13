@@ -49,7 +49,7 @@ CMD [ "bash" ]
 # —————————————————————————————————————————————— #
 
 FROM koalaman/shellcheck:v0.8.0 as shellcheck
-FROM mvdan/shfmt:v3.5.1 as shfmt
+FROM mvdan/shfmt:v3.6.0 as shfmt
 FROM hadolint/hadolint:v2.12.0 as hadolint
 FROM node:16.18.1-buster as node
 
