@@ -79,68 +79,58 @@
   "comment-divider.mainHeaderFiller": "—",
   "comment-divider.subheaderFiller": "—",
   "commentAnchors.workspace.excludeFiles": "**/{node_modules,npm_cache,.husky/_,.history}/**/*",
-  "commentAnchors.tags.list": [
-    {
-      "tag": "TEMP",
+  "commentAnchors.tags.anchors": {
+    "TEMP": {
       "iconColor": "pink",
       "highlightColor": "#e84393",
       "scope": "workspace"
     },
-    {
-      "tag": "DEPRECATED",
+    "DEPRECATED": {
       "iconColor": "pink",
       "highlightColor": "#e84393",
       "scope": "workspace"
     },
-    {
-      "tag": "IDEA",
+    "IDEA": {
       "iconColor": "purple",
       "highlightColor": "#ba68c8",
       "scope": "workspace"
     },
-    {
-      "tag": "QUESTION",
+    "QUESTION": {
       "iconColor": "purple",
       "highlightColor": "#ba68c8",
       "scope": "workspace"
     },
-    {
-      "tag": "DEBUG",
+    "DEBUG": {
       "iconColor": "red",
       "highlightColor": "#F44336",
       "scope": "workspace"
     },
-    {
-      "tag": "WARNING",
+    "WARNING": {
       "iconColor": "orange",
       "highlightColor": "#ffa100",
       "scope": "workspace"
     },
-    {
-      "tag": "FIX",
+    "FIX": {
       "iconColor": "emerald",
       "highlightColor": "#2ecc71",
       "scope": "file"
     },
-    {
-      "tag": "HACK",
+    "HACK": {
       "iconColor": "orange",
       "highlightColor": "#ffa100",
       "scope": "workspace"
     },
-    {
-      "tag": "!!!",
+    "!!!": {
       "iconColor": "#ff2d00",
       "highlightColor": "#ff2d00",
       "scope": "workspace"
     },
-    {
-      "tag": "???",
+    "???": {
       "iconColor": "#3498db",
       "highlightColor": "#3498db",
       "scope": "workspace"
     }
-  ],
+  },
 
   // Markdown All in One:
   "markdown.extension.orderedList.marker": "one",
