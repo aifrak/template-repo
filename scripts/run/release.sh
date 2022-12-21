@@ -63,17 +63,17 @@ function test:release-it:custom {
 }
 
 function test:release:hooks {
-  function reset_updated_files {
-    local updated_files=(
-      CHANGELOG.md
-    )
-
-    git checkout -- "${updated_files[@]}"
-  }
-
   for path in ./scripts/release-it/hooks/**/*.sh; do
     bash "${path}"
   done
 
   trap '$(reset_updated_files)' EXIT
+}
+
+function reset_updated_files {
+  local updated_files=(
+    CHANGELOG.md
+  )
+
+  git checkout -- "${updated_files[@]}"
 }
