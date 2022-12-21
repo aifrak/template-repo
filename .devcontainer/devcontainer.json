@@ -19,54 +19,58 @@
   "settings": {
     "shellformat.path": "/usr/local/bin/shfmt"
   },
-  "extensions": [
-    // EditorConfig
-    "editorconfig.editorconfig",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        // EditorConfig
+        "editorconfig.editorconfig",
 
-    // HTML
-    "mkaufman.htmlhint",
+        // HTML
+        "mkaufman.htmlhint",
 
-    // CSS, SCSS, SASS, LESS
-    "stylelint.vscode-stylelint",
+        // CSS, SCSS, SASS, LESS
+        "stylelint.vscode-stylelint",
 
-    // Javascript:
-    "dbaeumer.vscode-eslint",
+        // Javascript:
+        "dbaeumer.vscode-eslint",
 
-    // Commit:
-    "joshbolduc.commitlint",
-    "vivaxy.vscode-conventional-commits",
+        // Commit:
+        "joshbolduc.commitlint",
+        "vivaxy.vscode-conventional-commits",
 
-    // Git:
-    "eamodio.gitlens",
+        // Git:
+        "eamodio.gitlens",
 
-    // Github Actions:
-    "cschleiden.vscode-github-actions",
+        // Github Actions:
+        "cschleiden.vscode-github-actions",
 
-    // Docker
-    "ms-azuretools.vscode-docker",
+        // Docker
+        "ms-azuretools.vscode-docker",
 
-    // Dockerfile
-    "exiasr.hadolint",
+        // Dockerfile
+        "exiasr.hadolint",
 
-    // Shell
-    "foxundermoon.shell-format",
-    "timonwong.shellcheck",
+        // Shell
+        "foxundermoon.shell-format",
+        "timonwong.shellcheck",
 
-    // Markdown
-    "davidanson.vscode-markdownlint",
-    "yzhang.markdown-all-in-one",
+        // Markdown
+        "davidanson.vscode-markdownlint",
+        "yzhang.markdown-all-in-one",
 
-    // YAML
-    "redhat.vscode-yaml",
+        // YAML
+        "redhat.vscode-yaml",
 
-    // Formatters
-    "esbenp.prettier-vscode",
+        // Formatters
+        "esbenp.prettier-vscode",
 
-    // Comments
-    "stackbreak.comment-divider",
-    "exodiusstudios.comment-anchors",
+        // Comments
+        "stackbreak.comment-divider",
+        "exodiusstudios.comment-anchors",
 
-    // Spellcheck
-    "streetsidesoftware.code-spell-checker"
-  ]
+        // Spellcheck
+        "streetsidesoftware.code-spell-checker"
+      ]
+    }
+  }
 }
