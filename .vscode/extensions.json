@@ -7,7 +7,7 @@
     "editorconfig.editorconfig",
 
     // HTML:
-    "mkaufman.htmlhint",
+    "HTMLHint.vscode-htmlhint",
     "bradgashler.htmltagwrap",
     "formulahendry.auto-rename-tag",
 
