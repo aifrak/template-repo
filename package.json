@@ -4,7 +4,7 @@
     "@commitlint/cli": "^17.4.0",
     "@commitlint/config-conventional": "^17.4.0",
     "@commitlint/cz-commitlint": "^17.4.0",
-    "@release-it/bumper": "^4.0.1",
+    "@release-it/bumper": "^4.0.2",
     "@release-it/conventional-changelog": "^5.1.1",
     "@ronilaukkarinen/stylelint-a11y": "^1.2.4",
     "calver": "^22.8.4",
