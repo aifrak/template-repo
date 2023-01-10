@@ -1,5 +1,6 @@
 airbnb
 browserslist
+caniuse
 commitizen
 commitlint
 compat
