@@ -100,10 +100,10 @@ RUN set -e \
   && echo "--- Install packages ---" \
   && apt-get update -qq \
   && apt-get install -y -qq --no-install-recommends \
-    ca-certificates=* \
-    gnupg2=* \
-    openssh-client=* \
-    sudo=* \
+    ca-certificates=20211016ubuntu0.22.04.1 \
+    gnupg2=2.2.27-* \
+    openssh-client=1:8.9p1-* \
+    sudo=1.9.9-* \
   && echo "--- Give sudo rights to 'USERNAME' ---" \
   && echo "${USERNAME}" ALL=\(root\) NOPASSWD:ALL >/etc/sudoers.d/"${USERNAME}" \
   && chmod 0440 /etc/sudoers.d/"${USERNAME}" \
