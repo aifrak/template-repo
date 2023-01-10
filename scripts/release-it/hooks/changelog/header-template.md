@@ -12,5 +12,6 @@ See [Calendar Versioning (CalVer)](https://calver.org/) for versioning conventio
 
 CalVer format: `YYYY.MM.MINOR`
 
-<!-- This header will be cut from CHANGELOG.md then appended again after each release. -->
+<!-- This header will be cut from CHANGELOG.md then appended again after each
+release. -->
 <!-- changelog-header:end -->
