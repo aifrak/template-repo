@@ -45,11 +45,6 @@
     "stylelint-no-unsupported-browser-features": "^6.0.1",
     "stylelint-use-logical-spec": "^4.1.0"
   },
-  "overrides": {
-    "stylelint-config-idiomatic-order": {
-      "stylelint-order": "^5.0.0"
-    }
-  },
   "type": "module",
   "engines": {
     "node": "16",
