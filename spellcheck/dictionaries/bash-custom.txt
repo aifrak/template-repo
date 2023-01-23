@@ -4,6 +4,7 @@ buildx
 chmod
 FUNCNAME
 gnupg
+localedef
 mkdir
 noninteractive
 NOPASSWD

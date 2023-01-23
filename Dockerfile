@@ -14,13 +14,13 @@ RUN set -e \
     git=1:2.34.1-* \
     locales=2.35-* \
   && echo "--- Add locales ---" \
-  && sed -i "/en_US.UTF-8/s/^# //g" /etc/locale.gen \
-  && locale-gen "en_US.UTF-8" \
+  && localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8 \
   && echo "--- Clean ---" \
   && apt-get clean \
   && apt-get autoremove \
   && rm -rf /var/lib/apt/lists/*
 
+ENV LANG=en_US.utf8
 ENV USERNAME=app-user
 ARG GROUPNAME=${USERNAME}
 ARG USER_UID=1000
