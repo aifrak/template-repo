@@ -10,9 +10,16 @@ EOF
 }
 
 function lint:prettier {
-  npx prettier --check "${@:-.}"
+  npx prettier \
+    --cache \
+    --cache-location="${APP_DIR}/.prettier-cache" \
+    --check "${@:-.}"
 }
 
 function format:prettier {
-  npx prettier --list-different --write "${@:-.}"
+  npx prettier \
+    --cache \
+    --cache-location="${APP_DIR}/.prettier-cache" \
+    --list-different \
+    --write "${@:-.}"
 }

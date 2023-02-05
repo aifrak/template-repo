@@ -8,10 +8,11 @@
 node_modules/
 npm_cache/
 
-# Cache for lints
+# Cache for lints and formatters
 .eslintcache
 .stylelintcache
 .cspellcache
+.prettier-cache
 
 # Text is generated automatically.
 # Also, as the file grows, it will take longer to lint and format.

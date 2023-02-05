@@ -78,6 +78,7 @@ ignorePaths:
   - "**/.git/**/!(COMMIT_EDITMSG)*"
   - "**/.history/**"
   - "**/.husky/_/**"
+  - "**/.prettier-cache"
   - "**/.stylelintcache"
   - "**/.vscode-insiders/**"
   - "**/node_modules/**"
