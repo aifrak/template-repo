@@ -90,6 +90,7 @@ jobs:
             **/npm_cache
             **/.cspellcache
             **/.eslintcache
+            **/.prettier-cache
             **/.stylelintcache
           key: |
             ${{ runner.os }}-node-${{ steps.versions.outputs.NODE }}-${{ hashFiles('**/package-lock.json') }}
