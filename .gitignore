@@ -9,11 +9,11 @@ npm_cache/
 docker-compose.override.yml
 
 # Cache for lints and formatters
-.eslintcache
-.stylelintcache
-.cspellcache
-.prettier-cache
 
+.cspellcache
+.eslintcache
+.prettier-cache
+.stylelintcache
 # Keep .gitkeep files
 !/**/.gitkeep
 
