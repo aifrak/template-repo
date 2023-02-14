@@ -6,7 +6,7 @@
     "@commitlint/cz-commitlint": "^17.4.2",
     "@release-it/bumper": "^4.0.2",
     "@release-it/conventional-changelog": "^5.1.1",
-    "@ronilaukkarinen/stylelint-a11y": "^1.2.4",
+    "@ronilaukkarinen/stylelint-a11y": "^1.2.5",
     "calver": "^22.8.4",
     "commitizen": "^4.3.0",
     "cspell": "^6.24.0",
