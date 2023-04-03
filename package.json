@@ -7,7 +7,7 @@
     "@release-it/bumper": "^4.0.2",
     "@release-it/conventional-changelog": "^5.1.1",
     "@ronilaukkarinen/stylelint-a11y": "^1.2.7",
-    "calver": "^22.8.4",
+    "calver": "^22.9.1",
     "commitizen": "^4.3.0",
     "cspell": "^6.31.1",
     "eslint": "^8.37.0",
