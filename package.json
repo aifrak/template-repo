@@ -10,7 +10,7 @@
     "calver": "^22.9.1",
     "commitizen": "^4.3.0",
     "cspell": "^6.31.1",
-    "eslint": "^8.37.0",
+    "eslint": "^8.38.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-formatter-pretty": "^5.0.0",
