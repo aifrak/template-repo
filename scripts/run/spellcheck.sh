@@ -4,7 +4,7 @@ function help:spellcheck {
   cat <<EOF
 
 Spellcheck commands:
-  lint:spellcheck             Run spellcheck
+  lint:spellcheck     Run spellcheck
 EOF
 }
 

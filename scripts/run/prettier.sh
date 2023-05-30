@@ -4,8 +4,8 @@ function help:prettier {
   cat <<EOF
 
 Prettier commands:
-  format:prettier             Format files handled by Prettier
-  lint:prettier               Lint files handled by Prettier
+  format:prettier     Format files handled by Prettier
+  lint:prettier       Lint files handled by Prettier
 EOF
 }
 

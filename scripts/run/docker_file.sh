@@ -6,8 +6,8 @@ function help:dockerfile {
   cat <<EOF
 
 Dockerfile commands:
-  format:dockerfile           Format all Dockerfiles
-  lint:dockerfile             Lint all Dockerfiles
+  format:dockerfile   Format all Dockerfiles
+  lint:dockerfile     Lint all Dockerfiles
 EOF
 }
 

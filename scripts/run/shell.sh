@@ -13,8 +13,8 @@ function help:shell {
   cat <<EOF
 
 Shell commands:
-  format:shell                Format given Shell scripts
-  lint:shell                  Lint given Shell scripts
+  format:shell        Format given Shell scripts
+  lint:shell          Lint given Shell scripts
 EOF
 }
 
