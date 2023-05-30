@@ -27,26 +27,26 @@ $0 [command] [OPTIONS] [sub-command]
 Example: $0 --dc-dev dc:exec ./run test
 
 Options:
-  -h, --help                  Print this message
-  --dc-ci                     Use "ci" file when docker compose
-  --dc-dev                    Use "dev" file when docker compose
+  -h, --help      Print this message
+  --dc-ci         Use "ci" file when docker compose
+  --dc-dev        Use "dev" file when docker compose
 
 Main commands:
-  help                        Print this message
-  check                       Test and lint the whole project
-  format                      Format code of the whole project
-  install:deps                Install all dependencies
-  lint                        Lint the whole project
-  lint:staged                 Lint staged files
-  pre-commit                  Lint staged files and test the whole project
-  test                        Test the whole project
+  help            Print this message
+  check           Test and lint the whole project
+  format          Format code of the whole project
+  install:deps    Install all dependencies
+  lint            Lint the whole project
+  lint:staged     Lint staged files
+  pre-commit      Lint staged files and test the whole project
+  test            Test the whole project
 
 docker compose commands:
-  dc:build                    Build all docker services
-  dc:console                  Build, start, up all services and console of "app" docker service
-  dc:exec                     Execute a command in a "app" docker service
-  dc:run                      Run a command inside the "app" docker service and remove stopped containers
-  dc:up                       Starts all docker services
+  dc:build        Build all docker services
+  dc:console      Build, start, up all services and console of "app" docker service
+  dc:exec         Execute a command in a "app" docker service
+  dc:run          Run a command inside the "app" docker service and remove stopped containers
+  dc:up           Starts all docker services
 EOF
 
   help:release

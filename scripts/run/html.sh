@@ -4,7 +4,7 @@ function help:html {
   cat <<EOF
 
 HTML commands:
-  lint:html                   Lint HTML files and templates
+  lint:html           Lint HTML files and templates
 EOF
 }
 

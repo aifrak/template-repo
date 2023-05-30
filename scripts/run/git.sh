@@ -4,8 +4,8 @@ function help:git {
   cat <<EOF
 
 Git commands:
-  lint:git:commit                       Lint git commit message
-  is-contributor-dependabot:git:commit  Check if Dependabot is (co-)author of the commit
+  lint:git:commit                         Lint git commit message
+  is-contributor-dependabot:git:commit    Check if Dependabot is (co-)author of the commit
 EOF
 }
 

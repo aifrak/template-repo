@@ -4,7 +4,7 @@ function help:markdown {
   cat <<EOF
 
 Markdown commands:
-  lint:markdown               Lint markdown files
+  lint:markdown       Lint markdown files
 EOF
 }
 
