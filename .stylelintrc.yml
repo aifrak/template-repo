@@ -5,7 +5,6 @@ extends:
   - stylelint-config-sass-guidelines
   - stylelint-config-idiomatic-order
   - stylelint-a11y/recommended
-  - stylelint-config-prettier # Must be last
 
 plugins:
   - stylelint-at-rule-no-children
