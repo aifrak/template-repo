@@ -55,6 +55,9 @@
     "**/.prettier-cache": true
   },
 
+  // Prettier:
+  "prettier.prettierPath": "./node_modules/prettier",
+
   // Git:
   "git.inputValidationSubjectLength": 100,
 
