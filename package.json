@@ -42,7 +42,8 @@
     "stylelint-declaration-strict-value": "^1.9.2",
     "stylelint-high-performance-animation": "^1.8.0",
     "stylelint-no-unsupported-browser-features": "^6.1.0",
-    "stylelint-use-logical-spec": "^5.0.0"
+    "stylelint-use-logical-spec": "^5.0.0",
+    "stylelint-use-nesting": "^4.1.0"
   },
   "overrides": {
     "stylelint-csstree-validator@^2.1.0": {
