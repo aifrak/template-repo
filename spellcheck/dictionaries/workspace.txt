@@ -2,6 +2,7 @@
 calver
 conventionalcommits
 Dependabot
+Descriptionless
 dockercompose
 dockerfiles
 dotfiles
