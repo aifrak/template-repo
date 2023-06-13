@@ -20,14 +20,30 @@ plugins:
   - stylelint-use-nesting
 
 rules:
+  # Rules for configuration
+  reportDescriptionlessDisables": true
+  reportInvalidScopeDisables": true
+  reportNeedlessDisables": true
+
   # Rules from core
   alpha-value-notation: number
-  hue-degree-notation: number
-  font-weight-notation: numeric
   color-function-notation: modern
   color-no-hex: true
+  font-family-name-quotes: always-unless-keyword
+  font-weight-notation:
+    - numeric
+    - ignore:
+        - relative
+  function-url-no-scheme-relative: true
+  hue-degree-notation: number
+  selector-max-id: 0
 
   # Rules from plugins
+  a11y/font-size-is-readable: true
+  a11y/media-prefers-color-scheme: true
+  a11y/no-obsolete-attribute: true
+  a11y/no-obsolete-element: true
+  a11y/no-text-align-justify: true
   color-format/format:
     format: hsl
   csstools/use-nesting: always
@@ -38,9 +54,7 @@ rules:
   order/properties-alphabetical-order: null
   plugin/declaration-block-no-ignored-properties: true
   plugin/no-low-performance-animation-properties: true
-  plugin/no-unsupported-browser-features:
-    - true
-    - severity: warning
+  plugin/no-unsupported-browser-features: true
   scale-unlimited/declaration-strict-value:
     - - /color/
       - fill
