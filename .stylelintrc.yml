@@ -4,11 +4,11 @@ extends:
   - stylelint-config-recommended
   - stylelint-config-sass-guidelines
   - stylelint-config-idiomatic-order
-  - stylelint-a11y/recommended
+  - "@ronilaukkarinen/stylelint-a11y/recommended"
 
 plugins:
   - stylelint-at-rule-no-children
-  - stylelint-a11y
+  - "@ronilaukkarinen/stylelint-a11y"
   - stylelint-csstree-validator
   - stylelint-color-format
   - stylelint-declaration-block-no-ignored-properties
