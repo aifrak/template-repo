@@ -59,6 +59,12 @@
   "prettier.prettierPath": "./node_modules/prettier",
   "prettier.useEditorConfig": true,
 
+  // CSS:
+  "css.validate": false,
+
+  // SASS/SCSS:
+  "scss.validate": false,
+
   // Git:
   "git.inputValidationSubjectLength": 100,
 
@@ -161,7 +167,7 @@
     // javascript: Follow rule from eslint-config-airbnb-base
     "editor.rulers": [100]
   },
-  "[handlebars][html][javascript][json][jsonc][markdown][yaml]": {
+  "[css][handlebars][html][javascript][json][jsonc][markdown][sass][scss][yaml]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[html]": {
