@@ -19,12 +19,11 @@ plugins:
   - stylelint-use-logical-spec
   - stylelint-use-nesting
 
-rules:
-  # Rules for configuration
-  reportDescriptionlessDisables": true
-  reportInvalidScopeDisables": true
-  reportNeedlessDisables": true
+reportDescriptionlessDisables: true
+reportInvalidScopeDisables: true
+reportNeedlessDisables: true
 
+rules:
   # Rules from core
   alpha-value-notation: number
   color-function-notation: modern
