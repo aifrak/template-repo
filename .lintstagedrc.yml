@@ -1,7 +1,7 @@
 "*":
   - ./run lint:spellcheck
 
-"*.{css,less,sass,scss}":
+"*.{css,sass,scss}":
   - ./run lint:css
   - ./run lint:prettier
 
