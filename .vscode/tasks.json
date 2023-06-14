@@ -189,23 +189,23 @@
       "detail": "Run spellcheck"
     },
     /* ———————————————————————————————————————————— */
-    /*             CSS, SCSS, SASS, LESS            */
+    /*                CSS, SASS/SCSS                */
     /* ———————————————————————————————————————————— */
     {
       "label": "format:css",
       "type": "shell",
       "command": "./run",
-      "args": ["format:css "],
+      "args": ["format:css"],
       "problemMatcher": [],
-      "detail": "Format CSS, SCSS, SASS, LESS and any files containing CSS"
+      "detail": "Format CSS, SASS/SCSS files"
     },
     {
       "label": "lint:css",
       "type": "shell",
       "command": "./run",
-      "args": ["lint:css "],
+      "args": ["lint:css"],
       "problemMatcher": [],
-      "detail": "Lint CSS, SCSS, SASS, LESS and any files containing CSS"
+      "detail": "Lint CSS, SASS/SCSS files"
     },
     /* ———————————————————————————————————————————— */
     /*                     HTML                     */

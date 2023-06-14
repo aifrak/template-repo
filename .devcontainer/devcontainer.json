@@ -28,7 +28,7 @@
         // HTML
         "HTMLHint.vscode-htmlhint",
 
-        // CSS, SCSS, SASS, LESS
+        // CSS, SASS/SCSS
         "stylelint.vscode-stylelint",
 
         // Javascript:

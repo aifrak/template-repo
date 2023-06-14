@@ -11,7 +11,7 @@
     "bradgashler.htmltagwrap",
     "formulahendry.auto-rename-tag",
 
-    // CSS, SCSS, SASS, LESS:
+    // CSS, SASS/SCSS
     "stylelint.vscode-stylelint",
     "gencer.html-slim-scss-css-class-completion",
     "mrmlnc.vscode-scss",
