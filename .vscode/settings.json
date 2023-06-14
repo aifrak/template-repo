@@ -57,12 +57,10 @@
 
   // Prettier:
   "prettier.prettierPath": "./node_modules/prettier",
+  "prettier.useEditorConfig": true,
 
   // Git:
   "git.inputValidationSubjectLength": 100,
-
-  // Prettier:
-  "prettier.useEditorConfig": true,
 
   // Shellformat:
   "shellformat.useEditorConfig": true,
@@ -151,6 +149,9 @@
   "yaml.schemas": {
     "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json": "cspell.yml"
   },
+
+  // Stylelint:
+  "stylelint.validate": ["css", "scss"],
 
   // Override languages:
   "[dockerfile]": {
