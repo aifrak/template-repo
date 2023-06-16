@@ -16,8 +16,8 @@
     ".stylelintrc*": ".stylelint*",
     "cspell.*": ".cspell*",
     "Dockerfile": ".docker*, docker-compose.*, Dockerfile*",
-    "README.*": "*.md, LICENSE",
-    "package.json": ".npmrc, package-lock.json"
+    "package.json": ".npmrc, package-lock.json",
+    "README.*": "*.md, LICENSE"
   },
 
   // Files:
@@ -35,11 +35,12 @@
     "**/node_modules/**": true,
     "**/npm_cache/**": true,
     // Cache for lints
-    "**/.stylelintcache": true,
-    "**/.prettier-cache": true
+    "**/.prettier-cache": true,
+    "**/.stylelintcache": true
   },
   "files.exclude": {
     "**/.git": true,
+    // VSCode
     "**/.history": true
   },
 
@@ -53,8 +54,8 @@
     "**/node_modules": true,
     "**/npm_cache": true,
     // Cache for lints
-    "**/.stylelintcache": true,
-    "**/.prettier-cache": true
+    "**/.prettier-cache": true,
+    "**/.stylelintcache": true
   },
 
   // Prettier:
@@ -88,8 +89,8 @@
     "**/node_modules/**",
     "**/npm_cache/**",
     // Cache for lints
-    "**/.stylelintcache",
-    "**/.prettier-cache"
+    "**/.prettier-cache",
+    "**/.stylelintcache"
   ],
 
   // Comments:
