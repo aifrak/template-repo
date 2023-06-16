@@ -16,11 +16,11 @@
     "APP_DIR": "${containerWorkspaceFolder}"
   },
   "postAttachCommand": "bash .devcontainer/setup-dev-env.sh",
-  "settings": {
-    "shellformat.path": "/usr/local/bin/shfmt"
-  },
   "customizations": {
     "vscode": {
+      "settings": {
+        "shellformat.path": "/usr/local/bin/shfmt"
+      },
       "extensions": [
         // EditorConfig
         "editorconfig.editorconfig",
@@ -31,17 +31,17 @@
         // CSS, SASS/SCSS
         "stylelint.vscode-stylelint",
 
-        // Javascript:
+        // Javascript
         "dbaeumer.vscode-eslint",
 
-        // Commit:
+        // Commit
         "joshbolduc.commitlint",
         "vivaxy.vscode-conventional-commits",
 
-        // Git:
+        // Git
         "eamodio.gitlens",
 
-        // Github Actions:
+        // Github Actions
         "cschleiden.vscode-github-actions",
 
         // Docker

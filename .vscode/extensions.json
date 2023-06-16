@@ -3,10 +3,10 @@
     // Remote container
     "ms-vscode-remote.remote-containers",
 
-    // EditorConfig:
+    // EditorConfig
     "editorconfig.editorconfig",
 
-    // HTML:
+    // HTML
     "HTMLHint.vscode-htmlhint",
     "bradgashler.htmltagwrap",
     "formulahendry.auto-rename-tag",
@@ -18,7 +18,7 @@
     "christian-kohler.path-intellisense",
     "pranaygp.vscode-css-peek",
 
-    // Javascript:
+    // Javascript
     "dbaeumer.vscode-eslint",
     "xabikos.javascriptsnippets",
     "nathanchapman.javascriptsnippets",
@@ -26,26 +26,26 @@
     // Tasks / Makefile targets
     "spmeesseman.vscode-taskexplorer",
 
-    // Commit:
+    // Commit
     "joshbolduc.commitlint",
     "vivaxy.vscode-conventional-commits",
 
-    // Git:
+    // Git
     "eamodio.gitlens",
 
-    // Github Actions:
+    // Github Actions
     "cschleiden.vscode-github-actions",
 
     // Gitignore
     "codezombiech.gitignore",
 
-    // Dockerfile:
+    // Dockerfile
     "exiasr.hadolint",
 
-    // Docker:
+    // Docker
     "ms-azuretools.vscode-docker",
 
-    // Shell:
+    // Shell
     "foxundermoon.shell-format",
     "timonwong.shellcheck",
     "sadeghpm.sql-snippets",
@@ -56,22 +56,22 @@
     // YAML
     "redhat.vscode-yaml",
 
-    // Markdown:
+    // Markdown
     "davidanson.vscode-markdownlint",
     "shd101wyy.markdown-preview-enhanced",
     "yzhang.markdown-all-in-one",
 
-    // Formatters:
+    // Formatters
     "esbenp.prettier-vscode",
 
-    // Comments:
+    // Comments
     "stackbreak.comment-divider",
     "exodiusstudios.comment-anchors",
 
-    // Cron jobs:
+    // Cron jobs
     "tumido.cron-explained",
 
-    // Spellcheck:
+    // Spellcheck
     "streetsidesoftware.code-spell-checker"
   ],
 
