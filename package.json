@@ -30,7 +30,7 @@
     "markdownlint-cli": "^0.34.0",
     "prettier": "^2.8.8",
     "release-it": "^15.11.0",
-    "stylelint": "^15.7.0",
+    "stylelint": "^15.8.0",
     "stylelint-at-rule-no-children": "^0.3.1",
     "stylelint-color-format": "^1.1.0",
     "stylelint-config-idiomatic-order": "^9.0.0",
