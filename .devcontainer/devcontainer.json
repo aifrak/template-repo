@@ -12,7 +12,7 @@
   devcontainer is ignoring "workspaceFolder" when repository is cloned into a
   container volume from VSCode.
   */
-  "remoteEnv": {
+  "containerEnv": {
     "APP_DIR": "${containerWorkspaceFolder}"
   },
   "onCreateCommand": "bash ./.devcontainer/setup.sh",
