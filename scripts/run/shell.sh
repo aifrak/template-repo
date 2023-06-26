@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 shell_scripts_globs=(
-  .husky/*.sh
   .husky/commit-msg
+  .husky/helpers/*.sh
   .husky/post-*
   .husky/pre-*
   run
