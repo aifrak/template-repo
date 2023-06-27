@@ -47,6 +47,7 @@
     "stylelint-use-nesting": "^4.1.0"
   },
   "overrides": {
+    "semver": "^7.5.3",
     "stylelint-config-idiomatic-order@^9.0.0": {
       "stylelint-order": "^6.0.3"
     }
