@@ -9,4 +9,5 @@ htmlhint
 lintstaged
 markdownlint
 minimist
+optionator
 stylelint
