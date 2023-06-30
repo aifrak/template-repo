@@ -47,10 +47,12 @@
     "stylelint-use-nesting": "^4.1.0"
   },
   "overrides": {
+    "optionator": "^0.9.3",
     "semver": "^7.5.3",
     "stylelint-config-idiomatic-order@^9.0.0": {
       "stylelint-order": "^6.0.3"
-    }
+    },
+    "word-wrap": "@aashutoshrathi/word-wrap@^1.2.6"
   },
   "type": "module",
   "engines": {
