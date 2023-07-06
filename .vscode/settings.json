@@ -59,7 +59,6 @@
   },
 
   // Prettier:
-  "prettier.prettierPath": "./node_modules/prettier",
   "prettier.useEditorConfig": true,
 
   // CSS:
