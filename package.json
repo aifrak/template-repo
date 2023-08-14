@@ -26,7 +26,7 @@
     "eslint-plugin-unicorn": "^48.0.1",
     "htmlhint": "^1.1.4",
     "husky": "^8.0.3",
-    "lint-staged": "^13.2.3",
+    "lint-staged": "^14.0.0",
     "markdownlint-cli": "^0.35.0",
     "prettier": "^3.0.1",
     "release-it": "^16.1.5",
