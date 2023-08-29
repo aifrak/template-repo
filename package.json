@@ -9,7 +9,7 @@
     "@ronilaukkarinen/stylelint-a11y": "^1.2.7",
     "calver": "^22.9.1",
     "commitizen": "^4.3.0",
-    "cspell": "^7.0.1",
+    "cspell": "^7.1.1",
     "eslint": "^8.48.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^9.0.0",
