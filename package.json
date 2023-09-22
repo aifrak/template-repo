@@ -5,7 +5,7 @@
     "@commitlint/config-conventional": "^17.7.0",
     "@commitlint/cz-commitlint": "^17.7.1",
     "@release-it/bumper": "^5.1.0",
-    "@release-it/conventional-changelog": "^7.0.1",
+    "@release-it/conventional-changelog": "^7.0.2",
     "@ronilaukkarinen/stylelint-a11y": "^1.2.7",
     "calver": "^22.9.1",
     "commitizen": "^4.3.0",
