@@ -29,7 +29,7 @@
     "lint-staged": "^14.0.1",
     "markdownlint-cli": "^0.37.0",
     "prettier": "^3.0.3",
-    "release-it": "^16.2.0",
+    "release-it": "^16.2.1",
     "stylelint": "^15.10.3",
     "stylelint-at-rule-no-children": "^0.3.1",
     "stylelint-color-format": "^1.1.0",
