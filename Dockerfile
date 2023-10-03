@@ -2,7 +2,7 @@
 #                      base                      #
 # —————————————————————————————————————————————— #
 
-FROM ubuntu:jammy-20230816 as base
+FROM ubuntu:jammy-20230916 as base
 
 USER root
 
