@@ -3,7 +3,7 @@
   "devDependencies": {
     "@commitlint/cli": "^18.0.0",
     "@commitlint/config-conventional": "^18.0.0",
-    "@commitlint/cz-commitlint": "^17.8.0",
+    "@commitlint/cz-commitlint": "^18.0.0",
     "@release-it/bumper": "^5.1.0",
     "@release-it/conventional-changelog": "^7.0.2",
     "@ronilaukkarinen/stylelint-a11y": "^1.2.7",
