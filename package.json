@@ -1,7 +1,7 @@
 {
   "name": "template-repo",
   "devDependencies": {
-    "@commitlint/cli": "^18.0.0",
+    "@commitlint/cli": "^18.1.0",
     "@commitlint/config-conventional": "^18.0.0",
     "@commitlint/cz-commitlint": "^18.1.0",
     "@release-it/bumper": "^5.1.0",
