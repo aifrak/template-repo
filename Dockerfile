@@ -50,7 +50,7 @@ CMD [ "bash" ]
 
 FROM koalaman/shellcheck:v0.11.0 as shellcheck
 FROM mvdan/shfmt:v3.12.0 as shfmt
-FROM hadolint/hadolint:v2.13.1 as hadolint
+FROM hadolint/hadolint:v2.14.0 as hadolint
 FROM node:18.20.8-bullseye as node
 
 FROM base as ci
